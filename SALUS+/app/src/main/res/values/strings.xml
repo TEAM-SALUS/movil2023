@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">Salus+</string>
-    <string name="logout">LOGOUT</string>
-    <string name="turnos">TURNOS</string>
-    <string name="Servicios">SERVICIOS</string>
-    <string name="profesionales">PROFESIONALES</string>
+    <string name="logout">Logout</string>
+    <string name="turnos">Turnos</string>
+    <string name="Servicios">Servicios</string>
+    <string name="med">Médicos</string>
     <string name="profesionales_profesionales">Profesionales</string>
     <string name="btn_reservar_turno_profesionales">Reservar turno</string>
     <string name="txtEspecialidadDr1_profesionales">Especialidad profesional</string>
     <string name="txtNombreDr1_profesionales">Nombre profesional</string>
     <string name="todo">TODO</string>
+    <string name="salus">SALUS</string>
 </resources>
