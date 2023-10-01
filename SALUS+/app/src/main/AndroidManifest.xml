@@ -27,6 +27,13 @@
                 android:value=".home" />
         </activity>
         <activity
+            android:name=".ProfesionalActivity"
+            android:parentActivityName=".ProfesionalesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ProfesionalesActivity" />
+        </activity>
+        <activity
             android:name=".login"
             android:parentActivityName=".MainActivity">
             <meta-data
