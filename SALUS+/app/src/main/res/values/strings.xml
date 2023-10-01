@@ -8,4 +8,5 @@
     <string name="btn_reservar_turno_profesionales">Reservar turno</string>
     <string name="txtEspecialidadDr1_profesionales">Especialidad profesional</string>
     <string name="txtNombreDr1_profesionales">Nombre profesional</string>
+    <string name="todo">TODO</string>
 </resources>
