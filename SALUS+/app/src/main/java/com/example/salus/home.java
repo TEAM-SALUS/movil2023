@@ -121,10 +121,10 @@ public class home extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void irProfesionales()
-    {
-        Intent intent = new Intent(this, login.class);
+    public void irProfesionales(View view) {
+        Intent intent = new Intent(this, ProfesionalesActivity.class);
         startActivity(intent);
+
     }
 
 }
