@@ -127,4 +127,10 @@ public class home extends AppCompatActivity
 
     }
 
+    public void irServicios(View view) {
+        Intent intent = new Intent(this, ServiciosActivity.class);
+        startActivity(intent);
+
+    }
+
 }
