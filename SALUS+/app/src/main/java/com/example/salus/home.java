@@ -133,4 +133,9 @@ public class home extends AppCompatActivity
 
     }
 
+    public void irTurnos(View view) {
+        Intent intent = new Intent(this, TurnosActivity.class);
+        startActivity(intent);
+    }
+
 }
