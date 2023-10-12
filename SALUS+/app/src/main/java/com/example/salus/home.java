@@ -4,6 +4,7 @@ import static com.example.salus.R.id.datePickerButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -26,6 +27,7 @@ public class home extends AppCompatActivity
     private Button logt;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -128,14 +130,13 @@ public class home extends AppCompatActivity
     }
 
     public void irServicios(View view) {
-        Intent intent = new Intent(this, ServiciosActivity.class);
+        Intent intent = new Intent(this, Servicios.class);
         startActivity(intent);
-
     }
-
+    /*
     public void irTurnos(View view) {
         Intent intent = new Intent(this, TurnosActivity.class);
         startActivity(intent);
     }
-
+    */
 }
