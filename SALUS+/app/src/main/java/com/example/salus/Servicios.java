@@ -19,6 +19,11 @@ public class Servicios extends AppCompatActivity {
         reservarTurno = findViewById(R.id.reservarTurno1);
     }
 
+    public void irServicio(View view){
+        Intent intent = new Intent(this, ServiciosOdon.class);
+        startActivity(intent);
+    }
+
         /*
     public void irConfirmarServicio(View view){
         Intent intent = new Intent(this, ConfirmarServicioActivity.class);

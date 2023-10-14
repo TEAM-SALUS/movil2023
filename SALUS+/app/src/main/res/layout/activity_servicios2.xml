@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#83D9FE"
-                    android:onClick="irConfirmarServicio"
+                    android:onClick="irServicio"
                     android:text="Reservar turno"
                     android:textColor="#000000" />
 
@@ -115,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#83D9FE"
-                    android:onClick="irConfirmarServicio"
+                    android:onClick="irServicio"
                     android:text="Reservar turno"
                     android:textColor="#000000" />
 
@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#83D9FE"
-                    android:onClick="irConfirmarServicio"
+                    android:onClick="irServicio"
                     android:text="Reservar turno"
                     android:textColor="#000000" />
 
@@ -205,7 +205,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#83D9FE"
-                    android:onClick="irConfirmarServicio"
+                    android:onClick="irServicio"
                     android:text="Reservar turno"
                     android:textColor="#000000" />
 
