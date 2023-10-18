@@ -12,21 +12,26 @@
         android:id="@+id/TVservicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
         android:text="Servicios"
         android:textSize="28sp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="150dp" />
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <LinearLayout
-        android:layout_width="900px"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="51dp"
         android:gravity="center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.786">
+        app:layout_constraintTop_toBottomOf="@+id/TVservicio">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#83D9FE"
-                    android:onClick="reservarTurno"
+                    android:onClick="irServicio"
                     android:text="Reservar turno"
                     android:textColor="#000000" />
 
@@ -110,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#83D9FE"
-                    android:onClick="reservarTurno"
+                    android:onClick="irServicio"
                     android:text="Reservar turno"
                     android:textColor="#000000" />
 
@@ -155,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#83D9FE"
-                    android:onClick="reservarTurno"
+                    android:onClick="irServicio"
                     android:text="Reservar turno"
                     android:textColor="#000000" />
 
@@ -200,7 +205,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#83D9FE"
-                    android:onClick="reservarTurno"
+                    android:onClick="irServicio"
                     android:text="Reservar turno"
                     android:textColor="#000000" />
 
@@ -209,5 +214,16 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/TVservicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/images" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

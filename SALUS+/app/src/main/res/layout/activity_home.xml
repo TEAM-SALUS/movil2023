@@ -104,11 +104,12 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="145dp"
                 android:backgroundTint="#83D9FE"
+                android:onClick="irServicios"
                 android:text="@string/Servicios"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/ic2"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.cardview.widget.CardView>
@@ -147,7 +148,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="145dp"
                 android:backgroundTint="#83D9FE"
-                android:text="@string/Servicios"
+                android:onClick="irTurnos"
+                android:text="@string/turnos"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"

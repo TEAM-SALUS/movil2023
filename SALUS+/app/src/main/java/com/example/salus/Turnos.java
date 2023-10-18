@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class TurnosActivity extends AppCompatActivity {
+public class Turnos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
