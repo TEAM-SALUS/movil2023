@@ -1,6 +1,8 @@
 package com.example.salus;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.salus.adaptador.ProfesionalesAdaptador;
 import com.example.salus.entidad.Categoria;
 import com.example.salus.entidad.Condicion;
 import com.example.salus.entidad.Servicio;
@@ -43,6 +46,8 @@ public class ProfesionalesActivity extends AppCompatActivity {
     private IUsuarioNeg usuNI;
     private IServicioXProfesionalNeg serXProNI;
     private ITurnoNeg turNI;
+    private RecyclerView recyclerServicioXPreofesional;
+    private ProfesionalesAdaptador profesionalesAdaptador;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +62,10 @@ public class ProfesionalesActivity extends AppCompatActivity {
         usuNI = new UsuarioNegImpl();
         serXProNI = new ServicioXProfesionalNegImpl();
         turNI = new TurnoNegImpl();
+        recyclerServicioXPreofesional = findViewById(R.id.recyclerProfesionales);
+        recyclerServicioXPreofesional.setLayoutManager(new LinearLayoutManager(context));
+        profesionalesAdaptador = new ProfesionalesAdaptador(serXProNI.listarTodos(context),context);
+        recyclerServicioXPreofesional.setAdapter(profesionalesAdaptador);
         //listarCategoria();
         //listarCategoriaId();
         //actualizarCategoria();
