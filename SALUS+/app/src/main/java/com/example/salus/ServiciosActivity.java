@@ -14,7 +14,7 @@ public class ServiciosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_servicios);
+        setContentView(R.layout.activity_servicios2);
 
         /*reservarTurno = (Button)findViewById(R.id.reservarTurno1);
         reservarTurno.setOnClickListener(new View.OnClickListener() {
