@@ -21,10 +21,11 @@ public class home extends AppCompatActivity
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
 
-    private Button prof;
-    private Button serv;
-    private Button calend;
-    private Button logt;
+    Button prof;
+    Button serv;
+    Button calend;
+    Button logt;
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -40,6 +41,38 @@ public class home extends AppCompatActivity
         serv = findViewById(R.id.button2);
         calend = findViewById(R.id.button3);
         logt = findViewById(R.id.button4);
+
+        prof.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(home.this,ProfesionalActivity.class);
+                startActivity(i);
+            }
+        });
+
+        serv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i2 = new Intent( home.this,Servicios.class);
+                startActivity(i2);
+            }
+        });
+
+        calend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i3 = new Intent ( home.this,TurneroActivity.class);
+                startActivity(i3);
+            }
+        });
+
+        logt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i4 = new Intent( home.this,login.class);
+                startActivity(i4);
+            }
+        });
     }
 
     private String getTodaysDate()
