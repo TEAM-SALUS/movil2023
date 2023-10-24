@@ -13,3 +13,4 @@ public interface IServicioNeg {
     public boolean editar(Servicio servicio, Context context);
     public boolean borrar(int id, Context context);
 }
+
