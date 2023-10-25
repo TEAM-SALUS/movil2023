@@ -150,25 +150,4 @@ public class home extends AppCompatActivity
 
     }
 
-    public void irLogin()
-    {
-        Intent intent = new Intent(this, login.class);
-        startActivity(intent);
-    }
-
-    public void irProfesionales(View view) {
-        Intent intent = new Intent(this, ProfesionalesActivity.class);
-        startActivity(intent);
-    }
-
-    public void irServicios(View view) {
-        Intent intent = new Intent(this, Servicios.class);
-        startActivity(intent);
-    }
-
-    public void irTurnos(View view) {
-        Intent intent = new Intent(this, Turnos.class);
-        startActivity(intent);
-    }
-
 }
