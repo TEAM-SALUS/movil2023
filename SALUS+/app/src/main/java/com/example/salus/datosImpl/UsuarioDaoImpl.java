@@ -103,7 +103,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             nuevoRegistro.put("Usuario_Us",usuario.getUsuario());
             nuevoRegistro.put("Clave_Us",usuario.getClave());
             //nuevoRegistro.put("Estado",usuario.getEstado());
-            nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
+            //nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
             cn.insert("Usuario",null,nuevoRegistro);
         } catch (Exception e) {
             e.printStackTrace();

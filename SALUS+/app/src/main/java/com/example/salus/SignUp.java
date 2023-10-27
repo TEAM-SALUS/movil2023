@@ -15,9 +15,9 @@ import com.example.salus.negocio.IUsuarioNeg;
 import com.example.salus.negocioImpl.UsuarioNegImpl;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
-    private Button btnRegistrarse;
+    Button btnRegistrarse;
     Context context;
-    TextView signUsuario;
+    TextView signDni;
     TextView signEmail;
     TextView signPass;
     Usuario usuario;
@@ -32,27 +32,39 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
     private void init(){
         context = getApplicationContext();
-        signUsuario = findViewById(R.id.sign_usuario);
+        signDni = findViewById(R.id.sign_dni);
         signEmail = findViewById(R.id.sign_email);
         signPass = findViewById(R.id.sign_pass);
         btnRegistrarse = findViewById(R.id.btn_registrarse);
     }
     private Usuario completarDatos(){
         Usuario u = new Usuario();
-        String user = signUsuario.getText().toString();
+        String dni = signDni.getText().toString();
         String email = signEmail.getText().toString();
         String pass = signPass.getText().toString();
-        u.setUsuario(user);
+        u.setDni(Integer.parseInt(dni));
+        //u.setNombre("");
+        //u.setApellido("");
+        //u.setDireccion("");
+        //u.setCiudad("");
+        //u.setTelefono("");
         u.setEmail(email);
+        //u.setUsuario();
         u.setClave(pass);
+        //u.setEstado();
+        //u.setCondicion();
         return u;
     }
 
     private void guardar(){
-        iUsuarioNeg = new UsuarioNegImpl( );
-        Usuario usuario = completarDatos();
-        iUsuarioNeg.insertar(usuario, context);
-        Toast.makeText(context, "Usuario registrado", Toast.LENGTH_LONG).show();
+        iUsuarioNeg = new UsuarioNegImpl();
+        usuario = completarDatos();
+        boolean res = iUsuarioNeg.insertar(usuario, context);
+        if (res){
+            Toast.makeText(context, "Usuario registrado", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(context, "Registro falló", Toast.LENGTH_LONG).show();
+        }
     }
     public void irLogin(View view){
         Intent intent = new Intent(this, login.class);
