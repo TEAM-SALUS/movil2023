@@ -7,7 +7,7 @@
     tools:context=".ServiciosOdon">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txtViewT"
         android:layout_width="198dp"
         android:layout_height="29dp"
         android:text="Especialidades"

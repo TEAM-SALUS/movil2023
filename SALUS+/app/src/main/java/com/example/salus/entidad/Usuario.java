@@ -10,11 +10,12 @@ public class Usuario {
     private String email;
     private String usuario;
     private String clave;
+    private String descripcion;
     private boolean estado;
     private Condicion condicion;
     public Usuario() {}
 
-    public Usuario(int dni, String nombre, String apellido, String direccion, String ciudad, String telefono, String email, String usuario, String clave, boolean estado, Condicion condicion) {
+    public Usuario(int dni, String nombre, String apellido, String direccion, String ciudad, String telefono, String email, String usuario, String clave, String descripcion, boolean estado, Condicion condicion) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -24,9 +25,11 @@ public class Usuario {
         this.email = email;
         this.usuario = usuario;
         this.clave = clave;
+        this.descripcion = descripcion;
         this.estado = estado;
         this.condicion = condicion;
     }
+
     public int getDni() {
         return dni;
     }
@@ -81,6 +84,8 @@ public class Usuario {
     public void setClave(String clave) {
         this.clave = clave;
     }
+    public String getDescripcion() { return descripcion; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
     public boolean getEstado() {
         return estado;
     }
@@ -105,6 +110,7 @@ public class Usuario {
                 ", email='" + email + '\'' +
                 ", usuario='" + usuario + '\'' +
                 ", clave='" + clave + '\'' +
+                ", descripcion='" + descripcion + '\'' +
                 ", estado=" + estado +
                 ", condicion=" + condicion +
                 '}';

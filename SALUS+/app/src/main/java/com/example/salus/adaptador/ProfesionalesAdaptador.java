@@ -46,6 +46,7 @@ public class ProfesionalesAdaptador extends RecyclerView.Adapter<ProfesionalesAd
                 Intent intent = new Intent(context, ProfesionalActivity.class);
                 Toast.makeText(context,"Selecciono a: " + servicioXProfesionalList.get(position).getUsuario_SXP().getNombre(),Toast.LENGTH_LONG).show();
                 intent.putExtra("proSeleccionado",servicioXProfesionalList.get(position).getUsuario_SXP().getDni());
+                intent.putExtra("especialidadSeleccionada",servicioXProfesionalList.get(position).getServicio_SXP().getCodServicio());
                 context.startActivity(Intent.createChooser(intent,"compartir en").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             }
         });

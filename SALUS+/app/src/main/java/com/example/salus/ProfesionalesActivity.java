@@ -201,9 +201,9 @@ public class ProfesionalesActivity extends AppCompatActivity {
     public void listarUsuario() {
         List<Usuario> lista = (ArrayList<Usuario>)usuNI.listarTodos(context);
         if(lista.size() == 0) {
-            usuNI.insertar(new Usuario(11111111, "Nombre Uno", "Apellido Uno", "Direccion 1", "Ciudad 1", "Telefono 1","Email 1","Usuario 1","Clave 1", true,conNI.listarUno(1, context)), context);
-            usuNI.insertar(new Usuario(22222222, "Nombre Dos", "Apellido Dos", "Direccion 2", "Ciudad 2", "Telefono 2","Email 2", "Usuario 2", "Clave 2" ,true,conNI.listarUno(2, context)), context);
-            usuNI.insertar(new Usuario(0, "Nombre Admin", "Apellido Admin", "Direccion Admin", "Ciudad Admin", "Telefono Admin","Email admin","Usuario admin", "Clave 3",true,conNI.listarUno(3, context)), context);
+            usuNI.insertar(new Usuario(11111111, "Nombre Uno", "Apellido Uno", "Direccion 1", "Ciudad 1", "Telefono 1","Email 1","Usuario 1","Clave 1","Descripcion 1",true,conNI.listarUno(1, context)), context);
+            usuNI.insertar(new Usuario(22222222, "Nombre Dos", "Apellido Dos", "Direccion 2", "Ciudad 2", "Telefono 2","Email 2", "Usuario 2", "Clave 2","Descripcion 2",true,conNI.listarUno(2, context)), context);
+            usuNI.insertar(new Usuario(0, "Nombre Admin", "Apellido Admin", "Direccion Admin", "Ciudad Admin", "Telefono Admin","Email admin","Usuario admin", "Clave 3","Descripcion 3",true,conNI.listarUno(3, context)), context);
         }
         String listaTxt = "";
         for (Usuario u : lista) {
@@ -221,16 +221,16 @@ public class ProfesionalesActivity extends AppCompatActivity {
         }
     }
     public void actualizarUsuario(){
-        Usuario u = new Usuario(11111111, "Nombre Nuevo", "Apellido Nuevo", "Direccion Nuevo", "Ciudad Nuevo", "Telefono Nuevo","Email nuevo", "Usuario nuevo","Clave nueva", true,conNI.listarUno(1, context));
+        Usuario u = new Usuario(11111111, "Nombre Nuevo", "Apellido Nuevo", "Direccion Nuevo", "Ciudad Nuevo", "Telefono Nuevo","Email nuevo", "Usuario nuevo","Clave nueva","Descripcion nueva",true,conNI.listarUno(1, context));
         Log.d("Usuario id 11111111 - descrpcion nueva", usuNI.listarUno(11111111, context).toString());
         Log.d("Usuario id 11111111 - descrpcion nueva", String.valueOf(usuNI.editar(u, context)));
         Log.d("Usuario id 11111111 - descrpcion nueva", usuNI.listarUno(11111111, context).toString());
-        u = new Usuario(11111111, "Nombre Uno", "Apellido Uno", "Direccion 1", "Ciudad 1", "Telefono 1", "Email 1", "Usuario 1","Clave 1", true,conNI.listarUno(1, context));
+        u = new Usuario(11111111, "Nombre Uno", "Apellido Uno", "Direccion 1", "Ciudad 1", "Telefono 1", "Email 1", "Usuario 1","Clave 1","Descripcion 1",true,conNI.listarUno(1, context));
         usuNI.editar(u, context);
         Log.d("Usuario id 11111111 - descrpcion final", usuNI.listarUno(11111111, context).toString());
     }
     public void eliminarUsuario() {
-        usuNI.insertar( new Usuario(444444444, "Nombre Cuatro", "Apellido Cuatro", "Direccion 4", "Ciudad 4", "Telefono 4","Email 4","Usuario 4","Clave 4", true,conNI.listarUno(1, context)), context);
+        usuNI.insertar( new Usuario(444444444, "Nombre Cuatro", "Apellido Cuatro", "Direccion 4", "Ciudad 4", "Telefono 4","Email 4","Usuario 4","Clave 4","Descripcion 4",true,conNI.listarUno(1, context)), context);
         Log.d("Usuario 444444444 agregada ", usuNI.listarUno(444444444,context).toString());
         Log.d("Usuario 444444444 elimianda ",String.valueOf(usuNI.borrar(444444444, context)));
         Log.d("Usuario 444444444 agregada ", usuNI.listarUno(444444444,context).toString());
