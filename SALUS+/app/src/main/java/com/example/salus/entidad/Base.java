@@ -15,6 +15,10 @@ public class Base {
             "Direccion_Us VARCHAR (100)," +
             "Ciudad_Us VARCHAR (50)," +
             "Telefono_Us VARCHAR (50)," +
+            "Email_Us VARCHAR (50)," +
+            "Usuario_Us VARCHAR (50)," +
+            "Clave_Us VARCHAR (50)," +
+            "Descripcion_Us VARCHAR (1000)," +
             "Estado BOOLEAN DEFAULT true," +
             "CodCondicion_Us INT," +
             "CONSTRAINT PK_Usuario PRIMARY KEY (`DNI_Us`)," +

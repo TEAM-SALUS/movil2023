@@ -22,7 +22,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
         try {
             cn = new ConexionSQLiteHelper(context).getReadableDatabase();
             Cursor c = cn.rawQuery(
-                    "SELECT DNI_Us, Nombre_Us, Apellido_Us, Direccion_Us, Ciudad_Us, Telefono_Us, Estado, CodCondicion_Us FROM Usuario;",
+                    "SELECT DNI_Us,Nombre_Us,Apellido_Us,Direccion_Us,Ciudad_Us,Telefono_Us,Email_Us,Usuario_Us,Clave_Us,Descripcion_Us,Estado,CodCondicion_Us FROM Usuario;",
                     null
             );
             if(c.moveToFirst()) {
@@ -35,8 +35,12 @@ public class UsuarioDaoImpl implements IUsuarioDao {
                     usuario.setDireccion(c.getString(3));
                     usuario.setCiudad(c.getString(4));
                     usuario.setTelefono(c.getString(5));
-                    usuario.setEstado(c.getString(6).equals("1"));
-                    usuario.setCondicion(conNI.listarUno(c.getInt(7),context));
+                    usuario.setEmail(c.getString(6));
+                    usuario.setUsuario(c.getString(7));
+                    usuario.setClave(c.getString(8));
+                    usuario.setDescripcion(c.getString(9));
+                    usuario.setEstado(c.getString(10).equals("1"));
+                    usuario.setCondicion(conNI.listarUno(c.getInt(11),context));
                     lista.add(usuario);
                 } while (c.moveToNext());
             }
@@ -53,7 +57,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
         try {
             cn = new ConexionSQLiteHelper(context).getReadableDatabase();
             Cursor c = cn.rawQuery(
-                    "SELECT DNI_Us, Nombre_Us, Apellido_Us, Direccion_Us, Ciudad_Us, Telefono_Us, Estado, CodCondicion_Us " +
+                    "SELECT DNI_Us,Nombre_Us,Apellido_Us,Direccion_Us,Ciudad_Us,Telefono_Us,Email_Us,Usuario_Us,Clave_Us,Descripcion_Us,Estado,CodCondicion_Us " +
                             "FROM Usuario WHERE DNI_Us = " + id + ";",
                     null
             );
@@ -66,8 +70,12 @@ public class UsuarioDaoImpl implements IUsuarioDao {
                     usuario.setDireccion(c.getString(3));
                     usuario.setCiudad(c.getString(4));
                     usuario.setTelefono(c.getString(5));
-                    usuario.setEstado(c.getString(6).equals("1"));
-                    usuario.setCondicion(conNI.listarUno(c.getInt(7),context));
+                    usuario.setEmail(c.getString(6));
+                    usuario.setUsuario(c.getString(7));
+                    usuario.setClave(c.getString(8));
+                    usuario.setDescripcion(c.getString(9));
+                    usuario.setEstado(c.getString(10).equals("1"));
+                    usuario.setCondicion(conNI.listarUno(c.getInt(11),context));
                 } while (c.moveToNext());
             }
         } catch (Exception e) {
@@ -93,6 +101,10 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             nuevoRegistro.put("Direccion_Us",usuario.getDireccion());
             nuevoRegistro.put("Ciudad_Us",usuario.getCiudad());
             nuevoRegistro.put("Telefono_Us",usuario.getTelefono());
+            nuevoRegistro.put("Email_Us",usuario.getEmail());
+            nuevoRegistro.put("Usuario_Us",usuario.getUsuario());
+            nuevoRegistro.put("Clave_Us",usuario.getClave());
+            nuevoRegistro.put("Descripcion_Us",usuario.getDescripcion());
             //nuevoRegistro.put("Estado",usuario.getEstado());
             nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
             cn.insert("Usuario",null,nuevoRegistro);
@@ -119,6 +131,10 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             nuevoRegistro.put("Direccion_Us",usuario.getDireccion());
             nuevoRegistro.put("Ciudad_Us",usuario.getCiudad());
             nuevoRegistro.put("Telefono_Us",usuario.getTelefono());
+            nuevoRegistro.put("Email_Us",usuario.getEmail());
+            nuevoRegistro.put("Usuario_Us",usuario.getUsuario());
+            nuevoRegistro.put("Clave_Us",usuario.getClave());
+            nuevoRegistro.put("Descripcion_Us",usuario.getDescripcion());
             nuevoRegistro.put("Estado",usuario.getEstado());
             nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
             cn.update("Usuario",
