@@ -128,7 +128,7 @@
                 android:layout_marginBottom="16dp"
                 android:alpha="0.9"
                 android:backgroundTint="#83D9FE"
-                android:onClick="irHome"
+                android:onClick="onClick"
                 android:text="Ingresar"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -162,4 +162,17 @@ public class UsuarioDaoImpl implements IUsuarioDao {
         }
         return delete;
     }
+    @Override
+    public int login(String email, String pass, Context context){
+        int res = 0;
+        cn = new ConexionSQLiteHelper(context).getReadableDatabase();
+        String[] args = new String[] {email, pass};
+        Cursor cr = cn.rawQuery("SELECT * FROM Usuario WHERE Email_Us=? AND Clave_uS=?", args);
+        if (cr.getCount()>0){
+            res = 1;
+            return res;
+        }else {
+            return res;
+        }
+    }
 }
