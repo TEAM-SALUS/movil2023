@@ -45,7 +45,7 @@ public class home extends AppCompatActivity
         prof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(home.this,ProfesionalActivity.class);
+                Intent i = new Intent(home.this,ProfesionalesActivity.class);
                 startActivity(i);
             }
         });
