@@ -10,4 +10,7 @@
     <string name="txtNombreDr1_profesionales">Nombre profesional</string>
     <string name="todo">TODO</string>
     <string name="salus">SALUS</string>
+    <string name="oct_2023">Oct 2023</string>
+    <string name="salustitulo">Salus +</string>
+    <string name="Volver" />
 </resources>
