@@ -39,8 +39,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn_reservar_turno_profesionales"
                 android:layout_marginBottom="8dp"
-                android:backgroundTint="@color/btn_reservarTurno"
-                android:textColor="@color/black"
+                android:backgroundTint="#FF9800"
+                android:textColor="@color/white"
                 android:layout_gravity="center"/>
         </LinearLayout>
     </LinearLayout>
