@@ -36,7 +36,7 @@ public class UsuarioNegImpl implements IUsuarioNeg {
         return usuDao.borrar(id, context);
     }
     @Override
-    public int login(String email, String pass, Context context){
+    public Usuario login(String email, String pass, Context context){
         return usuDao.login(email, pass, context);
     }
 }

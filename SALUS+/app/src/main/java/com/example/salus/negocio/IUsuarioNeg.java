@@ -12,5 +12,5 @@ public interface IUsuarioNeg {
     public boolean insertar(Usuario usuario, Context context);
     public boolean editar(Usuario usuario, Context context);
     public boolean borrar(int id, Context context);
-    public int login(String email, String pass, Context context);
+    public Usuario login(String email, String pass, Context context);
 }

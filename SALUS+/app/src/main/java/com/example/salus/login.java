@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,10 +49,14 @@ public class login extends AppCompatActivity implements View.OnClickListener{
         iUsuarioNeg = new UsuarioNegImpl();
         email = loginEmail.getText().toString();
         pass = loginPass.getText().toString();
-        int res = iUsuarioNeg.login(email, pass, context);
-        if (res==1){
+        Usuario user = new Usuario();
+        user = (Usuario) iUsuarioNeg.login(email, pass, context);
+        int res = user.getDni();
+        Log.d("dni", Integer.toString(res));
+        if (res >= 0){
             Toast.makeText(context, "Usuario logueado", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, home.class);
+            intent.putExtra("dniCliente", res);
             startActivity(intent);
         }else{
             Toast.makeText(context, "Usuario y contraseña incorrectos", Toast.LENGTH_LONG).show();
