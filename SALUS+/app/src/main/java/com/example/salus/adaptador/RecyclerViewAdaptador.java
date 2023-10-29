@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salus.R;
 import com.example.salus.Servicios;
+import com.example.salus.entidad.Servicio;
 import com.example.salus.entidad.ServicioXProfesional;
 import com.example.salus.negocioImpl.ServicioModelo;
 
@@ -22,11 +23,11 @@ import java.util.List;
 
 
 public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdaptador.ViewHolder> {
-    private List<ServicioModelo> servicioList;
+    private List<Servicio> servicioList;
     private Context context;
 
-    public RecyclerViewAdaptador(List<ServicioModelo> servicioLista) {
-        this.servicioList = servicioLista;
+    public RecyclerViewAdaptador(List<Servicio> servicioList, Context context) {
+        this.servicioList = servicioList;
         this.context = context;
     }
 
@@ -46,7 +47,7 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
     }
 
 
-    public List<ServicioModelo> ServicioLista;
+    // public List<ServicioModelo> ServicioLista;
 
 
 
@@ -62,8 +63,8 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.fotoServicio.setImageResource(ServicioLista.get(position).getImgServicio());
-        holder.servicio.setText(ServicioLista.get(position).getServicio());
+        holder.fotoServicio.setImageResource(R.drawable.img_servicios);
+        holder.servicio.setText(servicioList.get(position).getTitulo());
 
         holder.botonServicio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +78,7 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
     @Override
     public int getItemCount() {
-        return ServicioLista.size();
+        return servicioList.size();
     }
 }
 
