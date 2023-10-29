@@ -25,14 +25,12 @@
             android:layout_marginTop="20dp"
             android:text="Servicios"
             android:textSize="22dp" />
-    </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerServicio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="259dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerServicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp" />
+    </LinearLayout>
 
 </RelativeLayout>

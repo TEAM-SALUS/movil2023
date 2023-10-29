@@ -12,6 +12,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -35,14 +39,16 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="TextView"
-                    android:textSize="22dp" />
+                    android:textSize="18dp" />
 
                 <Button
                     android:id="@+id/btnServicio"
                     android:layout_width="188dp"
                     android:layout_height="match_parent"
+                    android:backgroundTint="#83D9FE"
                     android:onClick="irServiciosOdon"
-                    android:text="Reservar turno" />
+                    android:text="Reservar turno"
+                    android:textColor="#000000" />
 
             </LinearLayout>
         </LinearLayout>
