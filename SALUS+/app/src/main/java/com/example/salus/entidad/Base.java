@@ -54,8 +54,8 @@ public class Base {
     private final static String sqlDropTableServicioXProfesional = "DROP TABLE IF EXISTS ServicioXProfesional;";
     private final static String sqlCreateTableTurno = "CREATE TABLE IF NOT EXISTS Turno (" +
             "CodTurno_Tur INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-            "Fecha_Tur DATETIME DEFAULT CURRENT_TIMESTAMP," +
-            "FechaAsignacion_Tur DATETIME," +
+            "Fecha_Tur DATETIME NOT NULL," +
+            "FechaAsignacion_Tur DATETIME NOT NULL," +
             "Estado BOOLEAN DEFAULT true," +
             "DNI_CliTur INT NOT NULL," +
             "CodServicio_Tur INT NOT NULL," +
