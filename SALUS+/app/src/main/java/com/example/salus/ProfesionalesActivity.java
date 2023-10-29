@@ -1,5 +1,6 @@
 package com.example.salus;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -48,12 +49,14 @@ public class ProfesionalesActivity extends AppCompatActivity {
     private ITurnoNeg turNI;
     private RecyclerView recyclerServicioXPreofesional;
     private ProfesionalesAdaptador profesionalesAdaptador;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profesionales);
         iniciar();
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void iniciar() {
         context = getApplicationContext();
         catNI = new CategoriaNegImpl();
@@ -66,23 +69,23 @@ public class ProfesionalesActivity extends AppCompatActivity {
         recyclerServicioXPreofesional.setLayoutManager(new LinearLayoutManager(context));
         profesionalesAdaptador = new ProfesionalesAdaptador(serXProNI.listarTodos(context),context);
         recyclerServicioXPreofesional.setAdapter(profesionalesAdaptador);
-        listarCategoria();
+        //listarCategoria();
         //listarCategoriaId();
         //actualizarCategoria();
         //eliminarCategoria();
-        listarCondicion();
+        //listarCondicion();
         //listarCondicionId();
         //actualizarCondicion();
         //eliminarCondicion();
-        listarServicio();
+        //listarServicio();
         //listarServicioId();
         //actualizarServicio();
         //eliminarServicio();
-        listarUsuario();
+        //listarUsuario();
         //listarUsuarioId();
         //actualizarUsuario();
         //eliminarUsuario();
-        listarServicioXProfesional();
+        //listarServicioXProfesional();
         //listarServicioXProfesionalId();
         //actualizarServicioXProfesional();
         //eliminarServicioXProfesional();
@@ -278,51 +281,44 @@ public class ProfesionalesActivity extends AppCompatActivity {
         Log.d("ServicioXProfesional 11111111 agregada ", serXProNI.listarUno(1,11111111,context).toString());
     }
     /* TEST Turno */
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void listarTurno() {
         List<Turno> lista = (ArrayList<Turno>)turNI.listarTodos(context);
         if(lista.size() == 0) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                turNI.insertar(new Turno(1,LocalDateTime.now(), LocalDateTime.now(), true, usuNI.listarUno(11111111,context), serXProNI.listarUno(1,22222222,context)), context);
-            }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                turNI.insertar(new Turno(2,LocalDateTime.now(), LocalDateTime.now(), true, usuNI.listarUno(11111111,context), serXProNI.listarUno(2,22222222,context)), context);
-            }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                turNI.insertar(new Turno(3,LocalDateTime.now(), LocalDateTime.now(), true, usuNI.listarUno(11111111,context), serXProNI.listarUno(3,22222222,context)), context);
-            }
+            turNI.insertar(new Turno(1,LocalDateTime.now(),LocalDateTime.of(2023,11,28,15,30,30), true, usuNI.listarUno(11111111,context), serXProNI.listarUno(1,22222222,context)), context);
+            turNI.insertar(new Turno(2,LocalDateTime.now(),LocalDateTime.of(2024,11,28,15,30,30), true, usuNI.listarUno(11111111,context), serXProNI.listarUno(2,22222222,context)), context);
+            turNI.insertar(new Turno(3,LocalDateTime.now(),LocalDateTime.of(2025,11,28,15,30,30), true, usuNI.listarUno(11111111,context), serXProNI.listarUno(3,22222222,context)), context);
         }
         String listaTxt = "";
         for (Turno t : lista) {
             listaTxt += t.toString() + "\n";
-            Log.d("ServicioXProfesional ",t.toString());
+            Log.d("Turno ",t.toString());
         }
-        Toast.makeText(context,"Listado servicioXProfesional",Toast.LENGTH_LONG).show();
-        Log.d("Lista ServicioXProfesional ",listaTxt);
+        Toast.makeText(context,"Listado turno",Toast.LENGTH_LONG).show();
+        Log.d("Lista Turno ",listaTxt);
     }
     public void listarTurnoId(){
-        ServicioXProfesional sXP = serXProNI.listarUno(1,22222222, context);
-        Log.d("ServicioXProfesional idS 1 - idP 22222222", sXP.toString());
-        if(((Usuario)sXP.getUsuario_SXP()).getDni() == 0){
-            Toast.makeText(context,"ServicioXProfesional no registrado",Toast.LENGTH_LONG).show();
+        Turno t = turNI.listarUno(1,context);
+        Log.d("Turni idT 1", t.toString());
+        if(((Turno)t).getCodTurno() == 0){
+            Toast.makeText(context,"STurno no registrado",Toast.LENGTH_LONG).show();
         }
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void actualizarTurno(){
-        ServicioXProfesional sXP = new ServicioXProfesional(serNI.listarUno(1,context),usuNI.listarUno(22222222,context));
-        Log.d("ServicioXProfesional idS 1 - descrpcion nueva", serXProNI.listarUno(1,22222222, context).toString());
-        Log.d("ServicioXProfesional idS 1 - descrpcion nueva", String.valueOf(serXProNI.editar(sXP, context)));
-        Log.d("ServicioXProfesional idS 1 - descrpcion nueva", serXProNI.listarUno(1, 22222222, context).toString());
-        sXP = new ServicioXProfesional(serNI.listarUno(1,context),usuNI.listarUno(22222222,context));
-        serXProNI.editar(sXP, context);
-        Log.d("ServicioXProfesional idS 1 - idP 22222222 - descrpcion final", serXProNI.listarUno(1, 22222222, context).toString());
+        Turno t = new Turno(1,LocalDateTime.now(),LocalDateTime.of(2030,11,28,15,30,30), true, usuNI.listarUno(11111111,context), serXProNI.listarUno(1,22222222,context));
+        Log.d("Turno idT 1 - fecha asignacion nueva", turNI.listarUno(1,context).toString());
+        Log.d("Turno idT 1 - fecha asignacion nueva", String.valueOf(turNI.editar(t, context)));
+        Log.d("Turno idT 1 - fecha asignacion nueva", turNI.listarUno(1,context).toString());
+        t = new Turno(1,LocalDateTime.now(),LocalDateTime.of(2023,11,28,15,30,30), true, usuNI.listarUno(11111111,context), serXProNI.listarUno(1,22222222,context));
+        turNI.editar(t, context);
+        Log.d("Turno idS 1 - fecha asignacion final", turNI.listarUno(1,context).toString());
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void eliminarTurno() {
-        serXProNI.insertar(
-                new ServicioXProfesional(
-                        serNI.listarUno(1,context),
-                        usuNI.listarUno(11111111,context)),
-                context);
-        Log.d("ServicioXProfesional 11111111 agregada ", serXProNI.listarUno(1,11111111,context).toString());
-        Log.d("ServicioXProfesional 11111111 elimianda ",String.valueOf(serXProNI.borrar(1,11111111, context)));
-        Log.d("ServicioXProfesional 11111111 agregada ", serXProNI.listarUno(1,11111111,context).toString());
+        turNI.insertar(new Turno(4,LocalDateTime.now(),LocalDateTime.of(2020,11,28,15,30,30), true, usuNI.listarUno(11111111,context), serXProNI.listarUno(1,22222222,context)), context);
+        Log.d("Turno agregada ", turNI.listarUno(4,context).toString());
+        Log.d("Turno elimianda ",String.valueOf(turNI.borrar(4,context)));
+        Log.d("Turno agregada ", turNI.listarUno(4,context).toString());
     }
 }

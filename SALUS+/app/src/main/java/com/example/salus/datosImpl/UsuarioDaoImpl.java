@@ -106,7 +106,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             nuevoRegistro.put("Clave_Us",usuario.getClave());
             nuevoRegistro.put("Descripcion_Us",usuario.getDescripcion());
             //nuevoRegistro.put("Estado",usuario.getEstado());
-            nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
+            //nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
             cn.insert("Usuario",null,nuevoRegistro);
         } catch (Exception e) {
             e.printStackTrace();
@@ -165,5 +165,18 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             cn.close();
         }
         return delete;
+    }
+    @Override
+    public int login(String email, String pass, Context context){
+        int res = 0;
+        cn = new ConexionSQLiteHelper(context).getReadableDatabase();
+        String[] args = new String[] {email, pass};
+        Cursor cr = cn.rawQuery("SELECT * FROM Usuario WHERE Email_Us=? AND Clave_Us=?", args);
+        if (cr.getCount()>0){
+            res = 1;
+            return res;
+        }else {
+            return res;
+        }
     }
 }

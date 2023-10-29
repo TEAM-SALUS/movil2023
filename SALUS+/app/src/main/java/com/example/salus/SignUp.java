@@ -62,6 +62,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         boolean res = iUsuarioNeg.insertar(usuario, context);
         if (res){
             Toast.makeText(context, "Usuario registrado", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, login.class);
+            startActivity(intent);
         }else{
             Toast.makeText(context, "Registro falló", Toast.LENGTH_LONG).show();
         }
@@ -74,6 +76,5 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         guardar();
-        irLogin(view);
     }
 }
