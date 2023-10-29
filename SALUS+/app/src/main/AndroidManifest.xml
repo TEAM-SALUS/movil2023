@@ -13,11 +13,16 @@
         android:theme="@style/Theme.Salus"
         tools:targetApi="31">
         <activity
+            android:name=".CalendarViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".Turnos"
             android:parentActivityName=".home" />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".home" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".home" />
+
         <activity
             android:name=".Servicios"
             android:parentActivityName=".home">
@@ -28,15 +33,19 @@
         <activity
             android:name=".ServiciosOdon"
             android:parentActivityName=".home" />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".home" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".home" />
+
         <activity
             android:name=".TurneroActivity"
             android:parentActivityName=".home" />
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".home" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".home" />
+
         <activity
             android:name=".SignUp"
             android:parentActivityName=".MainActivity">

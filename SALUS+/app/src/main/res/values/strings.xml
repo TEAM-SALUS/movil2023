@@ -13,4 +13,6 @@
     <string name="oct_2023">Oct 2023</string>
     <string name="salustitulo">Salus +</string>
     <string name="Volver" />
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
 </resources>
