@@ -106,7 +106,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             nuevoRegistro.put("Clave_Us",usuario.getClave());
             nuevoRegistro.put("Descripcion_Us",usuario.getDescripcion());
             //nuevoRegistro.put("Estado",usuario.getEstado());
-            nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
+            //nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
             cn.insert("Usuario",null,nuevoRegistro);
         } catch (Exception e) {
             e.printStackTrace();
@@ -165,5 +165,36 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             cn.close();
         }
         return delete;
+    }
+    @Override
+    public Usuario login(String email, String pass, Context context){
+        Usuario usuario = new Usuario();
+        cn = new ConexionSQLiteHelper(context).getReadableDatabase();
+        String[] args = new String[] {email, pass};
+        Cursor c = cn.rawQuery("SELECT * FROM Usuario WHERE Email_Us=? AND Clave_Us=?", args);
+        if (c.getCount()>0){
+            conNI = new CondicionNegImpl();
+            if(c.moveToFirst()) {
+
+                do {
+                    usuario.setDni(c.getInt(0));
+                    usuario.setNombre(c.getString(1));
+                    usuario.setApellido(c.getString(2));
+                    usuario.setDireccion(c.getString(3));
+                    usuario.setCiudad(c.getString(4));
+                    usuario.setTelefono(c.getString(5));
+                    usuario.setEmail(c.getString(6));
+                    usuario.setUsuario(c.getString(7));
+                    usuario.setClave(c.getString(8));
+                    usuario.setDescripcion(c.getString(9));
+                    usuario.setEstado(c.getString(10).equals("1"));
+                    usuario.setCondicion(conNI.listarUno(c.getInt(11),context));
+                } while (c.moveToNext());
+            }
+            return usuario;
+        }else {
+            usuario.setDni(-1);
+            return usuario;
+        }
     }
 }

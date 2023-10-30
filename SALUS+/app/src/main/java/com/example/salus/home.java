@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -42,27 +43,35 @@ public class home extends AppCompatActivity
         calend = findViewById(R.id.button3);
         logt = findViewById(R.id.button4);
 
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        Toast.makeText(home.this,extras.get("dniCliente").toString(), Toast.LENGTH_LONG).show();
+
         prof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(home.this,ProfesionalesActivity.class);
+                i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
+
             }
         });
 
         serv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i2 = new Intent( home.this,Servicios.class);
-                startActivity(i2);
+                Intent i = new Intent( home.this,Servicios.class);
+                i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                startActivity(i);
             }
         });
 
         calend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i3 = new Intent ( home.this,TurneroActivity.class);
-                startActivity(i3);
+                Intent i = new Intent ( home.this,TurneroActivity.class);
+                i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                startActivity(i);
             }
         });
 
