@@ -47,10 +47,10 @@
                     android:id="@+id/btnServicio"
                     android:layout_width="188dp"
                     android:layout_height="match_parent"
-                    android:backgroundTint="#83D9FE"
+                    android:backgroundTint="#FF9800"
                     android:onClick="irServiciosOdon"
                     android:text="Reservar turno"
-                    android:textColor="#000000" />
+                    android:textColor="#FFFFFF" />
 
             </LinearLayout>
         </LinearLayout>
