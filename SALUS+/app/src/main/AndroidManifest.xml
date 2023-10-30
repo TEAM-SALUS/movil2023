@@ -48,11 +48,12 @@
 
         <activity
             android:name=".TurneroActivity"
-            android:parentActivityName=".home" />
+            android:parentActivityName=".ProfesionalActivity" >
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".home" />
+            android:value=".ProfesionalActivity" />
+        </activity>
 
         <activity
             android:name=".SignUp"
