@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salus.R;
 import com.example.salus.Servicios;
+import com.example.salus.ServiciosOdon;
 import com.example.salus.entidad.Servicio;
 import com.example.salus.entidad.ServicioXProfesional;
 import com.example.salus.negocioImpl.ServicioModelo;
@@ -31,8 +32,37 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
         this.context = context;
     }
 
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_servicio, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.fotoServicio.setImageResource(R.drawable.img_servicios);
+        holder.servicio.setText(servicioList.get(position).getTitulo());
+
+        holder.botonServicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ServiciosOdon.class);
+                intent.putExtra("servSeleccionado",servicioList.get(position).getCodServicio());
+                context.startActivity(Intent.createChooser(intent,"FUNCIONA").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return servicioList.size();
+    }
+
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView fotoServicio;
+        private ImageView fotoServicio;
         private TextView servicio;
         private Button botonServicio;
 
@@ -49,37 +79,6 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
     // public List<ServicioModelo> ServicioLista;
 
-
-
-
-
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_servicio, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.fotoServicio.setImageResource(R.drawable.img_servicios);
-        holder.servicio.setText(servicioList.get(position).getTitulo());
-
-        holder.botonServicio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, Servicios.class);
-                context.startActivity(Intent.createChooser(intent,"FUNCIONA").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            }
-        });
-    }
-
-
-    @Override
-    public int getItemCount() {
-        return servicioList.size();
-    }
 }
 
 

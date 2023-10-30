@@ -35,11 +35,10 @@ public class Servicios extends AppCompatActivity {
     private Context context;
     private IServicioNeg serNI;
     private IUsuarioNeg usuNI;
-    private RecyclerView recyclerViewServicio;
-    private RecyclerViewAdaptador adaptadorServicio;
+    RecyclerView recyclerViewServicio;
+    RecyclerViewAdaptador adaptadorServicio;
 
 
-    // @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
