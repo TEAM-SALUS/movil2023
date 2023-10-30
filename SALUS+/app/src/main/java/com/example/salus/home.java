@@ -1,17 +1,22 @@
 package com.example.salus;
 
+import static android.app.PendingIntent.getActivity;
 import static com.example.salus.R.id.datePickerButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -20,12 +25,14 @@ public class home extends AppCompatActivity
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
 
-    private Button prof;
-    private Button serv;
-    private Button calend;
-    private Button logt;
+    Button prof;
+    Button serv;
+    Button calend;
+    Button logt;
 
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -38,6 +45,48 @@ public class home extends AppCompatActivity
         serv = findViewById(R.id.button2);
         calend = findViewById(R.id.button3);
         logt = findViewById(R.id.button4);
+
+        //Intent intent = getIntent();
+        //Bundle extras = intent.getExtras();
+        SharedPreferences sharedPref = getSharedPreferences("shared_login_data", Context.MODE_PRIVATE);
+        int userDni = sharedPref.getInt(login.DNI_CLIENT, 0);
+        Toast.makeText(home.this,String.valueOf(userDni), Toast.LENGTH_LONG).show();
+
+        prof.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(home.this,ProfesionalesActivity.class);
+                //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                startActivity(i);
+
+            }
+        });
+
+        serv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent( home.this,Servicios.class);
+                //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                startActivity(i);
+            }
+        });
+
+        calend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent ( home.this,TurneroActivity.class);
+                //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                startActivity(i);
+            }
+        });
+
+        logt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i4 = new Intent( home.this,login.class);
+                startActivity(i4);
+            }
+        });
     }
 
     private String getTodaysDate()
@@ -113,29 +162,6 @@ public class home extends AppCompatActivity
     {
         datePickerDialog.show();
 
-    }
-
-    public void irLogin()
-    {
-        Intent intent = new Intent(this, login.class);
-        startActivity(intent);
-    }
-
-    public void irProfesionales(View view) {
-        Intent intent = new Intent(this, ProfesionalesActivity.class);
-        startActivity(intent);
-
-    }
-
-    public void irServicios(View view) {
-        Intent intent = new Intent(this, ServiciosActivity.class);
-        startActivity(intent);
-
-    }
-
-    public void irTurnos(View view) {
-        Intent intent = new Intent(this, TurnosActivity.class);
-        startActivity(intent);
     }
 
 }

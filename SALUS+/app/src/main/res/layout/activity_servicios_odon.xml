@@ -4,108 +4,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4D87BBBF"
     tools:context=".ServiciosOdon">
 
     <TextView
+        android:id="@+id/textView13"
+        android:layout_width="296dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:background="#252196F3"
+        android:gravity="center"
+        android:padding="2sp"
+        android:text="Lorem"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/txtHeadProfesionales"
+        android:layout_width="440dp"
+        android:layout_height="147dp"
+        android:alpha="0.95"
+        android:background="@color/btn_reservarTurno"
+        android:fontFamily="sans-serif"
+        android:paddingHorizontal="10dp"
+        android:text="Lorem"
+        android:textAlignment="gravity"
+        android:textColor="#FFFFFF"
+        android:textSize="100sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="296dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:background="#252196F3"
+        android:gravity="center"
+        android:padding="2sp"
+        android:text="Lorem"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
         android:id="@+id/textView3"
-        android:layout_width="198dp"
-        android:layout_height="29dp"
-        android:text="Especialidades"
-        android:textSize="24sp"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
+        android:text="Lorem"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintVertical_bias="0.537" />
+
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="144dp"
         android:layout_height="37dp"
-        android:text="Odontologia"
-        android:textSize="24sp"
+        android:text="Lorem"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="430dp"
-        android:layout_height="185dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/images"
-        tools:layout_editor_absoluteY="-3dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtHeadProfesionales"
+        app:layout_constraintVertical_bias="0.069" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:id="@+id/IdBtnReserva"
+        android:layout_width="203dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#83D9FE"
+        android:onClick="onClick"
         android:rotationY="3"
-        android:text="Reservar Turno"
-        android:textColorHighlight="#673AB7"
-        android:textColorLink="#673AB7"
+        android:text="Lorem"
+        android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="350dp"
-        android:layout_height="81dp"
-        android:text="Contamos con un destacado equipo de especialistas en odontología dispuestos a brindarte la mejor atención y un excelente servicio"
+        android:layout_width="359dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:text="Lorem"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/IdBtnReserva" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="310dp"
-        android:layout_height="97dp"
-        android:text="Consta de profesionales de diferentes especialidades como:  Odontología General. Rehabilitación Protésica. Odontopediatría. Cirugía. Implantes. Estomatología. Ortodoncia. Endodoncia. Periodoncia."
+        android:layout_width="374dp"
+        android:layout_height="74dp"
+        android:text="Lorem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="437dp" />
+        tools:layout_editor_absoluteY="430dp" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Button"
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="164dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="28dp"
+        android:text="Lorem"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="También para su comodidad, cuenta con una recepción, sala de espera, y baños para pacientes. El servicio atiende en el Hospital Central, y en los periféricos ambulatorios Cerro de las Rosas y Villa Allende. "
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="296dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:background="#252196F3"
+        android:gravity="center"
+        android:padding="2sp"
+        android:text="Lorem"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

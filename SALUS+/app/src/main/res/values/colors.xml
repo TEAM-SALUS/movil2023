@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="azul_900">#0D47A1</color>
     <color name="btn_reservarTurno">#83D9FE</color>
+    <color name="gray">#607D8B</color>
+    <color name="orange">#FB8C00</color>
 </resources>
