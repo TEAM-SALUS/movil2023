@@ -13,6 +13,9 @@
     <string name="oct_2023">Oct 2023</string>
     <string name="salustitulo">Salus +</string>
     <string name="Volver" />
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
     <string name="splash_integrantes">Desarrollado por Equipo Salus</string>
     <string name="splash_version">Version 1.0.1</string>
+>>>>>>> 4c382f290a708657321cd63a4ef05c642854fe6e
 </resources>

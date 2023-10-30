@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TurneroActivity">
@@ -13,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="#83D9FE"
-        tools:ignore="MissingConstraints"/>
-
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="2dp" />
 
     <TextView
-        android:id="@+id/txtTitleT"
+        android:id="@+id/txtTitle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -35,24 +35,152 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="172dp"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btnAtras"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:onClick="previousMonth"
+            android:text="@string/back"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="172dp" />
+
+        <TextView
+            android:id="@+id/textCalend"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Oct 2023"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="171dp"
+            tools:layout_editor_absoluteY="178dp"/>
+
+        <Button
+            android:id="@+id/btnDespues"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:onClick="nextMonth"
+            android:text="@string/forward"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="301dp"
+            tools:layout_editor_absoluteY="174dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="30dp"
-        tools:ignore="MissingConstraints"/>
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="232dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dom"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lun"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mar"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mie"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jue"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Vie"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sab"
+            android:textColor="@color/gray"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtProfEspec"
+        android:layout_width="199dp"
+        android:layout_height="34dp"
+        android:text=" Profesional"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="480dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/Volver"
-        android:background="@null"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:id="@+id/btnRecervarCita"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/orange"
+        android:clickable="true"
+        android:text="Reservar Turno"
+        android:textAlignment="center"
         android:textSize="20sp"
-        android:onClick="semanaAnterior"/>
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="634dp"
+        tools:ignore="MissingConstraints" />
 
-
-
-
-
-</LinearLayout>
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="408dp"
+        android:layout_height="200dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="268dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

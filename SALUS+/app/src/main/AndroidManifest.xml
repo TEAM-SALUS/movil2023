@@ -15,6 +15,10 @@
         android:theme="@style/Theme.Salus"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
+            android:name=".CalendarViewActivity"
+            android:exported="false" />
+=======
             android:name=".SplashActivity"
             android:exported="true" >
             <intent-filter>
@@ -23,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+>>>>>>> 4c382f290a708657321cd63a4ef05c642854fe6e
         <activity
             android:name=".Turnos"
             android:parentActivityName=".home" />
