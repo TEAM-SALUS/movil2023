@@ -2,6 +2,7 @@ package com.example.salus.adaptador;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.example.salus.Servicios;
 import com.example.salus.ServiciosOdon;
 import com.example.salus.entidad.Servicio;
 import com.example.salus.entidad.ServicioXProfesional;
+import com.example.salus.login;
 import com.example.salus.negocioImpl.ServicioModelo;
 
 import java.util.List;
@@ -48,7 +50,11 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ServiciosOdon.class);
-                intent.putExtra("servSeleccionado",servicioList.get(position).getCodServicio());
+                SharedPreferences sharedpreferences = context.getSharedPreferences("shared_login_data", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putInt(login.COD_SERVICIO, servicioList.get(position).getCodServicio());
+                editor.commit();
+                //intent.putExtra("servSeleccionado",servicioList.get(position).getCodServicio());
                 context.startActivity(Intent.createChooser(intent,"FUNCIONA").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             }
         });

@@ -1,5 +1,6 @@
 package com.example.salus;
 
+import static android.app.PendingIntent.getActivity;
 import static com.example.salus.R.id.datePickerButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,15 +46,17 @@ public class home extends AppCompatActivity
         calend = findViewById(R.id.button3);
         logt = findViewById(R.id.button4);
 
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
-        Toast.makeText(home.this,extras.get("dniCliente").toString(), Toast.LENGTH_LONG).show();
+        //Intent intent = getIntent();
+        //Bundle extras = intent.getExtras();
+        SharedPreferences sharedPref = getSharedPreferences("shared_login_data", Context.MODE_PRIVATE);
+        int userDni = sharedPref.getInt(login.DNI_CLIENT, 0);
+        Toast.makeText(home.this,String.valueOf(userDni), Toast.LENGTH_LONG).show();
 
         prof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(home.this,ProfesionalesActivity.class);
-                i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
 
             }
@@ -61,7 +66,7 @@ public class home extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent i = new Intent( home.this,Servicios.class);
-                i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
             }
         });
@@ -70,7 +75,7 @@ public class home extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent i = new Intent ( home.this,TurneroActivity.class);
-                i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
             }
         });
