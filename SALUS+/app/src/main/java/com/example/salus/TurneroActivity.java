@@ -1,9 +1,11 @@
 package com.example.salus;
 
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,16 +27,23 @@ public class TurneroActivity extends AppCompatActivity
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+    private Button reservar;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    @Override
+    //@RequiresApi(api = Build.VERSION_CODES.O)
+    //@Override
     protected void onCreate(Bundle saveInstanceState)
     {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_turnero);
-        initWidgets();
-        selectedDate = LocalDate.now();
-        setMonthView();
+        reservar = findViewById(R.id.btnReservarCita);
+        //initWidgets();
+        //selectedDate = LocalDate.now();
+        //setMonthView();
+    }
+
+    public void irTurnos(View view){
+        Intent intent = new Intent(this, Turnos.class);
+        startActivity(intent);
     }
 
     private void initWidgets()

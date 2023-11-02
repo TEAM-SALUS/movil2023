@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="#83D9FE"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="2dp" />
+        tools:layout_editor_absoluteX="34dp" />
 
     <TextView
         android:id="@+id/txtTitle2"
@@ -28,16 +28,17 @@
         android:textColor="#FFFFFF"
         android:textSize="90sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/top_view"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/top_view"
         app:layout_constraintTop_toTopOf="@+id/top_view" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="172dp"
-        tools:ignore="MissingConstraints">
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/top_view"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
 
         <Button
             android:id="@+id/btnAtras"
@@ -55,14 +56,14 @@
         <TextView
             android:id="@+id/textCalend"
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:text="Oct 2023"
-            android:textStyle="bold"
-            android:textSize="25sp"
             android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="171dp"
-            tools:layout_editor_absoluteY="178dp"/>
+            tools:layout_editor_absoluteY="178dp" />
 
         <Button
             android:id="@+id/btnDespues"
@@ -79,108 +80,116 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="232dp"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Dom"
-            android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="25dp"/>
+            android:textColor="@color/gray"
+            android:textSize="25dp" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Lun"
-            android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="25dp"/>
+            android:textColor="@color/gray"
+            android:textSize="25dp" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Mar"
-            android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="25dp"
-            />
+            android:textColor="@color/gray"
+            android:textSize="25dp" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Mie"
-            android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="25dp"
-            />
+            android:textColor="@color/gray"
+            android:textSize="25dp" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Jue"
-            android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="25dp"
-            />
+            android:textColor="@color/gray"
+            android:textSize="25dp" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Vie"
-            android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="25dp"
-            />
+            android:textColor="@color/gray"
+            android:textSize="25dp" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Sab"
-            android:textColor="@color/gray"
             android:textAlignment="center"
-            android:textSize="25dp"
-            />
+            android:textColor="@color/gray"
+            android:textSize="25dp" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/txtProfEspec"
-        android:layout_width="199dp"
-        android:layout_height="34dp"
-        android:text=" Profesional"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="480dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btnRecervarCita"
-        android:layout_width="198dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/orange"
-        android:clickable="true"
-        android:text="Reservar Turno"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="634dp"
-        tools:ignore="MissingConstraints" />
 
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="408dp"
-        android:layout_height="200dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="268dp" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:id="@+id/txtProfEspec"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:text=" Profesional"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnReservarCita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/orange"
+        android:clickable="true"
+        android:onClick="irTurnos"
+        android:text="Reservar Turno"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

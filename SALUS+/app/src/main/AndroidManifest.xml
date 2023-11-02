@@ -23,13 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Turnos"
-            android:parentActivityName=".home" />
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".home" />
 
         <activity
             android:name=".Servicios"
@@ -48,11 +41,11 @@
 
         <activity
             android:name=".TurneroActivity"
-            android:parentActivityName=".ProfesionalActivity" >
+            android:parentActivityName=".home" >
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".ProfesionalActivity" />
+            android:value=".home" />
         </activity>
 
         <activity
@@ -75,6 +68,13 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ProfesionalesActivity" />
+        </activity>
+        <activity
+            android:name=".Turnos"
+            android:parentActivityName=".TurneroActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TurneroActivity" />
         </activity>
         <activity
             android:name=".login"
