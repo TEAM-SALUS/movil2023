@@ -28,7 +28,8 @@ public class home extends AppCompatActivity
     Button prof;
     Button serv;
     Button calend;
-    Button logt;
+    Button contacto;
+    Button log;
 
 
 
@@ -44,7 +45,8 @@ public class home extends AppCompatActivity
         prof = findViewById(R.id.button1);
         serv = findViewById(R.id.button2);
         calend = findViewById(R.id.button3);
-        logt = findViewById(R.id.button4);
+        contacto = findViewById(R.id.button4);
+        log = findViewById(R.id.button5);
 
         //Intent intent = getIntent();
         //Bundle extras = intent.getExtras();
@@ -80,11 +82,20 @@ public class home extends AppCompatActivity
             }
         });
 
-        logt.setOnClickListener(new View.OnClickListener() {
+        contacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i4 = new Intent( home.this,login.class);
-                startActivity(i4);
+                Intent i = new Intent( home.this,Contacto.class);
+                startActivity(i);
+            }
+        });
+
+        log.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(home.this, login.class);
+                startActivity(i);
             }
         });
     }
