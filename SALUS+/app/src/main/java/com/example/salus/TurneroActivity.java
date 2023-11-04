@@ -1,12 +1,19 @@
 package com.example.salus;
 
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -16,10 +23,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 //import com.example.salus.adaptador.CalendarAdapter;
 
+import com.example.salus.entidad.Usuario;
+import com.example.salus.negocio.IUsuarioNeg;
+import com.example.salus.negocioImpl.UsuarioNegImpl;
+
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 
 public class TurneroActivity extends AppCompatActivity
@@ -28,6 +41,13 @@ public class TurneroActivity extends AppCompatActivity
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
     private Button reservar;
+    private TextView txtFecha;
+    private Button btnFecha;
+    private TextView txtHora;
+    private Button btnHora;
+    private Spinner spinner;
+    IUsuarioNeg iUsuarioNeg;
+    Context context;
 
     //@RequiresApi(api = Build.VERSION_CODES.O)
     //@Override
@@ -36,9 +56,54 @@ public class TurneroActivity extends AppCompatActivity
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_turnero);
         reservar = findViewById(R.id.btnReservarCita);
+        txtFecha = findViewById(R.id.txt_fecha);
+        btnFecha = findViewById(R.id.btn_fecha);
+        txtHora = findViewById(R.id.txt_hora);
+        btnHora = findViewById(R.id.btn_hora);
+        spinner = findViewById(R.id.spinner);
+        context = getApplicationContext();
+        List<Usuario> listaProf = llenarProfesionales();
+        ArrayAdapter<Usuario> arrayAdapter = new ArrayAdapter<>(context, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, listaProf);
+        spinner.setAdapter(arrayAdapter);
         //initWidgets();
         //selectedDate = LocalDate.now();
         //setMonthView();
+    }
+    private List<Usuario> llenarProfesionales(){
+        List listaProf = new ArrayList<>();
+        iUsuarioNeg = new UsuarioNegImpl();
+        //Usuario lista = new Usuario();
+        listaProf = iUsuarioNeg.listarTodos(context);
+       //listaProf.add(lista);
+        return listaProf;
+    }
+
+    public void abrirCalendario(View view) {
+        Calendar calendar = Calendar.getInstance();
+        int anio = calendar.get(Calendar.YEAR);
+        int mes = calendar.get(Calendar.MONTH);
+        int dia = calendar.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog dpd = new DatePickerDialog(TurneroActivity.this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                String fecha = i2 + "/" + i1 + "/" + i;
+                txtFecha.setText(fecha);
+            }
+        },anio, mes, dia);
+        dpd.show();
+    }
+
+    public void abrirRejoj(View view){
+        Calendar time = Calendar.getInstance();
+        int hora = time.get(Calendar.HOUR_OF_DAY);
+        int minutos = time.get(Calendar.MINUTE);
+        TimePickerDialog tpd = new TimePickerDialog(TurneroActivity.this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int i, int i1) {
+                txtHora.setText(i + ":" + i1);
+            }
+        },0, 0, false);
+        tpd.show();
     }
 
     public void irTurnos(View view){

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     tools:context=".TurneroActivity">
 
@@ -32,148 +31,40 @@
         app:layout_constraintStart_toStartOf="@+id/top_view"
         app:layout_constraintTop_toTopOf="@+id/top_view" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/top_view"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp">
-
-        <Button
-            android:id="@+id/btnAtras"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/black"
-            android:onClick="previousMonth"
-            android:text="@string/back"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="15dp"
-            tools:layout_editor_absoluteY="172dp" />
-
-        <TextView
-            android:id="@+id/textCalend"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Oct 2023"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="171dp"
-            tools:layout_editor_absoluteY="178dp" />
-
-        <Button
-            android:id="@+id/btnDespues"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/black"
-            android:onClick="nextMonth"
-            android:text="@string/forward"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="301dp"
-            tools:layout_editor_absoluteY="174dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Dom"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="25dp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Lun"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="25dp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Mar"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="25dp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Mie"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="25dp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Jue"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="25dp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Vie"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="25dp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Sab"
-            android:textAlignment="center"
-            android:textColor="@color/gray"
-            android:textSize="25dp" />
-
-    </LinearLayout>
-
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="408dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
     <TextView
         android:id="@+id/txtProfEspec"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:text=" Profesional"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:text=" Seleccione profesional"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        app:layout_constraintTop_toBottomOf="@+id/top_view"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="abrirCalendario"
+        android:text="Elegir fecha"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_fecha"
+        app:layout_constraintEnd_toStartOf="@+id/txt_fecha"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Fecha seleccionada"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/btn_fecha"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <Button
         android:id="@+id/btnReservarCita"
@@ -192,4 +83,36 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="abrirRejoj"
+        android:text="Elegir Hora"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txt_hora"
+        app:layout_constraintEnd_toStartOf="@+id/txt_hora"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="Horario Seleccionado"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/btn_hora"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fecha" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProfEspec" />
 </androidx.constraintlayout.widget.ConstraintLayout>
