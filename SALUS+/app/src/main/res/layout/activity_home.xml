@@ -68,8 +68,10 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datePickerButton">
+        app:layout_constraintTop_toBottomOf="@+id/datePickerButton"
+        app:layout_constraintVertical_bias="0.0">
 
 
         <LinearLayout
@@ -192,15 +194,6 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/ic3"
-                            android:layout_width="88dp"
-                            android:layout_height="88dp"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="20dp"
-                            android:contentDescription="@null"
-                            android:src="@drawable/turno_10" />
 
                         <Button
                             android:id="@+id/button3"
