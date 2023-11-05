@@ -58,7 +58,7 @@ public class home extends AppCompatActivity
                 i.setData(Uri.parse(wpurl));
                 startActivity(i);
             }
-        });gi
+        });
 
 
         //Intent intent = getIntent();
