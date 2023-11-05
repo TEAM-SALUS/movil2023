@@ -34,19 +34,19 @@
         app:layout_constraintStart_toStartOf="@+id/top_view"
         app:layout_constraintTop_toTopOf="@+id/top_view" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Consultar Fecha:"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        app:layout_constraintBaseline_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_view" />
+
+    <Button
+        android:id="@+id/btnWapp"
+        android:layout_width="105dp"
+        android:layout_height="43dp"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/green"
+        android:onClick="irWapp"
+        android:text="WhatsApp"
+        android:textSize="12dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="162dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/datePickerButton"
@@ -60,7 +60,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="205dp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -194,6 +195,16 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ic3"
+                            android:layout_width="88dp"
+                            android:layout_height="88dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:contentDescription="icturno"
+                            android:onClick="irTurno"
+                            android:src="@drawable/ic_turno" />
 
                         <Button
                             android:id="@+id/button3"

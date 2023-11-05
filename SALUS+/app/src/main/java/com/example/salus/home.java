@@ -11,6 +11,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +32,7 @@ public class home extends AppCompatActivity
     Button contacto;
     Button log;
 
-
+    Button WP;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -47,6 +48,18 @@ public class home extends AppCompatActivity
         calend = findViewById(R.id.button3);
         contacto = findViewById(R.id.button4);
         log = findViewById(R.id.button5);
+        WP = findViewById(R.id.btnWapp);
+
+        WP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String wpurl= "https://wa.me/+543525482570?text=Hola, quiero reservar un turno.";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(wpurl));
+                startActivity(i);
+            }
+        });
+
 
         //Intent intent = getIntent();
         //Bundle extras = intent.getExtras();
