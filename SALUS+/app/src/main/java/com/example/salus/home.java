@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -31,7 +32,7 @@ public class home extends AppCompatActivity
     Button calend;
     Button contacto;
     Button log;
-
+    private Button perfil;
     Button WP;
 
     @SuppressLint("MissingInflatedId")
@@ -49,6 +50,7 @@ public class home extends AppCompatActivity
         contacto = findViewById(R.id.button4);
         log = findViewById(R.id.button5);
         WP = findViewById(R.id.btnWapp);
+        perfil = findViewById(R.id.button6);
 
         WP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +109,19 @@ public class home extends AppCompatActivity
 
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences= getSharedPreferences("shared_login_data", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.commit();
                 Intent i = new Intent(home.this, login.class);
+                startActivity(i);
+            }
+        });
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("Entro perfil? ","entro");
+                Intent i = new Intent(home.this, PerfilActivity.class);
                 startActivity(i);
             }
         });

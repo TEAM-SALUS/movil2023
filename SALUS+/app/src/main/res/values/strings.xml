@@ -17,5 +17,20 @@
     <string name="forward"><![CDATA[->]]></string>
     <string name="splash_integrantes">Desarrollado por Equipo Salus</string>
     <string name="splash_version">Version 1.0.1</string>
+    <string name="perfil">Perfil</string>
+    <string name="dni_perfil">DNI</string>
+    <string name="nombre_perfil">Nombre</string>
+    <string name="apellido_perfil">Apellido</string>
+    <string name="direccion_perfil">Direccion</string>
+    <string name="ciudad_perfil">Ciudad</string>
+    <string name="telefono_perfil">Telefono</string>
+    <string name="email_perfil">Email</string>
+    <string name="usuario_perfil">Usuario</string>
+    <string name="clave_perfil">Clave</string>
+    <string name="descripcion_perfil">Descripcion</string>
+    <string name="estado_perfil">Estado</string>
+    <string name="condicion_perfil">Condicion</string>
+    <string name="editar_perfil">Editar</string>
+    <string name="confirmar_perfil">Confirmar</string>
     >>>>>>> 4c382f290a708657321cd63a4ef05c642854fe6e
 </resources>

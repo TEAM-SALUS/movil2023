@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.salus.datos.IUsuarioDao;
 import com.example.salus.entidad.Usuario;
@@ -40,6 +41,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
                     usuario.setClave(c.getString(8));
                     usuario.setDescripcion(c.getString(9));
                     usuario.setEstado(c.getString(10).equals("1"));
+                    Log.d("codigo condicion", c.getInt(11)+"");
                     usuario.setCondicion(conNI.listarUno(c.getInt(11),context));
                     lista.add(usuario);
                 } while (c.moveToNext());
@@ -105,8 +107,8 @@ public class UsuarioDaoImpl implements IUsuarioDao {
             nuevoRegistro.put("Usuario_Us",usuario.getUsuario());
             nuevoRegistro.put("Clave_Us",usuario.getClave());
             nuevoRegistro.put("Descripcion_Us",usuario.getDescripcion());
-            //nuevoRegistro.put("Estado",usuario.getEstado());
-            //nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
+            nuevoRegistro.put("Estado",usuario.getEstado());
+            nuevoRegistro.put("CodCondicion_Us",usuario.getCondicion().getCodCondicion());
             cn.insert("Usuario",null,nuevoRegistro);
         } catch (Exception e) {
             e.printStackTrace();

@@ -25,9 +25,6 @@ public class Condicion {
 
     @Override
     public String toString() {
-        return "Condicion{" +
-                "codCondicion=" + codCondicion +
-                ", descripcion='" + descripcion + '\'' +
-                '}';
+        return "id " + codCondicion +" - " + descripcion;
     }
 }

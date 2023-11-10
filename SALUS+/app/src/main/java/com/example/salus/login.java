@@ -16,6 +16,8 @@ import com.example.salus.entidad.Usuario;
 import com.example.salus.negocio.IUsuarioNeg;
 import com.example.salus.negocioImpl.UsuarioNegImpl;
 
+import java.util.ArrayList;
+
 public class login extends AppCompatActivity implements View.OnClickListener{
     Button btnIngresar;
     Context context;
@@ -59,15 +61,14 @@ public class login extends AppCompatActivity implements View.OnClickListener{
         Usuario user = new Usuario();
         user = (Usuario) iUsuarioNeg.login(email, pass, context);
         int res = user.getDni();
-        Log.d("dni", Integer.toString(res));
-        if (res >= 0){
+        Intent intent;
+        if (res != -1){
             Toast.makeText(context, "Usuario logueado", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, home.class);
-            //intent.putExtra("dniCliente", res);
             SharedPreferences sharedpreferences = getSharedPreferences("shared_login_data",   Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putInt(DNI_CLIENT,user.getDni());
             editor.commit();
+            intent = new Intent(this, home.class);
             startActivity(intent);
         }else{
             Toast.makeText(context, "Usuario y contraseña incorrectos", Toast.LENGTH_LONG).show();
