@@ -342,7 +342,7 @@
                             android:layout_marginTop="20dp"
                             android:contentDescription="@null"
                             android:onClick="irLogout"
-                            android:src="@drawable/ic_profesional" />
+                            android:src="@drawable/perfil_user" />
 
                         <Button
                             android:id="@+id/button6"
