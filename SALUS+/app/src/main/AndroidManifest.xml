@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Salus"
         tools:targetApi="31">
         <activity
+            android:name=".ContactoMensajeEnviado"
+            android:exported="false" />
+        <activity
             android:name=".PerfilActivity"
             android:parentActivityName=".home">
             <meta-data
