@@ -26,15 +26,32 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView9"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/tvContacto"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="Contáctenos"
-            android:textSize="22dp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnWpp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:background="#00FFFFFF"
+                android:src="@android:drawable/alert_light_frame"
+                tools:src="@drawable/wpp" />
+
+            <TextView
+                android:id="@+id/tvContacto"
+                android:layout_width="304dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="40dp"
+                android:text="Contáctenos por WhatsApp"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvEnvianosConsulta"
@@ -42,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:gravity="center"
-            android:text="Envíanos tu consulta"
+            android:text="O envíanos tu consulta por email"
             android:textSize="16dp"
             android:textStyle="italic" />
 
