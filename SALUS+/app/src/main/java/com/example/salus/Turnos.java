@@ -13,9 +13,9 @@ import com.example.salus.entidad.Turno;
 import java.util.ArrayList;
 import java.util.List;
 
-/*public class Turnos extends AppCompatActivity {
+public class Turnos extends AppCompatActivity {
 
-    MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
+    /*MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
 
     SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -30,8 +30,8 @@ import java.util.List;
 
         public MyDatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
-            dbHelper = new MyDatabaseHelper(this);
-            dbHelper = new MyDatabaseHelper(this);
+            //dbHelper = new MyDatabaseHelper(this);
+            //dbHelper = new MyDatabaseHelper(this);
         }
 
         @Override
@@ -51,7 +51,7 @@ import java.util.List;
             onCreate(db);
         }
 
-    }
+    }*/
 
 
 
@@ -61,4 +61,4 @@ import java.util.List;
         setContentView(R.layout.activity_turnos);
     }
 
-}*/
+}

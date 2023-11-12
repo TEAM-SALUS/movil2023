@@ -85,10 +85,10 @@
         </activity>
         <activity
             android:name=".Turnos"
-            android:parentActivityName=".TurneroActivity">
+            android:parentActivityName=".home">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TurneroActivity" />
+                android:value=".home" />
         </activity>
         <activity
             android:name=".login"

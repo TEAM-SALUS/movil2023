@@ -20,6 +20,8 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.salus.entidad.Turno;
+
 import java.util.Calendar;
 
 public class home extends AppCompatActivity
@@ -91,7 +93,7 @@ public class home extends AppCompatActivity
         calend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent ( home.this,TurneroActivity.class);
+                Intent i = new Intent ( home.this, Turnos.class);
                 //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
             }

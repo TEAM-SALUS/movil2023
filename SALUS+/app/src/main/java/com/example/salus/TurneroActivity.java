@@ -1,12 +1,16 @@
 package com.example.salus;
 
 
+import static com.example.salus.login.DNI_CLIENT;
+
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,11 +27,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 //import com.example.salus.adaptador.CalendarAdapter;
 
+import com.example.salus.datos.IServicioXProfesionalDao;
+import com.example.salus.datos.IUsuarioDao;
+import com.example.salus.entidad.Servicio;
+import com.example.salus.entidad.ServicioXProfesional;
+import com.example.salus.entidad.Turno;
 import com.example.salus.entidad.Usuario;
+import com.example.salus.negocio.IServicioXProfesionalNeg;
+import com.example.salus.negocio.ITurnoNeg;
 import com.example.salus.negocio.IUsuarioNeg;
+import com.example.salus.negocioImpl.TurnoNegImpl;
 import com.example.salus.negocioImpl.UsuarioNegImpl;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -48,6 +61,11 @@ public class TurneroActivity extends AppCompatActivity
     private Spinner spinner;
     IUsuarioNeg iUsuarioNeg;
     Context context;
+    ITurnoNeg iTurnoNeg;
+    Turno turno;
+    Integer dni;
+    IUsuarioNeg usuNI;
+    IServicioXProfesionalNeg serXProNI;
 
     //@RequiresApi(api = Build.VERSION_CODES.O)
     //@Override
@@ -65,16 +83,11 @@ public class TurneroActivity extends AppCompatActivity
         List<Usuario> listaProf = llenarProfesionales();
         ArrayAdapter<Usuario> arrayAdapter = new ArrayAdapter<>(context, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, listaProf);
         spinner.setAdapter(arrayAdapter);
-        //initWidgets();
-        //selectedDate = LocalDate.now();
-        //setMonthView();
     }
     private List<Usuario> llenarProfesionales(){
-        List listaProf = new ArrayList<>();
+        List listaProf;
         iUsuarioNeg = new UsuarioNegImpl();
-        //Usuario lista = new Usuario();
         listaProf = iUsuarioNeg.listarTodos(context);
-       //listaProf.add(lista);
         return listaProf;
     }
 
@@ -106,9 +119,60 @@ public class TurneroActivity extends AppCompatActivity
         tpd.show();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private Turno completarDatos(){
+        Turno t = new Turno();
+
+        Usuario u = new Usuario();
+        SharedPreferences sharedpreferences = getSharedPreferences("shared_login_data", Context.MODE_PRIVATE);
+        u.setDni(sharedpreferences.getInt(DNI_CLIENT, Context.MODE_PRIVATE));
+
+        Usuario us = new Usuario();
+        us.setDni(22222222);
+
+        Servicio se = new Servicio();
+        se.setCodServicio(1);
+
+        ServicioXProfesional s = new ServicioXProfesional();
+        s.setServicio_SXP(se);
+        s.setUsuario_SXP(us);
+
+        t.setCodTurno(10);
+        t.setFecha(LocalDateTime.now());
+        t.setFechaAsignacion(LocalDateTime.now());
+        t.setEstado(true);
+        t.setUsuarioCli(u);
+        t.setServicioXProfesional(s);
+        return t;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void guardar(){
+        iTurnoNeg = new TurnoNegImpl();
+        turno = completarDatos();
+        boolean res = iTurnoNeg.insertar(turno, context);
+        if (res){
+            Toast.makeText(context, "Turno registrado", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, home.class);
+            startActivity(intent);
+        }else{
+            Toast.makeText(context, "Registro falló", Toast.LENGTH_LONG).show();
+        }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void irTurnos(View view){
-        Intent intent = new Intent(this, Turnos.class);
-        startActivity(intent);
+        iTurnoNeg = new TurnoNegImpl();
+        turno = completarDatos();
+        Log.d("datos",turno.toString());
+        boolean res = iTurnoNeg.insertar(turno, context);
+        Log.d("res",String.valueOf(res));
+        if (res){
+            Toast.makeText(context, "Turno registrado", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, home.class);
+            startActivity(intent);
+        }else{
+            Toast.makeText(context, "Registro falló", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void initWidgets()

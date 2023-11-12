@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.salus.entidad.Condicion;
 import com.example.salus.entidad.Usuario;
+import com.example.salus.negocio.ICondicionNeg;
 import com.example.salus.negocio.IUsuarioNeg;
 import com.example.salus.negocioImpl.UsuarioNegImpl;
 
@@ -22,6 +24,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     TextView signPass;
     Usuario usuario;
     IUsuarioNeg iUsuarioNeg;
+    ICondicionNeg conNI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     }
     private Usuario completarDatos(){
         Usuario u = new Usuario();
+        Condicion c = new Condicion();
+        c.setCodCondicion(1);
         String dni = signDni.getText().toString();
         String email = signEmail.getText().toString();
         String pass = signPass.getText().toString();
@@ -52,7 +57,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         //u.setUsuario();
         u.setClave(pass);
         //u.setEstado();
-        //u.setCondicion();
+        u.setCondicion(c);
         return u;
     }
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:onClick="irTurnos"
     tools:context=".TurneroActivity">
 
     <View
@@ -61,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:inputType="datetime|date"
         android:text="Fecha seleccionada"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/btn_fecha"
@@ -101,6 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:inputType="datetime|time"
         android:text="Horario Seleccionado"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/btn_hora"
