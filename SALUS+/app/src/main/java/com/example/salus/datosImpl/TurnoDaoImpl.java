@@ -98,7 +98,7 @@ public class TurnoDaoImpl implements ITurnoDao {
                     "VALUES ('" + turno.getFecha() + "');");
             */
             ContentValues nuevoRegistro = new ContentValues();
-            nuevoRegistro.put("CodTurno_Tur",turno.getCodTurno());
+            //nuevoRegistro.put("CodTurno_Tur",turno.getCodTurno());
             nuevoRegistro.put("Fecha_Tur",turno.getFecha().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString());
             nuevoRegistro.put("FechaAsignacion_Tur",turno.getFechaAsignacion().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString());
             nuevoRegistro.put("Estado",turno.getEstado());

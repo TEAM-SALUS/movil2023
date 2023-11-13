@@ -1,6 +1,5 @@
 package com.example.salus;
 
-
 import static com.example.salus.login.DNI_CLIENT;
 
 import android.app.DatePickerDialog;
@@ -47,12 +46,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-
-public class TurneroActivity extends AppCompatActivity
-{
-    private TextView monthYearText;
-    private RecyclerView calendarRecyclerView;
-    private LocalDate selectedDate;
+public class TurneroActivity extends AppCompatActivity {
     private Button reservar;
     private TextView txtFecha;
     private Button btnFecha;
@@ -63,14 +57,13 @@ public class TurneroActivity extends AppCompatActivity
     Context context;
     ITurnoNeg iTurnoNeg;
     Turno turno;
-    Integer dni;
-    IUsuarioNeg usuNI;
-    IServicioXProfesionalNeg serXProNI;
+    int hora;
+    int minutos;
+    int dia;
+    int mes;
+    int anio;
 
-    //@RequiresApi(api = Build.VERSION_CODES.O)
-    //@Override
-    protected void onCreate(Bundle saveInstanceState)
-    {
+    protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_turnero);
         reservar = findViewById(R.id.btnReservarCita);
@@ -84,7 +77,8 @@ public class TurneroActivity extends AppCompatActivity
         ArrayAdapter<Usuario> arrayAdapter = new ArrayAdapter<>(context, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, listaProf);
         spinner.setAdapter(arrayAdapter);
     }
-    private List<Usuario> llenarProfesionales(){
+
+    private List<Usuario> llenarProfesionales() {
         List listaProf;
         iUsuarioNeg = new UsuarioNegImpl();
         listaProf = iUsuarioNeg.listarTodos(context);
@@ -93,34 +87,40 @@ public class TurneroActivity extends AppCompatActivity
 
     public void abrirCalendario(View view) {
         Calendar calendar = Calendar.getInstance();
-        int anio = calendar.get(Calendar.YEAR);
-        int mes = calendar.get(Calendar.MONTH);
-        int dia = calendar.get(Calendar.DAY_OF_MONTH);
+        anio = calendar.get(Calendar.YEAR);
+        mes = calendar.get(Calendar.MONTH);
+        dia = calendar.get(Calendar.DAY_OF_MONTH);
         DatePickerDialog dpd = new DatePickerDialog(TurneroActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                String fecha = i2 + "/" + i1 + "/" + i;
+                anio = i;
+                mes = i1 + 1;
+                dia = i2;
+                String fecha = dia + "/" + mes + "/" + anio;
                 txtFecha.setText(fecha);
             }
-        },anio, mes, dia);
+        }, anio, mes, dia);
         dpd.show();
     }
 
-    public void abrirRejoj(View view){
+    public void abrirRejoj(View view) {
         Calendar time = Calendar.getInstance();
-        int hora = time.get(Calendar.HOUR_OF_DAY);
-        int minutos = time.get(Calendar.MINUTE);
+        hora = time.get(Calendar.HOUR_OF_DAY);
+        minutos = time.get(Calendar.MINUTE);
         TimePickerDialog tpd = new TimePickerDialog(TurneroActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int i, int i1) {
-                txtHora.setText(i + ":" + i1);
+                hora = i;
+                minutos = i1;
+                String horario = hora + ":" + minutos;
+                txtHora.setText(horario);
             }
-        },0, 0, false);
+        }, 0, 0, false);
         tpd.show();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private Turno completarDatos(){
+    private Turno completarDatos() {
         Turno t = new Turno();
 
         Usuario u = new Usuario();
@@ -137,8 +137,8 @@ public class TurneroActivity extends AppCompatActivity
         s.setServicio_SXP(se);
         s.setUsuario_SXP(us);
 
-        t.setCodTurno(10);
-        t.setFecha(LocalDateTime.now());
+        //t.setCodTurno();
+        t.setFecha(LocalDateTime.of(anio, mes, dia, hora, minutos));
         t.setFechaAsignacion(LocalDateTime.now());
         t.setEstado(true);
         t.setUsuarioCli(u);
@@ -147,114 +147,18 @@ public class TurneroActivity extends AppCompatActivity
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void guardar(){
+    public void irTurnos(View view) {
         iTurnoNeg = new TurnoNegImpl();
         turno = completarDatos();
+        Log.d("datos", turno.toString());
         boolean res = iTurnoNeg.insertar(turno, context);
-        if (res){
+        Log.d("res", String.valueOf(res));
+        if (res) {
             Toast.makeText(context, "Turno registrado", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, home.class);
             startActivity(intent);
-        }else{
+        } else {
             Toast.makeText(context, "Registro falló", Toast.LENGTH_LONG).show();
         }
-    }
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void irTurnos(View view){
-        iTurnoNeg = new TurnoNegImpl();
-        turno = completarDatos();
-        Log.d("datos",turno.toString());
-        boolean res = iTurnoNeg.insertar(turno, context);
-        Log.d("res",String.valueOf(res));
-        if (res){
-            Toast.makeText(context, "Turno registrado", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, home.class);
-            startActivity(intent);
-        }else{
-            Toast.makeText(context, "Registro falló", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void initWidgets()
-    {
-        //calendarRecyclerView = findViewById(R.id.calendarRecuclerView);
-        monthYearText = findViewById(R.id.monthYearTV);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private void setMonthView()
-    {
-        monthYearText.setText(monthYearFromDate(selectedDate));
-        ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
-
-        //CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
-
-        calendarRecyclerView.setLayoutManager(layoutManager);
-        //calendarRecyclerView.setAdapter(calendarAdapter);
-
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private String monthYearFromDate(LocalDate date)
-    {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
-        return date.format(formatter);
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private ArrayList<String> daysInMonthArray(LocalDate date)
-    {
-        ArrayList<String> daysInMonthArray = new ArrayList<>();
-        YearMonth yearMonth = YearMonth.from(date);
-
-        int daysInMonth = yearMonth.lengthOfMonth();
-
-        LocalDate firstOfMonth = selectedDate.withDayOfMonth(1);
-        int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
-
-        for (int i = 1; i <= 42; i++)
-        {
-            if(i <= dayOfWeek || i > daysInMonth + dayOfWeek)
-            {
-                daysInMonthArray.add("");
-            }
-            else
-            {
-                daysInMonthArray.add(String.valueOf(i - dayOfWeek));
-            }
-        }
-
-        return daysInMonthArray;
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void previousMonth(View view)
-    {
-        selectedDate = selectedDate.minusMonths(1);
-        setMonthView();
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void nextMonth(View view)
-    {
-        selectedDate = selectedDate.plusMonths(1);
-        setMonthView();
-
-    }
-
-    //@Override
-    public void onItemClick(int position, String dayText)
-    {
-        if (dayText.equals(""))
-        {
-           int i = 1; // String message = "Fecha Seleccionada " + dayText + " " + monthYearFromDate(selectedDate);
-           //Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-        }
-    }
-
-    //@Override
-    public void onItemClick(int position, LocalDate date) {
-
     }
 }
