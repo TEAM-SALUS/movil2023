@@ -18,6 +18,7 @@
         android:layout_width="411dp"
         android:layout_height="569dp"
         android:layout_marginTop="12dp"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:layout_editor_absoluteX="0dp">
@@ -39,6 +40,15 @@
             android:layout_height="308dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/mensajeenviado" />
+
+        <Button
+            android:id="@+id/volverHome"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF9800"
+            android:gravity="center"
+            android:onClick="irHome"
+            android:text="Volver al inicio" />
 
     </LinearLayout>
 
