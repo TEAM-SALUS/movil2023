@@ -174,7 +174,7 @@
             android:text="Envianos tu mensaje" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/turno_wpp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"

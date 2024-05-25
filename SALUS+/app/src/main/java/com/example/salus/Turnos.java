@@ -2,14 +2,12 @@ package com.example.salus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.net.nsd.NsdManager;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -17,13 +15,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.salus.entidad.Turno;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Turnos extends AppCompatActivity {
     /*MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
@@ -70,6 +64,7 @@ public class Turnos extends AppCompatActivity {
 
     TextView tv_especialidad, tv_profesional, tv_hora;
     Button btn_modificar, btn_cancelar;
+    ImageButton turno_wpp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +76,17 @@ public class Turnos extends AppCompatActivity {
         tv_hora = findViewById(R.id.tv_hora);
         btn_modificar = findViewById(R.id.btn_modificar);
         btn_cancelar = findViewById(R.id.btn_cancelar);
+        turno_wpp = findViewById(R.id.turno_wpp);
+
+        turno_wpp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String wppurl= "https://wa.me/+543525482570?text=¡Hola! Quiero solicitar información sobre los servicios y reservar un turno.";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(wppurl));
+                startActivity(i);
+            }
+        });
 
         btn_modificar.setOnClickListener(new View.OnClickListener() {
             @Override
