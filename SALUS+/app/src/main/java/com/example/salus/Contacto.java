@@ -8,25 +8,27 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Contacto extends AppCompatActivity {
 
-    Button Wpp;
+    ImageButton contacto_wpp;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
 
-        Wpp = findViewById(R.id.btnWpp);
+        contacto_wpp = findViewById(R.id.contacto_wpp);
 
-        Wpp.setOnClickListener(new View.OnClickListener() {
+        contacto_wpp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String wpurl= "https://wa.me/+543525482570?text=Hola, quiero reservar un turno.";
+                String wppurl= "https://wa.me/+543525482570?text=¡Hola! Quiero solicitar información acerca" +
+                        "de los servicios que ofrecen.";
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(wpurl));
+                i.setData(Uri.parse(wppurl));
                 startActivity(i);
             }
         });
