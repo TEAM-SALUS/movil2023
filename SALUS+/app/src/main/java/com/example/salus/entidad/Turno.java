@@ -88,25 +88,25 @@ public class Turno {
 
 
     // MODELO DE LA BD
-    private Date fecha;
-    private Time horario;
+    private String fecha;
+    private String horario;
     private Boolean pagado;
     private Integer id_medico;
 
-    public java.util.Date getFecha() {
-        return this.fecha;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public String setFecha() {
+        return fecha;
     }
 
-    public CharSequence getHorario() {
-        return (CharSequence) this.horario;
+    public String getHorario() {
+        return horario;
     }
 
-    public void setHorario(Time horario) {
-        this.horario = horario;
+    public String setHorario() {
+        return horario;
     }
 
     public Boolean getPagado() {
@@ -125,27 +125,4 @@ public class Turno {
         this.id_medico = id_medico;
     }
 
-
-    // Convertir fecha y horario
-    public Time convertirHora(Time horario) {
-        try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            java.util.Date parsedDate = dateFormat.parse(String.valueOf(horario));
-            this.fecha = new Date(parsedDate.getTime());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return horario;
-    }
-
-    public Date convertirFecha(Date fecha) {
-        try {
-            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
-            java.util.Date parsedTime = timeFormat.parse(String.valueOf(fecha));
-            this.horario = new Time(parsedTime.getTime());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return fecha;
-    }
 }

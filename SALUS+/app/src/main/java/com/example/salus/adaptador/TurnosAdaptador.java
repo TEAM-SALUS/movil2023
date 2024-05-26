@@ -39,9 +39,7 @@ public class TurnosAdaptador extends RecyclerView.Adapter<TurnosAdaptador.ViewHo
         holder.tv_fecha.setText(String.valueOf(turno.getFecha()));
         holder.tv_hora.setText(String.valueOf(turno.getHorario()));
         holder.tv_profesional.setText(String.valueOf(turno.getId_medico()));
-        //holder.tv_fecha.setText(turnoLista.get(position).getFecha().toString());
-        //holder.tv_hora.setText(turnoLista.get(position).getHorario().toString());
-        //holder.tv_profesional.setText(turnoLista.get(position).getId_medico().toString());
+
 
         /*
         holder.botonServicio.setOnClickListener(new View.OnClickListener() {
@@ -67,15 +65,15 @@ public class TurnosAdaptador extends RecyclerView.Adapter<TurnosAdaptador.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         private TextView  tv_profesional, tv_hora, tv_fecha;
-        private Button btn_cancelar, btn_modificar;
+        //private Button btn_cancelar, btn_modificar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_fecha = (TextView) itemView.findViewById(R.id.tv_fecha);
             tv_hora = (TextView) itemView.findViewById(R.id.tv_hora);
             tv_profesional = (TextView) itemView.findViewById(R.id.tv_profesional);
-            btn_cancelar = (Button) itemView.findViewById(R.id.btn_cancelar);
-            btn_modificar = (Button) itemView.findViewById(R.id.btn_modificar);
+            //btn_cancelar = (Button) itemView.findViewById(R.id.btn_cancelar);
+            //btn_modificar = (Button) itemView.findViewById(R.id.btn_modificar);
         };
     };
 };

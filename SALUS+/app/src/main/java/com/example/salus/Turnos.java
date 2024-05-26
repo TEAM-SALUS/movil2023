@@ -14,10 +14,16 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.salus.adaptador.DateTypeAdapter;
+import com.example.salus.adaptador.TimeTypeAdapter;
 import com.example.salus.adaptador.TurnosAdaptador;
 import com.example.salus.entidad.Turno;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -29,7 +35,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Turnos extends AppCompatActivity {
-    ImageButton turno_wpp;
+    //ImageButton turno_wpp;
     private RecyclerView recyclerTurno;
     private TurnosAdaptador turnosAdaptador;
     private Context context;
@@ -43,6 +49,7 @@ public class Turnos extends AppCompatActivity {
         recyclerTurno = findViewById(R.id.recyclerTurnos);
         recyclerTurno.setLayoutManager(new LinearLayoutManager(context));
 
+        /*
         turno_wpp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,10 +60,13 @@ public class Turnos extends AppCompatActivity {
             }
         });
 
+         */
+
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(logging);
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.1.92:8000/api/v1/")
