@@ -32,7 +32,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btnWpp"
+                android:id="@+id/contacto_wpp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"

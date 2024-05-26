@@ -5,10 +5,15 @@ Este proyecto consiste en una aplicación que permite sacar un turno médico. La
 
 ## Integrantes
 #### Alvarado, Gonzalo Ezequiel 
-#### Gonzalez, Valeria Yaquelina 
+#### Benítez, Alejandro
 #### López, Melani Elizabeth Quiroga 
-#### Meier, Ivan Didier
+#### Nievas Guardia, Verónica Elena
+#### Olima Quinteros, Félix Sebastián
 #### Orellano, Esteban Joselo
-#### Quispe, Rosana G. 
+#### Quispe, Rosana G.
+#### Ramos, Isaias Rubén
 #### Sanchez Tejeda, Angel Pablo Sebastian 
 #### Vázquez, Ian Camilo
+
+
+
