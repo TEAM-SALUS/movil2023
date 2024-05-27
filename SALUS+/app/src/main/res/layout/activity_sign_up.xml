@@ -7,9 +7,9 @@
     tools:context=".RegisterActivity">
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/imageView3"
+        android:layout_width="1327dp"
+        android:layout_height="791dp"
         android:layout_marginTop="120dp"
         android:alpha="0.5"
         android:scaleType="fitStart"
@@ -50,12 +50,11 @@
                 android:textSize="100sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
@@ -71,7 +70,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="653dp">
+            android:layout_height="576dp">
 
             <TextView
                 android:id="@+id/textView"
@@ -81,7 +80,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:alpha="0.95"
-                android:text="Bienvenido a SALUS+"
+                android:text="Registro de Paciente"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -91,104 +90,103 @@
 
             <EditText
                 android:id="@+id/etDniPaciente"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="202dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="406dp"
                 android:hint="DNI Paciente"
                 android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <EditText
                 android:id="@+id/etNombre"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:hint="Nombre"
                 android:inputType="text"
-                app:layout_constraintBottom_toTopOf="@+id/etApellido"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etDniPaciente" />
 
             <EditText
                 android:id="@+id/etApellido"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:hint="Apellido"
                 android:inputType="text"
-                app:layout_constraintBottom_toTopOf="@+id/etEmail"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etNombre" />
 
             <EditText
                 android:id="@+id/etEmail"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                app:layout_constraintBottom_toTopOf="@+id/etClave"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etApellido" />
 
             <EditText
                 android:id="@+id/etClave"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:hint="Clave"
                 android:inputType="textPassword"
-                app:layout_constraintBottom_toTopOf="@+id/etTelefono"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
             <EditText
                 android:id="@+id/etTelefono"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
                 android:hint="Teléfono"
                 android:inputType="phone"
-                app:layout_constraintBottom_toTopOf="@+id/etPacienteUser"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etClave" />
 
             <EditText
                 android:id="@+id/etPacienteUser"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
                 android:hint="Usuario"
                 android:inputType="text"
-                app:layout_constraintBottom_toTopOf="@+id/btnRegister"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etTelefono" />
 
             <Button
                 android:id="@+id/btnRegister"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="16dp"
                 android:alpha="0.9"
                 android:backgroundTint="#83D9FE"
                 android:text="Registrar"
@@ -198,3 +196,4 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+

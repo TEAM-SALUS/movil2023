@@ -79,7 +79,7 @@
                 android:value=".ProfesionalActivity" />
         </activity>
         <activity
-            android:name=".SignUp"
+            android:name=".RegisterActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
