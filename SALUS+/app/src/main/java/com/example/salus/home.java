@@ -86,7 +86,7 @@ public class home extends AppCompatActivity
         serv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( home.this,Servicios.class);
+                Intent i = new Intent( home.this,EspecialidadesActivity.class);
                 //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
             }
