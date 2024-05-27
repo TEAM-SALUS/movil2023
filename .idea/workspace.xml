@@ -9,26 +9,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="a16038f4-ee90-4f71-ba8b-5e0024830102" name="Changes" comment="" />
-=======
-    <list default="true" id="a16038f4-ee90-4f71-ba8b-5e0024830102" name="Changes" comment="">
+    <list default="true" id="f50b18bb-faa5-4f38-8dd6-ac5aa4cb3b05" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/RegisterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/Contacto.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/Contacto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/Turnos.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/Turnos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_contacto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_contacto.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_turnos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_turnos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/SignUp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
     </list>
->>>>>>> 7c02d52a27d7d29a87eb9a022217f4a4f1161291
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[ZT322C2ZX9]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/SALUS+">
       <ProjectState />
@@ -85,25 +81,21 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Y0b1p3t23B15JLwphk0Amkj5H1" />
+  <component name="ProjectId" id="2h3GybbDqaz4kweRolWTSmaa2pX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "android.gradle.sync.needed": "true",
-    "cidr.known.project.marker": "true",
-<<<<<<< HEAD
-    "last_opened_file_path": "C:/Users/Esteban/Desktop/Escritorio/Git/SALUS-mobile"
-=======
-    "last_opened_file_path": "C:/Users/Vero/StudioProjects/SALUS-mobile/SALUS+/settings.gradle.kts"
->>>>>>> 7c02d52a27d7d29a87eb9a022217f4a4f1161291
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.android.tools.idea.devicemanager.tab&quot;: &quot;Physical&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/StudioProjects/SALUS-mobile/SALUS+/settings.gradle.kts&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Salus+.app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="Salus+.app.main" />
@@ -175,23 +167,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a16038f4-ee90-4f71-ba8b-5e0024830102" name="Changes" comment="" />
-      <created>1699665231908</created>
+      <changelist id="f50b18bb-faa5-4f38-8dd6-ac5aa4cb3b05" name="Changes" comment="" />
+      <created>1716815602756</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1699665231908</updated>
+      <updated>1716815602756</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
