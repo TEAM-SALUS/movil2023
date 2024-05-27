@@ -39,10 +39,11 @@ public class EspecialidadesActivity extends AppCompatActivity {
         httpClient.addInterceptor(logging);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.6:8000/api/v1/")
+                .baseUrl("http://192.168.0.110:8000/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();
+
 
         ApiDjango api = retrofit.create(ApiDjango.class);
         Call<List<Especialidad>> call = api.getEspecialidades();
