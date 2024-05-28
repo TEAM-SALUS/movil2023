@@ -45,6 +45,7 @@ public class login extends AppCompatActivity {
                         //.baseUrl("http://192.168.1.9:8000/api/v1/")
                         .baseUrl("http://192.168.1.92:8000/api/v1/")
                         //.baseUrl("http://192.168.1.6:8000/api/v1/")
+                        //.baseUrl("http://192.168.1.18:8000/api/v1/")
 
                         .addConverterFactory(GsonConverterFactory.create())
                         .client(httpClient.build())
