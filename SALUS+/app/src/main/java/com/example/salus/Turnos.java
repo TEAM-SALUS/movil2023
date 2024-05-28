@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.salus.adaptador.TurnosAdaptador;
+import com.example.salus.dao.URLConection;
 import com.example.salus.entidad.Turno;
 
 import java.util.List;
@@ -61,7 +62,7 @@ public class Turnos extends AppCompatActivity {
         httpClient.addInterceptor(logging);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.92:8000/api/v1/")
+                .baseUrl(URLConection.URLPrivada)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();
