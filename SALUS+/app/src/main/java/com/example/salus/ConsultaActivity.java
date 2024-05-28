@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.salus.adaptador.ConsultasAdaptador;
 import com.example.salus.dao.ApiRegistroDeConsulta;
+import com.example.salus.dao.URLConection;
 import com.example.salus.entidad.RegistroDeConsulta;
 
 import java.io.IOException;
@@ -74,7 +75,7 @@ public class ConsultaActivity extends AppCompatActivity {
         httpClient.addInterceptor(httpLogginInterceptor);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.44:8000/api/v1/")
+                .baseUrl(URLConection.URLPrivada)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();
