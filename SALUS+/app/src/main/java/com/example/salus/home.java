@@ -37,6 +37,7 @@ public class home extends AppCompatActivity
     Button log;
     private Button perfil;
     ImageButton wpp;
+    private Button consultas;
 
     @SuppressLint({"MissingInflatedId"})
     @Override
@@ -53,6 +54,7 @@ public class home extends AppCompatActivity
         log = findViewById(R.id.button5);
         perfil = findViewById(R.id.button6);
         wpp = findViewById(R.id.wpp);
+        consultas = findViewById(R.id.HomeActivity_btnIrConsultas);
 
         wpp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +126,13 @@ public class home extends AppCompatActivity
             public void onClick(View v) {
                 Log.d("Entro perfil? ","entro");
                 Intent i = new Intent(home.this, PerfilActivity.class);
+                startActivity(i);
+            }
+        });
+        consultas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(home.this,ConsultasActivity.class);
                 startActivity(i);
             }
         });

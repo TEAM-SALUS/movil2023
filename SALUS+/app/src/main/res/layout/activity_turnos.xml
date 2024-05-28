@@ -4,153 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Turnos">
+    android:background="#4283D9FE"
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/mis_turnos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/images" />
-
-    <TextView
-        android:id="@+id/mis_turnos"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="38dp"
-        android:paddingLeft="20dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="10dp"
-        android:text="Mis Turnos"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="341dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="265dp"
-        android:gravity="top|end"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mis_turnos">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#4B0D0D"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imageView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="10dp">
+            app:srcCompat="@drawable/images" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:radius="20dp">
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Mis Turnos"
+            android:textColor="#AB222222"
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_dia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:layout_weight="1"
-                    android:text="8"
-                    android:textSize="24dp"
-                    android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTurno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp">
 
-                <TextView
-                    android:id="@+id/tv_mes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginRight="3dp"
-                    android:layout_marginBottom="7dp"
-                    android:layout_weight="1"
-                    android:text="Septiembre"
-                    android:textStyle="bold" />
-            </LinearLayout>
+        </androidx.recyclerview.widget.RecyclerView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="12dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:id="@+id/tv_especialidad"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Medicina general"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_profesional"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dr. Fernandez" />
-
-                <TextView
-                    android:id="@+id/tv_hora"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:fontFamily="sans-serif"
-                    android:includeFontPadding="false"
-                    android:text="10:00 AM"
-                    android:textColor="#8A000000"
-                    android:textSize="12dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:gravity="bottom|left"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btn_cancelar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#65FF6969"
-                        android:text="Cancelar"
-                        android:textColor="#222121"
-                        android:textSize="12dp" />
-
-                    <Button
-                        android:id="@+id/btn_modificar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="15dp"
-                        android:backgroundTint="#83D9FE"
-                        android:text="Modificar"
-                        android:textColor="#222121"
-                        android:textSize="12dp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/imageView15"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    app:srcCompat="@drawable/fondo" />
-
-            </LinearLayout>
-        </LinearLayout>
 
     </LinearLayout>
 
@@ -158,28 +48,30 @@
         android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Envianos tu mensaje" />
+            android:text="Envianos tu mensaje"
+            android:textColor="#8E000000"
+            android:textStyle="italic" />
 
         <ImageButton
             android:id="@+id/turno_wpp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            app:srcCompat="@drawable/wpp" />
-
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="#4283D9FE"
+            android:backgroundTintMode="src_over"
+            android:contentDescription="Contactanos por wpp"
+            android:hapticFeedbackEnabled="false"
+            android:src="@drawable/wpp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
