@@ -1,5 +1,7 @@
 package com.example.salus;
 
+import androidx.room.vo.Field;
+
 import com.example.salus.entidad.Autorizacion;
 import com.example.salus.entidad.Especialidad;
 import com.example.salus.entidad.Usuario;
