@@ -23,12 +23,12 @@ public class TurnosAdaptador extends RecyclerView.Adapter<TurnosAdaptador.ViewHo
 
     public TurnosAdaptador(List<Turno> turnoLista) {
         this.turnoLista = turnoLista;
-        this.context = context;
+        //this.context = context;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_turno, parent, false);
         return new ViewHolder(view);
     }
@@ -38,8 +38,9 @@ public class TurnosAdaptador extends RecyclerView.Adapter<TurnosAdaptador.ViewHo
         Turno turno = turnoLista.get(position);
         holder.tv_fecha.setText(String.valueOf(turno.getFecha()));
         holder.tv_hora.setText(String.valueOf(turno.getHorario()));
-        holder.tv_profesional.setText(String.valueOf(turno.getId_medico()));
-
+        //holder.tv_fecha.setText(turnoLista.get(position).getFecha().toString());
+        //holder.tv_hora.setText(turnoLista.get(position).getHorario().toString());
+        //holder.tv_profesional.setText(turnoLista.get(position).getId_medico().toString());
 
         /*
         holder.botonServicio.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +72,6 @@ public class TurnosAdaptador extends RecyclerView.Adapter<TurnosAdaptador.ViewHo
             super(itemView);
             tv_fecha = (TextView) itemView.findViewById(R.id.tv_fecha);
             tv_hora = (TextView) itemView.findViewById(R.id.tv_hora);
-            tv_profesional = (TextView) itemView.findViewById(R.id.tv_profesional);
             //btn_cancelar = (Button) itemView.findViewById(R.id.btn_cancelar);
             //btn_modificar = (Button) itemView.findViewById(R.id.btn_modificar);
         };

@@ -14,16 +14,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.salus.adaptador.DateTypeAdapter;
-import com.example.salus.adaptador.TimeTypeAdapter;
 import com.example.salus.adaptador.TurnosAdaptador;
 import com.example.salus.entidad.Turno;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -35,10 +28,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Turnos extends AppCompatActivity {
-    //ImageButton turno_wpp;
     private RecyclerView recyclerTurno;
     private TurnosAdaptador turnosAdaptador;
     private Context context;
+    ImageButton turno_wpp;
+
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -46,10 +41,11 @@ public class Turnos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_turnos);
         context = getApplicationContext();
-        recyclerTurno = findViewById(R.id.recyclerTurnos);
+        recyclerTurno = findViewById(R.id.recyclerTurno);
         recyclerTurno.setLayoutManager(new LinearLayoutManager(context));
+        turno_wpp = findViewById(R.id.turno_wpp);
 
-        /*
+
         turno_wpp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +56,6 @@ public class Turnos extends AppCompatActivity {
             }
         });
 
-         */
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -103,40 +98,4 @@ public class Turnos extends AppCompatActivity {
 };
 
 
-
-//_______________________________________________________________________
-       /* btn_modificar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getTurno();
-            }
-        });
-    }
-
-    private void getTurno(){
-        String api_url = "https://jsonplaceholder.typicode.com/posts/1";
-
-        StringRequest getRequest = new StringRequest(Request.Method.GET, api_url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-
-                    // Traemos los elementos que nos dara la BD y pintamos los TextView con la información
-                    tv_especialidad.setText(jsonObject.getString("title"));
-
-                } catch (JSONException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-
-        Volley.newRequestQueue(this).add(getRequest);
-
-    }*/
 
