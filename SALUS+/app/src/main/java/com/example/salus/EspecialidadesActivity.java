@@ -26,6 +26,7 @@ public class EspecialidadesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private EspecialidadesAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
