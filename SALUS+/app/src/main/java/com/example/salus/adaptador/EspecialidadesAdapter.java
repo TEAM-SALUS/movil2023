@@ -20,6 +20,7 @@ public class EspecialidadesAdapter extends RecyclerView.Adapter<EspecialidadesAd
 
     public EspecialidadesAdapter(List<Especialidad> especialidades) {
         this.especialidades = especialidades;
+
     }
 
     @NonNull
