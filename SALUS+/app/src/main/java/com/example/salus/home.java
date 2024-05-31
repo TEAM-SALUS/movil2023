@@ -104,7 +104,7 @@ public class home extends AppCompatActivity
         contacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( home.this,Contacto.class);
+                Intent i = new Intent( home.this, Contacto.class);
                 startActivity(i);
             }
         });
