@@ -32,7 +32,7 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Button btn_ingresar = findViewById(R.id.btn_ingresar);
         btn_ingresar.setOnClickListener(new View.OnClickListener() {
-            EditText username = findViewById(R.id.login_email);
+            EditText username = findViewById(R.id.login_user);
             EditText password = findViewById(R.id.login_pass);
             HttpLoggingInterceptor loggin = new HttpLoggingInterceptor();
             @Override
