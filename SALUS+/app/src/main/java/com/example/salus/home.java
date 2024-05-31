@@ -76,7 +76,7 @@ public class home extends AppCompatActivity
         prof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(home.this,ProfesionalesActivity.class);
+                Intent i = new Intent(home.this,EspecialidadesActivity.class);
                 //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
 
@@ -86,7 +86,7 @@ public class home extends AppCompatActivity
         serv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( home.this,EspecialidadesActivity.class);
+                Intent i = new Intent( home.this,Servicios.class);
                 //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
             }
