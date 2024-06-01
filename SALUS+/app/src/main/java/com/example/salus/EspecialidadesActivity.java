@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salus.adaptador.EspecialidadesAdapter;
+import com.example.salus.dao.URLConection;
 import com.example.salus.entidad.Especialidad;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class EspecialidadesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private EspecialidadesAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +41,7 @@ public class EspecialidadesActivity extends AppCompatActivity {
         httpClient.addInterceptor(logging);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.56.1:8000/api/v1/")
+                .baseUrl(URLConection.URLPrivada)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();

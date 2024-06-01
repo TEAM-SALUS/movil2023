@@ -92,6 +92,7 @@ public class Turno {
     private String horario;
     private Boolean pagado;
     private Integer id_medico;
+    private Integer id;
 
     public String getFecha() {
         return fecha;
@@ -125,4 +126,11 @@ public class Turno {
         this.id_medico = id_medico;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

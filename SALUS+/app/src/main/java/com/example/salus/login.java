@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.salus.dao.URLConection;
 import com.example.salus.entidad.Autorizacion;
 
 import okhttp3.OkHttpClient;
@@ -31,7 +32,7 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Button btn_ingresar = findViewById(R.id.btn_ingresar);
         btn_ingresar.setOnClickListener(new View.OnClickListener() {
-            EditText username = findViewById(R.id.login_email);
+            EditText username = findViewById(R.id.login_user);
             EditText password = findViewById(R.id.login_pass);
             HttpLoggingInterceptor loggin = new HttpLoggingInterceptor();
             @Override
@@ -42,11 +43,8 @@ public class login extends AppCompatActivity {
                 OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
                 httpClient.addInterceptor(loggin);
                 Retrofit retrofit = new Retrofit.Builder()
-                        //.baseUrl("http://192.168.1.9:8000/api/v1/")
-                        .baseUrl("http://192.168.56.1:8000/api/v1/")
-                        //.baseUrl("http://192.168.1.6:8000/api/v1/")
-                        //.baseUrl("http://192.168.1.18:8000/api/v1/")
 
+                        .baseUrl(URLConection.URLPrivada)
                         .addConverterFactory(GsonConverterFactory.create())
                         .client(httpClient.build())
                         .build();

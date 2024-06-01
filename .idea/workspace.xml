@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AndroidLayouts">
@@ -91,13 +92,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ea67eb5c-a280-42a0-b21c-cc979b47edc6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/EspecialidadesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/EspecialidadesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/EspecialidadesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/EspecialidadesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/dao/URLConection.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/dao/URLConection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/item_especialidad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/item_especialidad.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/tarjeta_consultas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/tarjeta_consultas.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/SALUS+">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2h6yNK6naoI6LKzgTuvR8ynKjpW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+>>>>>>> e3a828ffa67b0b905597f55de033c70a727f08a8
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
-    "android.gradle.sync.needed": "true",
+    "android-custom-viewC:/Users/Asus/.gradle/caches/modules-2/files-2.1/androidx.cardview/cardview/1.0.0/c9f3ce7ca74ad2c978230f4094ba6804c5166f9c/cardview-1.0.0-sources.jar!/androidx/cardview/widget/CardView.java_SELECTED": "CardView",
     "cidr.known.project.marker": "true",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     "last_opened_file_path": "C:/Users/Usuario/Desktop/Mobile-Final/SALUS-mobile"
@@ -208,8 +267,11 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/StudioProjects/SALUS-mobile/SALUS+/settings.gradle.kts&quot;
 >>>>>>> 986b27b45417ae8281c7770459494c33e0940d1e
 >>>>>>> b20e806c7c3b5d6bb69ea55bc2e84949ce0ad59d
+=======
+    "last_opened_file_path": "C:/Users/Asus/StudioProjects/SALUS-mobile/SALUS+/settings.gradle.kts"
+>>>>>>> e3a828ffa67b0b905597f55de033c70a727f08a8
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Salus+.app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="Salus+.app.main" />
@@ -279,13 +341,20 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StandaloneScriptsStorage">
+    <option name="files">
+      <set>
+        <option value="$PROJECT_DIR$/SALUS+/settings.gradle.kts" />
+      </set>
+    </option>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f50b18bb-faa5-4f38-8dd6-ac5aa4cb3b05" name="Changes" comment="" />
-      <created>1716815602756</created>
+      <changelist id="ea67eb5c-a280-42a0-b21c-cc979b47edc6" name="Changes" comment="" />
+      <created>1716928780494</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1716815602756</updated>
+      <updated>1716928780494</updated>
     </task>
     <servers />
   </component>

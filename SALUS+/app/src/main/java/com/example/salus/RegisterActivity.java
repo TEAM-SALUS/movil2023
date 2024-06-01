@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.salus.dao.URLConection;
 import com.example.salus.entidad.PacienteRequest;
 import com.example.salus.entidad.PacienteResponse;
 import com.example.salus.entidad.RegisterRequest;
@@ -57,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
         RegisterRequest registerRequest = new RegisterRequest(username, email, password);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.56.1:8000/api/v1/")
+                .baseUrl(URLConection.URLPrivada)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -93,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
         PacienteRequest pacienteRequest = new PacienteRequest(dni, nombre, apellido, email, clave, telefono);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.56.1:8000/api/v1/")
+                .baseUrl(URLConection.URLPrivada)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
