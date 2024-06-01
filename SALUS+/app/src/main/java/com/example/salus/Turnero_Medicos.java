@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class TurneroActivity extends AppCompatActivity {
+public class Turnero_Medicos extends AppCompatActivity {
 
     private Spinner spinnerDoctor;
     private DatePicker datePicker;
@@ -26,7 +26,7 @@ public class TurneroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_turnero);
+        setContentView(R.layout.activity_turnero_medicos);
 
         spinnerDoctor = findViewById(R.id.spinnerDoctor);
         datePicker = findViewById(R.id.datePicker);
@@ -36,8 +36,6 @@ public class TurneroActivity extends AppCompatActivity {
         // Configurar Spinner con una lista de doctores
         ArrayList<String> doctorList = new ArrayList<>();
         doctorList.add("Dr. Smith");
-        doctorList.add("Dr. Johnson");
-        doctorList.add("Dr. Williams");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, doctorList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -57,9 +55,8 @@ public class TurneroActivity extends AppCompatActivity {
                         "Date: " + day + "/" + (month + 1) + "/" + year + "\n" +
                         "Time: " + String.format("%02d:%02d", hour, minute);
 
-                Toast.makeText(TurneroActivity.this, appointmentDetails, Toast.LENGTH_LONG).show();
+                Toast.makeText(Turnero_Medicos.this, appointmentDetails, Toast.LENGTH_LONG).show();
             }
         });
     }
 }
-

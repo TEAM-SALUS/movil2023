@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
         RegisterRequest registerRequest = new RegisterRequest(username, email, password);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.18:8000/api/v1/")
+                .baseUrl("http://192.168.56.1:8000/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
         PacienteRequest pacienteRequest = new PacienteRequest(dni, nombre, apellido, email, clave, telefono);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.18:8000/api/v1/")
+                .baseUrl("http://192.168.56.1:8000/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

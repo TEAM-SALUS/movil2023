@@ -39,7 +39,7 @@ public class EspecialidadesActivity extends AppCompatActivity {
         httpClient.addInterceptor(logging);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.110:8000/api/v1/")
+                .baseUrl("http://192.168.56.1:8000/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();

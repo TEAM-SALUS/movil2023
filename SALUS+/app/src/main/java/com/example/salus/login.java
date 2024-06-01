@@ -43,7 +43,7 @@ public class login extends AppCompatActivity {
                 httpClient.addInterceptor(loggin);
                 Retrofit retrofit = new Retrofit.Builder()
                         //.baseUrl("http://192.168.1.9:8000/api/v1/")
-                        .baseUrl("http://192.168.1.92:8000/api/v1/")
+                        .baseUrl("http://192.168.56.1:8000/api/v1/")
                         //.baseUrl("http://192.168.1.6:8000/api/v1/")
                         //.baseUrl("http://192.168.1.18:8000/api/v1/")
 

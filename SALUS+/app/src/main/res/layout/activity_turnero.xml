@@ -1,75 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TurneroActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/tvSelectDoctor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profesional"
-        android:fontFamily="sans-serif-black"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"/>
-
-    <Spinner
-        android:id="@+id/spinnerDoctor"
+        android:id="@+id/txtNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvSelectDoctor"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp" />
+        android:text="Nombre"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/tvSelectDate"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtEspecialidad"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Seleccionar Fecha"
-        android:fontFamily="sans-serif-black"
-        android:textSize="18sp"
-        android:layout_below="@id/spinnerDoctor"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="120dp"/>
-
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="392dp"
-        android:layout_below="@id/tvSelectDate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:text="Especialidad"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/tvSelectTime"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtFecha"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Seleccionar Hora"
-        android:fontFamily="sans-serif-black"
-        android:textSize="18sp"
-        android:layout_below="@id/datePicker"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="120dp"/>
+        android:text="Fecha"
+        android:textSize="18sp" />
 
-    <TimePicker
-        android:id="@+id/timePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="134dp"
-        android:layout_below="@id/tvSelectTime"
-        android:layout_centerHorizontal="true"
-        android:timePickerMode="spinner" />
+    <TextView
+        android:id="@+id/txtHora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hora"
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnReservarTurno"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar"
-        android:layout_below="@id/timePicker"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="1dp"/>
-
-</RelativeLayout>
+        android:text="Cargar Turno" />
+</LinearLayout>

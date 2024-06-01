@@ -44,7 +44,7 @@ public class ConsultasActivity extends AppCompatActivity {
         httpClient.addInterceptor(httpLogginInterceptor);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.44:8000/api/v1/")
+                .baseUrl("http://192.168.56.1:8000/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())
                 .build();

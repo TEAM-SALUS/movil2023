@@ -1,6 +1,7 @@
 package com.example.salus;
 
 import com.example.salus.entidad.Autorizacion;
+import com.example.salus.entidad.Medicos;
 import com.example.salus.entidad.Turno;
 import com.example.salus.entidad.Usuario;
 
@@ -24,6 +25,7 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 
 public interface ApiDjango {
@@ -45,5 +47,9 @@ public interface ApiDjango {
 
     @GET("especialidad")
     Call<List<Especialidad>> getEspecialidades();
+
+    @GET("medico")
+    Call<List<Medicos>> getMedicos();
+
 }
 
