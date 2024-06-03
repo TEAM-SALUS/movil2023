@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AndroidLayouts">
@@ -11,9 +10,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
+
     <list default="true" id="a16038f4-ee90-4f71-ba8b-5e0024830102" name="Changes" comment="" />
-=======
+
     <list default="true" id="a16038f4-ee90-4f71-ba8b-5e0024830102" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SALUS+/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/build.gradle.kts" afterDir="false" />
@@ -24,7 +23,6 @@
       <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_home.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_turnos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_turnos.xml" afterDir="false" />
     </list>
->>>>>>> 7c02d52a27d7d29a87eb9a022217f4a4f1161291
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +90,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AndroidLayouts">

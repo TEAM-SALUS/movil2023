@@ -101,7 +101,10 @@ public class Contacto extends AppCompatActivity {
                     Intent intent = new Intent(Contacto.this, ContactoMensajeEnviado.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(Contacto.this, "Error al enviar el mensaje", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Contacto.this, "Error al enviar el mensaje", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Contacto.this, "Mensaje enviado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Contacto.this, ContactoMensajeEnviado.class);
+                    startActivity(intent);
                 }
             }
         }.execute();

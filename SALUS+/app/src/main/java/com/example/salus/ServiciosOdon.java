@@ -32,7 +32,7 @@ public class ServiciosOdon extends AppCompatActivity implements View.OnClickList
         ReservaT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ServiciosOdon.this,home.class);
+                Intent i = new Intent(ServiciosOdon.this, Turnero_Medicos.class);
                 startActivity(i);
             }
         });
