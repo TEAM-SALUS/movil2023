@@ -85,7 +85,7 @@ public class ProfesionalActivity extends AppCompatActivity {
         btnTurnero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent ( ProfesionalActivity.this,TurneroActivity.class);
+                Intent i = new Intent ( ProfesionalActivity.this, Turnero_Medicos.class);
                 //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
             }
