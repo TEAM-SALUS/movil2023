@@ -73,25 +73,31 @@ public class home extends AppCompatActivity
         int userDni = sharedPref.getInt(login.DNI_CLIENT, 0);
         Toast.makeText(home.this,String.valueOf(userDni), Toast.LENGTH_LONG).show();
 
+
+        // ---- PROFESIONALES ----
         prof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(home.this,EspecialidadesActivity.class);
+                Intent i = new Intent(home.this, EspecialidadesActivity.class);
                 //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
 
             }
         });
 
-        serv.setOnClickListener(new View.OnClickListener() {
+
+        // ---- CONSULTAS ----
+        consultas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( home.this,Servicios.class);
-                //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                Intent i = new Intent(home.this,ConsultasActivity.class);
                 startActivity(i);
             }
         });
 
+
+
+        // ---- MSI TURNOS ----
         turnos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,14 +107,18 @@ public class home extends AppCompatActivity
             }
         });
 
+
+        // ---- CONTACTO ----
         contacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( home.this,Contacto.class);
+                Intent i = new Intent( home.this, Contacto.class);
                 startActivity(i);
             }
         });
 
+
+        // ---- SALIR ----
         log.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -121,6 +131,10 @@ public class home extends AppCompatActivity
                 startActivity(i);
             }
         });
+
+
+
+        // ---- PERFIL ----
         perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +143,10 @@ public class home extends AppCompatActivity
                 startActivity(i);
             }
         });
+
+
+        /*
+        // ---- CONSULTAS ----
         consultas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,7 +154,10 @@ public class home extends AppCompatActivity
                 startActivity(i);
             }
         });
+
+         */
     }
+
 
     private String getTodaysDate()
     {
