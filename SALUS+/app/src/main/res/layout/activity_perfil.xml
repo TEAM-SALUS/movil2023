@@ -65,6 +65,7 @@
                 android:layout_height="48dp"
                 android:inputType="text"
                 android:textColorHint="@color/black" />
+
             <EditText
 
                 android:layout_width="323dp"
@@ -81,11 +82,10 @@
 
             <EditText
 
-            android:layout_width="323dp"
-            android:layout_height="48dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
-
+                android:layout_width="323dp"
+                android:layout_height="48dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
 
             <EditText
@@ -101,8 +101,7 @@
                 android:gravity="center"
                 android:hint="Ingrese Nombre"
                 android:inputType="text"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black" />
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/editTextApellido"
@@ -245,9 +244,9 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="0dp"
-                android:layout_marginTop="0dp"
                 android:background="@color/btn_reservarTurno"
                 android:ems="10"
                 android:gravity="center"
@@ -264,11 +263,11 @@
         android:layout_width="167dp"
         android:layout_height="156dp"
         android:layout_marginTop="132dp"
-        app:srcCompat="@drawable/dr_pequena_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dr_pequena_1" />
 
     <LinearLayout
         android:layout_width="345dp"
@@ -283,24 +282,26 @@
         <Button
             android:id="@+id/btnCargarImagen"
             style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="127dp"
+            android:layout_width="138dp"
             android:layout_height="65dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="16dp"
-            android:background="#FF9800"
+            android:backgroundTint="#82FF9800"
             android:onClick="subirFoto"
-            android:text="TOMAR IMAGEN"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:text="Tomar Foto"
+            android:textColor="#404040"
+            android:textSize="12sp"
+            app:cornerRadius="30dp" />
 
         <Button
             android:id="@+id/btnActualizarPerfil"
-            android:layout_width="128dp"
+            android:layout_width="138dp"
             android:layout_height="65dp"
             android:layout_marginEnd="48dp"
-            android:backgroundTint="@color/orange"
+            android:backgroundTint="#82FF9800"
             android:text="Actualizar Perfil"
-            android:textColor="@color/black"
+            android:textColor="#2B2A2A"
+            android:textSize="12sp"
             tools:ignore="MissingConstraints" />
     </LinearLayout>
 
