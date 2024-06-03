@@ -1,20 +1,16 @@
 package com.example.salus;
 
 import com.example.salus.entidad.Autorizacion;
+import com.example.salus.entidad.Medico;
 import com.example.salus.entidad.Turno;
-import com.example.salus.entidad.Usuario;
 
-import java.sql.Time;
-import java.util.Date;
 import java.util.List;
-import java.util.Timer;
+
 import com.example.salus.entidad.Especialidad;
 import com.example.salus.entidad.PacienteRequest;
 import com.example.salus.entidad.PacienteResponse;
 import com.example.salus.entidad.RegisterRequest;
 import com.example.salus.entidad.RegisterResponse;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -22,10 +18,8 @@ import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Header;
-import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
@@ -59,6 +53,11 @@ public interface ApiDjango {
     //____ ESPECIALIDAD ____
     @GET("especialidad")
     Call<List<Especialidad>> getEspecialidades();
+
+
+    //____ Profesional ____
+    @GET("medico")
+    Call<List<Medico>> getProfesional();
 
 }
 
