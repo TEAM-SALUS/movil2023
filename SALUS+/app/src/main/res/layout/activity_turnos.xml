@@ -4,74 +4,198 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4283D9FE"
-    tools:context=".MainActivity">
+    tools:context=".Turnos">
 
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondo" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="410dp"
+        android:layout_height="184dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/images" />
+
+    <TextView
+        android:id="@+id/mes"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="10dp"
+        android:text="Septiembre"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="#4B0D0D"
-        android:orientation="vertical">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mes">
 
-        <ImageView
-            android:id="@+id/imageView8"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/images" />
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:text="Mis Turnos"
-            android:textColor="#AB222222"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#83D9FE"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerTurno"
+                <TextView
+                    android:id="@+id/tv_dia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_weight="1"
+                    android:text="8"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_mes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_weight="1"
+                    android:text="Septiembre"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/t_especialidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Medicina general"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/t_profesional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Fernandez" />
+
+                <TextView
+                    android:id="@+id/t_hora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="sans-serif"
+                    android:includeFontPadding="false"
+                    android:text="10:00 AM"
+                    android:textColor="#8A000000"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp">
+            android:orientation="horizontal">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#83D9FE"
+                android:gravity="center"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/tv_dia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_weight="1"
+                    android:text="14"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_mes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_weight="1"
+                    android:text="Septiembre"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="12dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Envianos tu mensaje"
-            android:textColor="#8E000000"
-            android:textStyle="italic" />
+                <TextView
+                    android:id="@+id/t_especialidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ortodoncista"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/turno_wpp"
-            android:layout_width="60dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:backgroundTint="#4283D9FE"
-            android:backgroundTintMode="src_over"
-            android:contentDescription="Contactanos por wpp"
-            android:hapticFeedbackEnabled="false"
-            android:src="@drawable/wpp" />
+                <TextView
+                    android:id="@+id/t_profesional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Gutierrez" />
+
+                <TextView
+                    android:id="@+id/t_hora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="sans-serif"
+                    android:includeFontPadding="false"
+                    android:text="10:00 AM"
+                    android:textColor="#8A000000"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

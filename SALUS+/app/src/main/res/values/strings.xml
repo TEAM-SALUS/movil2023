@@ -33,7 +33,5 @@
     <string name="editar_perfil">Editar</string>
     <string name="confirmar_perfil">Confirmar</string>
     <string name="seleccion_prof">Seleccione un profesional</string>
-    <string name="consultas">Consultas</string>
-    <string name="ver_consulta">Ver consulta</string>
-    <string name="ir_home">Ir Home</string>
+    >>>>>>> 4c382f290a708657321cd63a4ef05c642854fe6e
 </resources>

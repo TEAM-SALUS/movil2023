@@ -17,7 +17,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -32,36 +31,35 @@ public class home extends AppCompatActivity
 
     Button prof;
     Button serv;
-    Button turnos;
+    Button calend;
     Button contacto;
     Button log;
     private Button perfil;
-    ImageButton wpp;
-    private Button consultas;
+    Button WP;
 
-    @SuppressLint({"MissingInflatedId"})
+    @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         initDatePicker();
-        dateButton = findViewById(R.id.datePickerButton);
+        dateButton=findViewById(R.id.datePickerButton);
         dateButton.setText(getTodaysDate());
         prof = findViewById(R.id.button1);
         serv = findViewById(R.id.button2);
-        turnos = findViewById(R.id.button3);
+        calend = findViewById(R.id.button3);
         contacto = findViewById(R.id.button4);
         log = findViewById(R.id.button5);
+        WP = findViewById(R.id.btnWapp);
         perfil = findViewById(R.id.button6);
-        wpp = findViewById(R.id.wpp);
-        consultas = findViewById(R.id.HomeActivity_btnIrConsultas);
 
-        wpp.setOnClickListener(new View.OnClickListener() {
+        WP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String wppurl= "https://wa.me/+543525482570?text=¡Hola! Quiero solicitar información sobre los servicios que ofrecen y reservar un turno.";
+                String wpurl= "https://wa.me/+543525482570?text=Hola, quiero reservar un turno.";
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(wppurl));
+                i.setData(Uri.parse(wpurl));
                 startActivity(i);
             }
         });
@@ -76,7 +74,7 @@ public class home extends AppCompatActivity
         prof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(home.this,EspecialidadesActivity.class);
+                Intent i = new Intent(home.this,ProfesionalesActivity.class);
                 //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
 
@@ -92,7 +90,7 @@ public class home extends AppCompatActivity
             }
         });
 
-        turnos.setOnClickListener(new View.OnClickListener() {
+        calend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent ( home.this, Turnos.class);
@@ -104,7 +102,7 @@ public class home extends AppCompatActivity
         contacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( home.this, Contacto.class);
+                Intent i = new Intent( home.this,Contacto.class);
                 startActivity(i);
             }
         });
@@ -126,13 +124,6 @@ public class home extends AppCompatActivity
             public void onClick(View v) {
                 Log.d("Entro perfil? ","entro");
                 Intent i = new Intent(home.this, PerfilActivity.class);
-                startActivity(i);
-            }
-        });
-        consultas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(home.this,ConsultasActivity.class);
                 startActivity(i);
             }
         });
