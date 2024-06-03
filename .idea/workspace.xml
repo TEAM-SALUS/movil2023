@@ -4,13 +4,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a16038f4-ee90-4f71-ba8b-5e0024830102" name="Changes" comment="">
+    <list default="true" id="0f7bd9b2-cc6f-48bf-b422-626f52944be4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SALUS-aplic.movilesISPC-2023-c2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SALUS+/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -18,7 +36,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2Y0b1p3t23B15JLwphk0Amkj5H1" />
+  <component name="ProjectId" id="2fQWfZ23Hc1EhLuMVv5w0hDGhCJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,18 +46,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "android.gradle.sync.needed": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "D:/ISPC proyectos/SALUS-aplic.movilesISPC-2023-c2/SALUS+"
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "last_opened_file_path": "C:/Users/Alejandro/Desktop/SALUS-movil",
+    "settings.build.tools.auto.reload": "ALL",
+    "settings.editor.selected.configurable": "build.tools"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a16038f4-ee90-4f71-ba8b-5e0024830102" name="Changes" comment="" />
-      <created>1699665231908</created>
+      <changelist id="0f7bd9b2-cc6f-48bf-b422-626f52944be4" name="Changes" comment="" />
+      <created>1713733901757</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1699665231908</updated>
+      <updated>1713733901757</updated>
     </task>
     <servers />
   </component>
