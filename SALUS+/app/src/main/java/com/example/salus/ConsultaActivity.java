@@ -75,6 +75,8 @@ public class ConsultaActivity extends AppCompatActivity {
         httpClient.addInterceptor(httpLogginInterceptor);
 
         Retrofit retrofit = new Retrofit.Builder()
+                //.baseUrl("http://192.168.56.1:8000/api/v1/")
+
                 .baseUrl(URLConection.URLPrivada)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient.build())

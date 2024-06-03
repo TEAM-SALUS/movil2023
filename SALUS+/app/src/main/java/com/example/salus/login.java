@@ -43,8 +43,8 @@ public class login extends AppCompatActivity {
                 OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
                 httpClient.addInterceptor(loggin);
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(URLConection.URLPrivada)
 
+                        .baseUrl(URLConection.URLPrivada)
                         .addConverterFactory(GsonConverterFactory.create())
                         .client(httpClient.build())
                         .build();
