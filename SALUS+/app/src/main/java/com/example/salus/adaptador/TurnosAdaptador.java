@@ -1,29 +1,37 @@
 package com.example.salus.adaptador;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.salus.ApiDjango;
 import com.example.salus.R;
 import com.example.salus.entidad.Turno;
 
 import java.util.List;
 
-
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class TurnosAdaptador extends RecyclerView.Adapter<TurnosAdaptador.ViewHolder> {
     private List<Turno> turnoLista;
     private Context context;
+    private ApiDjango api;
 
-    public TurnosAdaptador(List<Turno> turnoLista) {
+    public TurnosAdaptador(List<Turno> turnoLista, Context context, ApiDjango api) {
         this.turnoLista = turnoLista;
-        //this.context = context;
+        this.context = context;
+        this.api = api;
     }
 
     @NonNull
@@ -38,44 +46,76 @@ public class TurnosAdaptador extends RecyclerView.Adapter<TurnosAdaptador.ViewHo
         Turno turno = turnoLista.get(position);
         holder.tv_fecha.setText(String.valueOf(turno.getFecha()));
         holder.tv_hora.setText(String.valueOf(turno.getHorario()));
-        //holder.tv_fecha.setText(turnoLista.get(position).getFecha().toString());
-        //holder.tv_hora.setText(turnoLista.get(position).getHorario().toString());
-        //holder.tv_profesional.setText(turnoLista.get(position).getId_medico().toString());
 
-        /*
-        holder.botonServicio.setOnClickListener(new View.OnClickListener() {
+        // Alerta para la cancelación del turno
+        holder.btn_cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, ServiciosOdon.class);
-                SharedPreferences sharedpreferences = context.getSharedPreferences("shared_login_data", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putInt(login.COD_SERVICIO, servicioList.get(position).getCodServicio());
-                editor.commit();
-                //intent.putExtra("servSeleccionado",servicioList.get(position).getCodServicio());
-                context.startActivity(Intent.createChooser(intent,"FUNCIONA").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                AlertDialog.Builder alerta = new AlertDialog.Builder(holder.itemView.getContext());
+                alerta.setTitle("Confirmar para cancelar el turno")
+                        .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Llamar a la función para eliminar el turno
+                                eliminarTurno(turno.getId(), position);
+                                Toast.makeText(holder.itemView.getContext(), "Turno cancelado", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = alerta.create();
+                alertDialog.show();
             }
-        });*/
+        });
     }
+
+    private void eliminarTurno(int id, int position) {
+        Call<Void> callEliminar = api.eliminarTurno(id);
+        callEliminar.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    turnoLista.remove(position);
+                    notifyItemRemoved(position);
+                    Toast.makeText(context, "Turno eliminado", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Error al eliminar el turno", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(context, "Error en la conexión", Toast.LENGTH_SHORT).show();
+            };
+        });
+    };
+
+    // Eliminar el item del turno
+    public void eliminarItem(int position) {
+        turnoLista.remove(position);
+        notifyItemRemoved(position);
+    };
+
+
 
     @Override
     public int getItemCount() {
         return turnoLista.size();
     }
 
-
-
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView  tv_profesional, tv_hora, tv_fecha;
-        //private Button btn_cancelar, btn_modificar;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView tv_hora, tv_fecha;
+        private Button btn_cancelar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_fecha = (TextView) itemView.findViewById(R.id.tv_fecha);
-            tv_hora = (TextView) itemView.findViewById(R.id.tv_hora);
-            //btn_cancelar = (Button) itemView.findViewById(R.id.btn_cancelar);
-            //btn_modificar = (Button) itemView.findViewById(R.id.btn_modificar);
-        };
-    };
-};
-
-
+            tv_fecha = itemView.findViewById(R.id.tv_fecha);
+            tv_hora = itemView.findViewById(R.id.tv_hora);
+            btn_cancelar = itemView.findViewById(R.id.btn_cancelar);
+        }
+    }
+}
