@@ -15,8 +15,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.salus.adaptador.EspecialidadesAdapter;
 import com.example.salus.adaptador.TurnosAdaptador;
 import com.example.salus.dao.URLConection;
+import com.example.salus.entidad.Especialidad;
 import com.example.salus.entidad.Turno;
 
 import java.util.List;
@@ -32,6 +34,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Turnos extends AppCompatActivity {
     private RecyclerView recyclerTurno;
     private TurnosAdaptador turnosAdaptador;
+    public  EspecialidadesAdapter especialidadesAdapter;
     private Context context;
     private ApiDjango api;
     ImageButton turno_wpp;
@@ -67,9 +70,8 @@ public class Turnos extends AppCompatActivity {
                 .client(httpClient.build())
                 .build();
 
-        api = retrofit.create(ApiDjango.class);
-
         // Obtener toda la lista de los turnos
+        api = retrofit.create(ApiDjango.class);
         Call<List<Turno>> call = api.getTurnos();
         call.enqueue(new Callback<List<Turno>>() {
             @Override
@@ -93,6 +95,35 @@ public class Turnos extends AppCompatActivity {
                 Toast.makeText(Turnos.this, "Error. Detalles: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        /*
+        // Obtener las especialidades
+        Call<List<Especialidad>> callE = api.getEspecialidades();
+        call.enqueue(new Callback<List<Especialidad>>() {
+            @Override
+            public void onResponse(Call<List<Especialidad>> call, Response<List<Especialidad>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    List<Especialidad> especialidades = response.body();
+                    }
+                    especialidadesAdapter = new TurnosAdaptador(especialidades, Especialidad.this, api);
+                    recyclerTurno.setAdapter(especialidadesAdapter);
+                    Toast.makeText(Turnos.this, "Especialidades funcionando", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(Turnos.this, "No se encontraron especialidades", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Turno>> call, Throwable t) {
+                Log.e("Turnos", "Error al realizar la llamada a la API.", t);
+                Toast.makeText(Turnos.this, "Error. Detalles: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            };
+        });
+    };
+*/
+
+
     }
 
     public void eliminarTurno(int id, int position) {

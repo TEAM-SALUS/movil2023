@@ -28,6 +28,7 @@ public class EspecialidadesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private EspecialidadesAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +60,7 @@ public class EspecialidadesActivity extends AppCompatActivity {
                         // Log para verificar los datos
                         Log.d("Especialidad", "Nombre: " + especialidad.getNombre() + ", Precio: " + especialidad.getPrecio() + ", Duracion: " + especialidad.getDuracion());
                     }
-                    adapter = new EspecialidadesAdapter(especialidades);
+                    adapter = new EspecialidadesAdapter(especialidades, EspecialidadesActivity.this);
                     recyclerView.setAdapter(adapter);
                 } else {
                     Toast.makeText(EspecialidadesActivity.this, "Error al obtener especialidades", Toast.LENGTH_SHORT).show();

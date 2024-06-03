@@ -1,9 +1,11 @@
 package com.example.salus;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.content.Context;;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.TextView;
@@ -19,7 +21,7 @@ import com.example.salus.dao.URLConection;
 import com.example.salus.entidad.Especialidad;
 import com.example.salus.entidad.Categoria;
 import com.example.salus.entidad.Servicio;
-import com.example.salus.entidad.Medico;
+import com.example.salus.entidad.Medicos;
 
 import java.util.List;
 import java.util.zip.Inflater;
@@ -39,11 +41,14 @@ public class ProfesionalActivity extends AppCompatActivity {
     private TextView prEspecialidades;
     private ImageView imageView4;
     private TextView prDescripcion;
+    private Button btn_profesional;
     private MedicoAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
         setContentView(R.layout.activity_profesional);
 
@@ -57,7 +62,12 @@ public class ProfesionalActivity extends AppCompatActivity {
 
         prDescripcion = findViewById(R.id.prDescripcion);
 
-        String matricula_incoming = "12345678303";
+        btn_profesional = findViewById(R.id.btn_profesional);
+
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
+        String matricula_incoming = extras.get("especialidadID").toString();
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -72,24 +82,27 @@ public class ProfesionalActivity extends AppCompatActivity {
 
 
         ApiDjango api = retrofit.create(ApiDjango.class);
-        Call<List<Medico>> call = api.getProfesional();
-        call.enqueue(new Callback<List<Medico>>() {
+        Call<List<Medicos>> call = api.getMedicos();
+        call.enqueue(new Callback<List<Medicos>>() {
             @Override
-            public void onResponse(Call<List<Medico>> call, Response<List<Medico>> response) {
-
+            public void onResponse(Call<List<Medicos>> call, Response<List<Medicos>> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    List<Medico> MedicoList = response.body();
-                    for (Medico medicos : MedicoList) {
+                    List<Medicos> MedicoList = response.body();
+                    for (Medicos medicos : MedicoList) {
 
-                        String matricula_find = medicos.getMatricula().trim();
+                        String matricula_find = medicos.getMatricula();
 
-                        Integer especialidad_find = medicos.getId_especialidad();
+                        String especialidad_find = medicos.getId_especialidad();
 
-                        if (matricula_find.equals(matricula_incoming)) {
+                        if (especialidad_find.equals(matricula_incoming)) {
 
-                            prTitulo.setText(medicos.getNombre() + " " + medicos.getApellido());
+                            String titulo = medicos.getNombre() + " " + medicos.getApellido();
 
-                            prDescripcion.setText("Telefono: " + medicos.getTelefono());
+                            prTitulo.setText(titulo);
+
+                            prDescripcion.setText("Matricula: " + matricula_find + "\nTelefono: " + medicos.getTelefono());
+
+                            String medico_find = medicos.getId();
 
 
                             Call<List<Especialidad>> callE = api.getEspecialidades();
@@ -99,10 +112,23 @@ public class ProfesionalActivity extends AppCompatActivity {
                                     if (response.isSuccessful() && response.body() != null) {
                                         List<Especialidad> especialidades = response.body();
                                         for (Especialidad especialidad : especialidades) {
-                                            Integer especialidadID = especialidad.getId();
+                                            String especialidadID = especialidad.getId().toString();
+                                            Log.d("especialidades:", especialidadID);
                                             if (especialidad_find.equals(especialidadID)) {
                                                 prEspecialidad.setText(especialidad.getNombre());
                                                 prEspecialidades.setText(especialidad.getDescripcion());
+
+                                                btn_profesional.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        Intent intento = new Intent(ProfesionalActivity.this, Turnero_Medicos.class);
+                                                        intento.putExtra("Medico",prTitulo.getText());
+                                                        intento.putExtra("Especialidad",prEspecialidad.getText());
+                                                        intento.putExtra("MedicoID",medico_find);
+                                                        intento.putExtra("EspecialidadID",especialidadID);
+                                                        startActivity(Intent.createChooser(intento,"Compartir en").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                                    }
+                                                });
                                             }
                                         }
                                     } else {
@@ -128,9 +154,16 @@ public class ProfesionalActivity extends AppCompatActivity {
 
 
             @Override
-            public void onFailure(Call<List<Medico>> call, Throwable t) {
+            public void onFailure(Call<List<Medicos>> call, Throwable t) {
                 Toast.makeText(ProfesionalActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.e("Error request", t.toString());
+            }
+
+            public void onClick(View v) {
+                Intent i = new Intent ( ProfesionalActivity.this,Turnero_Medicos.class);
+                //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                startActivity(i);
+
             }
         });
 

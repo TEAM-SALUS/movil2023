@@ -1,7 +1,8 @@
 package com.example.salus;
 
 import com.example.salus.entidad.Autorizacion;
-import com.example.salus.entidad.Medico;
+
+import com.example.salus.entidad.Medicos;
 import com.example.salus.entidad.Turno;
 
 import java.util.List;
@@ -57,7 +58,7 @@ public interface ApiDjango {
 
     //____ Profesional ____
     @GET("medico")
-    Call<List<Medico>> getProfesional();
+    Call<List<Medicos>> getMedicos();
 
 }
 

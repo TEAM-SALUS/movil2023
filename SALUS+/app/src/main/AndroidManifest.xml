@@ -56,6 +56,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".EspecialidadesActivity"
+            android:parentActivityName=".home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".home" />
+        </activity>
+        <activity
             android:name=".Servicios"
             android:parentActivityName=".home">
             <meta-data
@@ -72,7 +79,7 @@
             android:value=".home" />
 
         <activity
-            android:name=".TurneroActivity"
+            android:name=".Turnero_Medicos"
             android:parentActivityName=".ProfesionalActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -129,7 +136,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.salus.EspecialidadesActivity" />
+
 
         <meta-data
             android:name="preloaded_fonts"
