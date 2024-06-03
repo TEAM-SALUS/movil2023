@@ -12,8 +12,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Salus"
         tools:targetApi="31">
+        <activity
+            android:name=".ConsultaActivity"
+            android:parentActivityName=".ConsultasActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ConsultasActivity" />
+        </activity>
+        <activity
+            android:name=".ConsultasActivity"
+            android:parentActivityName=".home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".home" />
+        </activity>
         <activity
             android:name=".ContactoMensajeEnviado"
             android:exported="false" />
@@ -41,12 +56,20 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".EspecialidadesActivity"
+            android:parentActivityName=".home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".home" />
+        </activity>
+        <activity
             android:name=".Servicios"
             android:parentActivityName=".home">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".home" />
         </activity>
+
         <activity
             android:name=".ServiciosOdon"
             android:parentActivityName=".home" />
@@ -56,14 +79,14 @@
             android:value=".home" />
 
         <activity
-            android:name=".TurneroActivity"
+            android:name=".Turnero_Medicos"
             android:parentActivityName=".ProfesionalActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ProfesionalActivity" />
         </activity>
         <activity
-            android:name=".SignUp"
+            android:name=".RegisterActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -113,6 +136,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

@@ -10,8 +10,8 @@
         android:id="@+id/imageView9"
         android:layout_width="match_parent"
         android:layout_height="156dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/images"
-        tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="-9dp" />
 
     <LinearLayout
@@ -27,29 +27,30 @@
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minHeight="74dp"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/btnWpp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
-                android:background="#00FFFFFF"
-                android:src="@android:drawable/alert_light_frame"
-                tools:src="@drawable/wpp" />
+                android:id="@+id/c_wpp"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom|center|center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
+                android:contentDescription="WhatsApp"
+                android:src="@drawable/wpp" />
 
             <TextView
                 android:id="@+id/tvContacto"
-                android:layout_width="304dp"
+                android:layout_width="303dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="40dp"
                 android:text="Contáctenos por WhatsApp"
-                android:textSize="22dp"
-                android:textStyle="bold" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -73,35 +74,38 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/ETemail"
+                android:id="@+id/ed_email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="66dp"
                 android:layout_marginTop="10dp"
                 android:ems="10"
                 android:hint="Email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/ETmensaje"
+                android:id="@+id/ed_mensaje"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="40dp"
                 android:ems="10"
                 android:gravity="start|top"
                 android:hint="Mensaje"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/btnEnviarMensaje"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#FF9800"
+                android:backgroundTint="#83D9FE"
                 android:onClick="enviarMensaje"
                 android:text="Enviar mensaje"
-                android:textColor="#FFFFFF"
-                android:textColorLink="#000000" />
+                android:textColor="#AA000000"
+                android:textColorLink="#000000"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
