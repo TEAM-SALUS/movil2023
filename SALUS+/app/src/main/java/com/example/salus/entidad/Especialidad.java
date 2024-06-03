@@ -7,6 +7,8 @@ public class Especialidad {
     private String foto;
     private String descripcion;
 
+    private Integer id;
+
     // Getters y setters
     public String getNombre() {
         return nombre;
@@ -46,5 +48,13 @@ public class Especialidad {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
