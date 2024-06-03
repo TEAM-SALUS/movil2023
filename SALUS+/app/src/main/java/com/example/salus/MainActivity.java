@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void irSignUp(View view) {
-        Intent intent = new Intent(this, RegisterActivity.class);
+        Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
 
     }

@@ -99,7 +99,7 @@ public class TurnoDaoImpl implements ITurnoDao {
             */
             ContentValues nuevoRegistro = new ContentValues();
             //nuevoRegistro.put("CodTurno_Tur",turno.getCodTurno());
-            nuevoRegistro.put("Fecha_Tur",turno.getFechaH().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString());
+            nuevoRegistro.put("Fecha_Tur",turno.getFecha().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString());
             nuevoRegistro.put("FechaAsignacion_Tur",turno.getFechaAsignacion().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString());
             nuevoRegistro.put("Estado",turno.getEstado());
             nuevoRegistro.put("DNI_CliTur",turno.getUsuarioCli().getDni());
@@ -126,7 +126,7 @@ public class TurnoDaoImpl implements ITurnoDao {
                     +"' WHERE CodTurno_Tur = '" + turno.getCodTurno() + "');");
             */
             ContentValues nuevoRegistro = new ContentValues();
-            nuevoRegistro.put("Fecha_Tur",turno.getFechaH().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString());
+            nuevoRegistro.put("Fecha_Tur",turno.getFecha().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString());
             nuevoRegistro.put("FechaAsignacion_Tur",turno.getFechaAsignacion().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")).toString());
             nuevoRegistro.put("Estado",turno.getEstado());
             nuevoRegistro.put("DNI_CliTur",turno.getUsuarioCli().getDni());

@@ -11,11 +11,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.salus.adaptador.ProfesionalesAdaptador;
 import com.example.salus.adaptador.RecyclerViewAdaptador;
 import com.example.salus.entidad.Servicio;
+import com.example.salus.negocio.ICategoriaNeg;
+import com.example.salus.negocio.ICondicionNeg;
 import com.example.salus.negocio.IServicioNeg;
+import com.example.salus.negocio.IServicioXProfesionalNeg;
+import com.example.salus.negocio.ITurnoNeg;
 import com.example.salus.negocio.IUsuarioNeg;
+import com.example.salus.negocioImpl.CategoriaNegImpl;
+import com.example.salus.negocioImpl.CondicionNegImpl;
+import com.example.salus.negocioImpl.ServicioModelo;
 import com.example.salus.negocioImpl.ServicioNegImpl;
+import com.example.salus.negocioImpl.ServicioXProfesionalNegImpl;
+import com.example.salus.negocioImpl.TurnoNegImpl;
+import com.example.salus.negocioImpl.UsuarioNegImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +50,7 @@ public class Servicios extends AppCompatActivity {
         context = getApplicationContext();
         serNI = new ServicioNegImpl();
 
-        recyclerViewServicio = (RecyclerView) findViewById(R.id.recyclerTurno);
+        recyclerViewServicio = (RecyclerView) findViewById(R.id.recyclerServicio);
         recyclerViewServicio.setLayoutManager(new LinearLayoutManager(context));
 
         adaptadorServicio = new RecyclerViewAdaptador(serNI.listarTodos(context),context);

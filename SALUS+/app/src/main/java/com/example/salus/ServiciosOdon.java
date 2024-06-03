@@ -32,7 +32,7 @@ public class ServiciosOdon extends AppCompatActivity implements View.OnClickList
         ReservaT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ServiciosOdon.this, Turnero_Medicos.class);
+                Intent i = new Intent(ServiciosOdon.this,TurneroActivity.class);
                 startActivity(i);
             }
         });
@@ -112,7 +112,7 @@ public class ServiciosOdon extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(this, home.class);
+        Intent intent = new Intent(this, TurneroActivity.class);
         SharedPreferences sharedpreferences = getSharedPreferences("shared_login_data",   Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putInt(login.DNI_PROFESIONAL, 22222222);
