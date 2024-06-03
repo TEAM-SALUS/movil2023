@@ -97,7 +97,7 @@
             android:value=".home" />
 
         <activity
-            android:name=".TurneroActivity"
+            android:name=".Turnero_Medicos"
             android:parentActivityName=".ProfesionalActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
