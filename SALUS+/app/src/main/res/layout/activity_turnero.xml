@@ -1,121 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="irTurnos"
-    tools:context=".TurneroActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <View
-        android:id="@+id/top_view"
+    <TextView
+        android:id="@+id/txtNombre"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="#83D9FE"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="34dp" />
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/txtTitle2"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtEspecialidad"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif"
-        android:paddingHorizontal="10dp"
-        android:text="@string/salustitulo"
-        android:textAlignment="gravity"
-        android:textColor="#FFFFFF"
-        android:textSize="90sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/top_view"
-        app:layout_constraintTop_toTopOf="@+id/top_view" />
+        android:text="Especialidad"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/txtProfEspec"
-        android:layout_width="0dp"
+        android:id="@+id/txtFecha"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
-        android:text=" Seleccione profesional"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top_view"
-        tools:ignore="MissingConstraints" />
+        android:text="Fecha"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txtHora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hora"
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btn_fecha"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnReservarTurno"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="abrirCalendario"
-        android:text="Elegir fecha"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txt_fecha"
-        app:layout_constraintEnd_toStartOf="@+id/txt_fecha"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txt_fecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:inputType="datetime|date"
-        android:text="Fecha seleccionada"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_fecha"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <Button
-        android:id="@+id/btnReservarCita"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/orange"
-        android:clickable="true"
-        android:onClick="irTurnos"
-        android:text="Reservar Turno"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btn_hora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="abrirRejoj"
-        android:text="Elegir Hora"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txt_hora"
-        app:layout_constraintEnd_toStartOf="@+id/txt_hora"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txt_hora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:inputType="datetime|time"
-        android:text="Horario Seleccionado"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/btn_hora"
-        app:layout_constraintTop_toBottomOf="@+id/txt_fecha" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProfEspec" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Cargar Turno" />
+</LinearLayout>

@@ -14,12 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salus.R;
-import com.example.salus.Servicios;
 import com.example.salus.ServiciosOdon;
 import com.example.salus.entidad.Servicio;
-import com.example.salus.entidad.ServicioXProfesional;
 import com.example.salus.login;
-import com.example.salus.negocioImpl.ServicioModelo;
 
 import java.util.List;
 
@@ -77,8 +74,8 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             fotoServicio = (ImageView) itemView.findViewById(R.id.imgServicio);
-            servicio = (TextView) itemView.findViewById(R.id.tvServicio);
-            botonServicio = (Button) itemView.findViewById(R.id.btnServicio);
+            servicio = (TextView) itemView.findViewById(R.id.tv_especialidad);
+            botonServicio = (Button) itemView.findViewById(R.id.btn_cancelar);
         }
     }
 
