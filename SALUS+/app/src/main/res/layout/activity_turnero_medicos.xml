@@ -43,36 +43,41 @@
         <DatePicker
             android:id="@+id/datePicker"
             android:layout_width="wrap_content"
-            android:layout_height="399dp"
+            android:layout_height="191dp"
             android:layout_below="@id/tvSelectDate"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="15dp" />
 
         <TextView
             android:id="@+id/tvSelectTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Seleccionar Hora"
-            android:textSize="18sp"
             android:layout_below="@id/datePicker"
-            android:layout_marginStart="130dp" />
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="15dp"
+            android:text="Seleccionar Hora"
+            android:textSize="18sp" />
 
         <TimePicker
             android:id="@+id/timePicker"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="192dp"
             android:layout_below="@id/tvSelectTime"
+            android:layout_marginTop="26dp"
             android:layout_centerHorizontal="true"
-            android:timePickerMode="spinner"/>
+            android:timePickerMode="spinner" />
 
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Submit"
             android:layout_below="@id/timePicker"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/azul_900"
+            android:textSize="20sp"
+            android:text="Aceptar"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
 
