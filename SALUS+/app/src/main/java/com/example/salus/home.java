@@ -71,26 +71,40 @@ public class home extends AppCompatActivity
         int userDni = sharedPref.getInt(login.DNI_CLIENT, 0);
         Toast.makeText(home.this,String.valueOf(userDni), Toast.LENGTH_LONG).show();
 
+
+        // ---- PROFESIONALES ----
         prof.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
                 Intent i = new Intent(home.this,ProfesionalesActivity.class);
+=======
+                Intent i = new Intent(home.this, EspecialidadesActivity.class);
+>>>>>>> feature
                 //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
                 startActivity(i);
 
             }
         });
 
-        serv.setOnClickListener(new View.OnClickListener() {
+
+        // ---- CONSULTAS ----
+        consultas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( home.this,Servicios.class);
-                //i.putExtra("dniCliente",(int) extras.get("dniCliente"));
+                Intent i = new Intent(home.this,ConsultasActivity.class);
                 startActivity(i);
             }
         });
 
+<<<<<<< HEAD
         calend.setOnClickListener(new View.OnClickListener() {
+=======
+
+
+        // ---- MSI TURNOS ----
+        turnos.setOnClickListener(new View.OnClickListener() {
+>>>>>>> feature
             @Override
             public void onClick(View v) {
                 Intent i = new Intent ( home.this, Turnos.class);
@@ -99,6 +113,8 @@ public class home extends AppCompatActivity
             }
         });
 
+
+        // ---- CONTACTO ----
         contacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +123,8 @@ public class home extends AppCompatActivity
             }
         });
 
+
+        // ---- SALIR ----
         log.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -119,6 +137,10 @@ public class home extends AppCompatActivity
                 startActivity(i);
             }
         });
+
+
+
+        // ---- PERFIL ----
         perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +149,24 @@ public class home extends AppCompatActivity
                 startActivity(i);
             }
         });
+<<<<<<< HEAD
+=======
+
+
+        /*
+        // ---- CONSULTAS ----
+        consultas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(home.this,ConsultasActivity.class);
+                startActivity(i);
+            }
+        });
+
+         */
+>>>>>>> feature
     }
+
 
     private String getTodaysDate()
     {

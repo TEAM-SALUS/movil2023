@@ -12,6 +12,7 @@
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
+<<<<<<< HEAD
     <timeTargetWasSelectedWithDropDown value="2023-11-07T03:50:16.066415Z" />
     <targetsSelectedWithDialog>
       <Target>
@@ -24,5 +25,8 @@
         </deviceKey>
       </Target>
     </targetsSelectedWithDialog>
+=======
+    <timeTargetWasSelectedWithDropDown value="2024-06-03T22:56:28.188608500Z" />
+>>>>>>> feature
   </component>
 </project>

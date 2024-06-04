@@ -101,7 +101,12 @@
                 android:onClick="enviarMensaje"
                 android:text="Enviar mensaje"
                 android:textColor="#FFFFFF"
+<<<<<<< HEAD
                 android:textColorLink="#000000" />
+=======
+                android:textColorLink="#000000"
+                android:textSize="12sp" />
+>>>>>>> feature
 
         </LinearLayout>
 

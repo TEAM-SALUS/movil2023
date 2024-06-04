@@ -1,9 +1,19 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+=======
+
+    <list default="true" id="a16038f4-ee90-4f71-ba8b-5e0024830102" name="Changes" comment="" />
+
+>>>>>>> feature
     <list default="true" id="a16038f4-ee90-4f71-ba8b-5e0024830102" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/SALUS+/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/.idea/misc.xml" afterDir="false" />
     </list>
@@ -23,6 +33,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ea67eb5c-a280-42a0-b21c-cc979b47edc6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/EspecialidadesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/EspecialidadesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/EspecialidadesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/EspecialidadesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/dao/URLConection.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/dao/URLConection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/item_especialidad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/item_especialidad.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/tarjeta_consultas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/tarjeta_consultas.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/SALUS+">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2h6yNK6naoI6LKzgTuvR8ynKjpW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+>>>>>>> e3a828ffa67b0b905597f55de033c70a727f08a8
+>>>>>>> feature
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",

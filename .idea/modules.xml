@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/SALUS-aplic.movilesISPC-2023-c2.iml" filepath="$PROJECT_DIR$/.idea/SALUS-aplic.movilesISPC-2023-c2.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/SALUS-mobile.iml" filepath="$PROJECT_DIR$/.idea/SALUS-mobile.iml" />
+>>>>>>> feature
     </modules>
   </component>
 </project>

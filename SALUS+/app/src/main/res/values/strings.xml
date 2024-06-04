@@ -25,7 +25,7 @@
     <string name="ciudad_perfil">Ciudad</string>
     <string name="telefono_perfil">Telefono</string>
     <string name="email_perfil">Email</string>
-    <string name="usuario_perfil">Usuario</string>
+    <string name="ucorreo_perfil">Usuario</string>
     <string name="clave_perfil">Clave</string>
     <string name="descripcion_perfil">Descripcion</string>
     <string name="estado_perfil">Estado</string>

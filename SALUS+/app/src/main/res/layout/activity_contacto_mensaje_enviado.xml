@@ -48,7 +48,12 @@
             android:backgroundTint="#FF9800"
             android:gravity="center"
             android:onClick="irHome"
+<<<<<<< HEAD
             android:text="Volver al inicio" />
+=======
+            android:text="Volver al inicio"
+            android:textColor="#FFFFFF" />
+>>>>>>> feature
 
     </LinearLayout>
 
