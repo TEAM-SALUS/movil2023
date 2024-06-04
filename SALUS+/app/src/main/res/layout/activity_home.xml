@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,9 +9,11 @@
 
     <View
         android:id="@+id/top_view"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="150dp"
         android:background="#83D9FE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -35,8 +36,6 @@
         app:layout_constraintTop_toTopOf="@+id/top_view" />
 
 
-<<<<<<< HEAD
-=======
     <ImageButton
         android:id="@+id/wpp"
         android:layout_width="59dp"
@@ -53,38 +52,26 @@
         app:layout_constraintStart_toEndOf="@+id/datePickerButton"
         app:layout_constraintTop_toTopOf="parent" />
 
->>>>>>> feature
     <Button
-        android:id="@+id/btnWapp"
-        android:layout_width="105dp"
-        android:layout_height="43dp"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/green"
-        android:onClick="irWapp"
-        android:text="WhatsApp"
-        android:textSize="12dp"
+        android:id="@+id/datePickerButton"
+        style="?android:spinnerStyle"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="7dp"
+        android:gravity="center"
+        android:onClick="openDatePicker"
+        android:text="ENE 01 2023"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/wpp"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_view"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/datePickerButton"
-        style="?android:spinnerStyle"
-        android:layout_width="252dp"
-        android:layout_height="58dp"
-        android:onClick="openDatePicker"
-        android:text="ENE 01 2023"
-        android:textColor="@color/black"
-        android:textSize="35sp"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnWapp"
-        tools:ignore="MissingConstraints" />
-
     <ScrollView
+        android:id="@+id/scrollView4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -92,8 +79,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/datePickerButton"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
+
+        <!--app:layout_constraintTop_toBottomOf="@+id/wpp"-->
+
 
 
         <LinearLayout
@@ -108,7 +99,7 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:columnCount="2"
-                android:rowCount="4">
+                android:rowCount="5">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
@@ -333,8 +324,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-<<<<<<< HEAD
-=======
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -379,7 +368,6 @@
 
                 </androidx.cardview.widget.CardView>
 
->>>>>>> feature
             </GridLayout>
 
         </LinearLayout>

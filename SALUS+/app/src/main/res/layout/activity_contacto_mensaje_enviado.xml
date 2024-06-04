@@ -8,36 +8,35 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="156dp"
-        app:srcCompat="@drawable/images"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="-9dp" />
+        android:layout_width="414dp"
+        android:layout_height="137dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/images" />
 
     <LinearLayout
         android:layout_width="411dp"
         android:layout_height="569dp"
-        android:layout_marginTop="12dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
         <TextView
             android:id="@+id/TVmensajeEnviado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:gravity="center|fill_vertical"
-            android:text="¡ Mensaje Enviado !"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:text="¡ Mensaje enviado !"
+            android:textColor="#B3060606"
+            android:textSize="26sp" />
 
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="268dp"
-            android:layout_height="308dp"
+            android:layout_width="264dp"
+            android:layout_height="247dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/mensajeenviado" />
 
@@ -45,15 +44,11 @@
             android:id="@+id/volverHome"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FF9800"
+            android:backgroundTint="#83D9FE"
             android:gravity="center"
             android:onClick="irHome"
-<<<<<<< HEAD
-            android:text="Volver al inicio" />
-=======
             android:text="Volver al inicio"
             android:textColor="#FFFFFF" />
->>>>>>> feature
 
     </LinearLayout>
 

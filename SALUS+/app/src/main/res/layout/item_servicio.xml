@@ -35,7 +35,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvServicio"
+                    android:id="@+id/tv_especialidad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -44,7 +44,7 @@
                     android:textSize="18dp" />
 
                 <Button
-                    android:id="@+id/btnServicio"
+                    android:id="@+id/btn_cancelar"
                     android:layout_width="188dp"
                     android:layout_height="match_parent"
                     android:backgroundTint="#FF9800"

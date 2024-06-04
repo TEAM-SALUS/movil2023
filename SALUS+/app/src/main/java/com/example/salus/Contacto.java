@@ -1,6 +1,4 @@
 package com.example.salus;
-<<<<<<< HEAD
-=======
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -11,61 +9,46 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
->>>>>>> feature
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import com.example.salus.R;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
+
+
+
 
 public class Contacto extends AppCompatActivity {
 
-<<<<<<< HEAD
-    Button Wpp;
-    @SuppressLint("WrongViewCast")
-=======
     private EditText edEmail, edMensaje;
     private Button btnEnviarMensaje;
     private ImageButton c_wpp;
 
->>>>>>> feature
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
 
-<<<<<<< HEAD
-        Wpp = findViewById(R.id.btnWpp);
-=======
         edEmail = findViewById(R.id.ed_email);
         edMensaje = findViewById(R.id.ed_mensaje);
         btnEnviarMensaje = findViewById(R.id.btnEnviarMensaje);
         c_wpp = findViewById(R.id.c_wpp);
->>>>>>> feature
 
-        Wpp.setOnClickListener(new View.OnClickListener() {
+        btnEnviarMensaje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String wpurl= "https://wa.me/+543525482570?text=Hola, quiero reservar un turno.";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(wpurl));
-                startActivity(i);
+                enviarMensaje();
             }
         });
 
-<<<<<<< HEAD
-    }
-
-    public void enviarMensaje(View view){
-        Intent intent = new Intent(this, ContactoMensajeEnviado.class);
-        startActivity(intent);
-        Toast.makeText(this, "Mensaje enviado", Toast.LENGTH_SHORT).show();
-=======
 
         c_wpp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,6 +124,6 @@ public class Contacto extends AppCompatActivity {
                 }
             }
         }.execute();
->>>>>>> feature
     }
+
 }
