@@ -35,8 +35,6 @@ public class home extends AppCompatActivity
     Button turnos;
     Button contacto;
     Button log;
-    Button btn_linkWeb;
-    String url_linkWeb;
     private Button perfil;
     ImageButton wpp;
     private Button consultas;
@@ -57,7 +55,6 @@ public class home extends AppCompatActivity
         perfil = findViewById(R.id.button6);
         wpp = findViewById(R.id.wpp);
         consultas = findViewById(R.id.HomeActivity_btnIrConsultas);
-        btn_linkWeb = findViewById(R.id.btn_linkWeb);
 
         wpp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,18 +143,6 @@ public class home extends AppCompatActivity
                 startActivity(i);
             }
         });
-
-
-        // ---- LINK A LA WEB ----
-        btn_linkWeb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("https://www.ispc.edu.ar/");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
-        });
-
 
 
         /*
