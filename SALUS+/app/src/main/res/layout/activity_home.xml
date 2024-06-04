@@ -135,7 +135,7 @@
                             android:backgroundTint="#83D9FE"
                             android:onClick="irProfesionales"
                             android:text="Profesionales"
-                            android:textColor="#FFFFFF"
+                            android:textColor="#232323"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toTopOf="@+id/ic1"
@@ -181,7 +181,7 @@
                             android:backgroundTint="#83D9FE"
                             android:onClick="irServicios"
                             android:text="Consultas"
-                            android:textColor="#FFFFFF"
+                            android:textColor="#232323"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toTopOf="@+id/button2"
@@ -226,7 +226,7 @@
                             android:backgroundTint="#83D9FE"
                             android:onClick="irTurnos"
                             android:text="Mis Turnos"
-                            android:textColor="#FFFFFF"
+                            android:textColor="#232323"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toTopOf="@id/ic3"
@@ -271,7 +271,7 @@
                             android:backgroundTint="#83D9FE"
                             android:onClick="irContacto"
                             android:text="Contacto"
-                            android:textColor="#FFFFFF"
+                            android:textColor="#232323"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toTopOf="@id/ic4"
@@ -313,7 +313,7 @@
                             android:layout_gravity="center_horizontal"
                             android:backgroundTint="#83D9FE"
                             android:text="Mi Perfil"
-                            android:textColor="#FFFFFF"
+                            android:textColor="#232323"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toTopOf="@id/ic6"
@@ -357,7 +357,7 @@
                             android:backgroundTint="#83D9FE"
                             android:onClick="irLogout"
                             android:text="Cerrar Sesión"
-                            android:textColor="#FFFFFF"
+                            android:textColor="#232323"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toTopOf="@id/ic5"
@@ -369,6 +369,27 @@
                 </androidx.cardview.widget.CardView>
 
             </GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="#83D9FE"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_linkWeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#83D9FE"
+                    android:onClick="ingresarWeb"
+                    android:text="Ingresa a nuestra página web desde aquí."
+                    android:textColor="#414141"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
