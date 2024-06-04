@@ -50,22 +50,25 @@
         tools:ignore="ExtraText,MissingConstraints,VisualLintBounds"
         tools:layout_editor_absoluteX="0dp">
 
-        <ImageView
-            android:id="@+id/prBG"
-            android:layout_width="383dp"
-            android:layout_height="511dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="24dp"
-            android:contentDescription="TODO"
-            app:srcCompat="@drawable/fondo"
-            tools:ignore="ContentDescription,HardcodedText,VisualLintBounds" />
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="clip_horizontal|center"
-            android:orientation="vertical">
+            android:layout_height="574dp"
+            android:layout_gravity="center_horizontal"
+            android:hapticFeedbackEnabled="false">
+
+            <ImageView
+                android:id="@+id/prBG"
+                android:layout_width="383dp"
+                android:layout_height="511dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:contentDescription="TODO"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/fondo"
+                tools:ignore="ContentDescription,HardcodedText,VisualLintBounds" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -75,6 +78,9 @@
                 android:layout_marginTop="32dp"
                 android:contentDescription="@string/todo"
                 android:src="@drawable/dr_pequena_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ImageContrastCheck" />
 
             <TextView
@@ -86,6 +92,9 @@
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -95,27 +104,36 @@
                 android:text="Odontologo"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prTitulo"
                 tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/prDescripcion"
                 android:layout_width="266dp"
-                android:layout_height="40dp"
+                android:layout_height="78dp"
                 android:layout_marginTop="8dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur  adipiscing elit. Pellentesque dictum tellus  faucibus urna commodo, eget porta ligula  suscipit. Donec ultricies mollis urna."
+                app:layout_constraintEnd_toEndOf="@id/prBG"
+                app:layout_constraintHorizontal_bias="0.548"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prEspecialidad"
                 tools:ignore="HardcodedText,TextSizeCheck" />
 
             <TextView
                 android:id="@+id/prTituloEspecialidades"
-                android:layout_width="143dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="70dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="208dp"
                 android:text="Especialidades"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/prBG"
+                app:layout_constraintTop_toBottomOf="@+id/prDescripcion"
+                app:layout_constraintVertical_bias="0.0"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -124,21 +142,31 @@
                 android:layout_height="80dp"
                 android:text="Prostodoncista\nPatólogo oral o cirujano oral.\nOrtodoncista\nDentista general"
                 android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/prBG"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prTituloEspecialidades"
                 tools:ignore="HardcodedText,TextSizeCheck" />
 
             <Button
                 android:id="@+id/btn_profesional"
-                android:layout_width="291dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="44dp"
                 android:backgroundTint="@color/btn_reservarTurno"
                 android:gravity="center"
                 android:onClick="irTurnero"
                 android:text="@string/btn_reservar_turno_profesionales"
-                android:textColor="@color/white"
-                android:textStyle="normal" />
-        </LinearLayout>
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.46"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prEspecialidades" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 

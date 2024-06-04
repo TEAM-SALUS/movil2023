@@ -50,7 +50,6 @@ public class SplashActivity extends AppCompatActivity {
     private IServicioXProfesionalNeg serXProNI;
     private ITurnoNeg turNI;
 
-
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +60,6 @@ public class SplashActivity extends AppCompatActivity {
         initVideo(savedInstanceState);
         cargarBase();
     }
-
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void cargarBase() {
