@@ -1,6 +1,8 @@
 package com.example.salus;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,7 +20,8 @@ import java.util.Calendar;
 
 public class Turnero_Medicos extends AppCompatActivity {
 
-    private Spinner spinnerDoctor;
+    private TextView spinnerDoctor;
+    private TextView tvSelectDoctor;
     private DatePicker datePicker;
     private TimePicker timePicker;
     private Button btnSubmit;
@@ -29,22 +32,44 @@ public class Turnero_Medicos extends AppCompatActivity {
         setContentView(R.layout.activity_turnero_medicos);
 
         spinnerDoctor = findViewById(R.id.spinnerDoctor);
+        tvSelectDoctor = findViewById(R.id.tvSelectDoctor);
         datePicker = findViewById(R.id.datePicker);
         timePicker = findViewById(R.id.timePicker);
         btnSubmit = findViewById(R.id.btnSubmit);
 
         // Configurar Spinner con una lista de doctores
-        ArrayList<String> doctorList = new ArrayList<>();
+        /*ArrayList<String> doctorList = new ArrayList<>();
         doctorList.add("Dr. Smith");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, doctorList);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerDoctor.setAdapter(adapter);
+        spinnerDoctor.setAdapter(adapter);*/
+
+        // Comente lo de arriba porque ese codigo creaba el spinner, el cual ya no es mas un spinner
+        // sino que es un textView que seria donde se ve la especialidad ahora
+
+        // Este es el bundle que se trae los datos que mando desde la activity ProfesionalActivity.java
+        // Te mando el nombre completo del medico y la especialidad
+        // Le sumo tambien la ID del medico y la ID de la especialidad por si te lo piden
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
+        String medico_incoming = extras.get("Medico").toString();
+        String especialidad_incoming = extras.get("Especialidad").toString();
+
+        tvSelectDoctor.setText(medico_incoming);
+        spinnerDoctor.setText(especialidad_incoming);
+
+        String medicoId = extras.get("MedicoID").toString();
+        String especialidadId = extras.get("EspecialidadID").toString();
+        Log.d("Medico ID:" , medicoId);
+        Log.d("Especialidad ID:" , especialidadId);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String selectedDoctor = spinnerDoctor.getSelectedItem().toString();
+                //String selectedDoctor = spinnerDoctor.getSelectedItem().toString();
+                String selectedDoctor = "asd";
                 int day = datePicker.getDayOfMonth();
                 int month = datePicker.getMonth();
                 int year = datePicker.getYear();

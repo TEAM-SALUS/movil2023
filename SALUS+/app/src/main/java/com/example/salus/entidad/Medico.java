@@ -1,23 +1,15 @@
 package com.example.salus.entidad;
 
-public class Medicos {
-    private String id;
+import android.net.Uri;
+
+public class Medico {
     private String matricula;
     private String nombre;
     private String apellido;
-    private String id_horario;
-    private String id_especialidad;
-    private String telefono;
+    private Integer id_especialidad;
     private String foto;
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String telefono;
+    // Getters y setters
 
     public String getMatricula() {
         return matricula;
@@ -26,7 +18,6 @@ public class Medicos {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-
     public String getNombre() {
         return nombre;
     }
@@ -51,13 +42,6 @@ public class Medicos {
         this.foto = foto;
     }
 
-    public String getId_horario() {
-        return id_horario;
-    }
-
-    public void setId_horario(String id_horario) {
-        this.id_horario = id_horario;
-    }
     public String getTelefono() {
         return telefono;
     }
@@ -66,11 +50,11 @@ public class Medicos {
         this.telefono = telefono;
     }
 
-    public String getId_especialidad() {
+    public Integer getId_especialidad() {
         return id_especialidad;
     }
 
-    public void setId_especialidad(String id_especialidad) {
+    public void setId_especialidad(Integer id_especialidad) {
         this.id_especialidad = id_especialidad;
     }
 }
