@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.salus.entidad.Pago;
+//import com.example.salus.entidad.Pago;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -67,6 +67,7 @@ public class Turnero_Medicos extends AppCompatActivity {
         Log.d("Medico ID:" , medicoId);
         Log.d("Especialidad ID:" , especialidadId);
 
+        /*
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,5 +99,8 @@ public class Turnero_Medicos extends AppCompatActivity {
 
             }
         });
+         */
     }
+
+
 }
