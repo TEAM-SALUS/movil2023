@@ -60,5 +60,6 @@ public interface ApiDjango {
     @GET("medico")
     Call<List<Medicos>> getMedicos();
 
+
 }
 
