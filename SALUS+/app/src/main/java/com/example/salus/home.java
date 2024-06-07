@@ -37,7 +37,7 @@ public class home extends AppCompatActivity
     Button log;
     private Button perfil;
     ImageButton wpp;
-    private Button consultas;
+    private Button consultas, btn_link;
 
     @SuppressLint({"MissingInflatedId"})
     @Override
@@ -55,6 +55,7 @@ public class home extends AppCompatActivity
         perfil = findViewById(R.id.button6);
         wpp = findViewById(R.id.wpp);
         consultas = findViewById(R.id.HomeActivity_btnIrConsultas);
+        btn_link = findViewById(R.id.btn_link);
 
         wpp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,6 +142,18 @@ public class home extends AppCompatActivity
                 Log.d("Entro perfil? ","entro");
                 Intent i = new Intent(home.this, PerfilActivity.class);
                 startActivity(i);
+            }
+        });
+
+
+
+        // ---- INGRESAR A LA APP WEB ----
+        btn_link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://www.ispc.edu.ar/");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
 
