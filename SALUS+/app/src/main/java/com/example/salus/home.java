@@ -38,6 +38,8 @@ public class home extends AppCompatActivity
     private Button perfil;
     ImageButton wpp;
     private Button consultas;
+    private String token;
+    private int id;
 
     @SuppressLint({"MissingInflatedId"})
     @Override
@@ -139,7 +141,9 @@ public class home extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Log.d("Entro perfil? ","entro");
-                Intent i = new Intent(home.this, PerfilActivity.class);
+                Intent i = new Intent(home.this, ProfileActivity.class);
+                i.putExtra("token", token);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
