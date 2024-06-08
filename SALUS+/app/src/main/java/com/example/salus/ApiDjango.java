@@ -12,6 +12,7 @@ import com.example.salus.entidad.PacienteRequest;
 import com.example.salus.entidad.PacienteResponse;
 import com.example.salus.entidad.RegisterRequest;
 import com.example.salus.entidad.RegisterResponse;
+import com.example.salus.entidad.UserProfile;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -48,9 +49,16 @@ public interface ApiDjango {
     Call<RegisterResponse> registerUser(@Body RegisterRequest registerRequest);
     @POST("paciente-registro")
     Call<PacienteResponse> registerPaciente(@Header("Authorization") String token, @Body PacienteRequest pacienteRequest);
+    @GET("/api/v1/profile")
+    Call<UserProfile> getProfile(@Header("Authorization") String token);
 
+    @GET("/api/v1/paciente-user/{id}")
+    Call<PacienteResponse> getPerfil(@Header("Authorization") String token, @Path("id") int id);
+    @PUT("/api/v1/paciente-user/{id}")
+    Call<PacienteResponse> updatePaciente(@Header("Authorization") String token, @Path("id") int id, @Body PacienteRequest pacienteRequest);
 
-
+    @DELETE("/api/v1/paciente-user/{id}")
+    Call<Void> deletePaciente(@Header("Authorization") String token, @Path("id") int id);
     //____ ESPECIALIDAD ____
     @GET("especialidad")
     Call<List<Especialidad>> getEspecialidades();
@@ -60,8 +68,12 @@ public interface ApiDjango {
     @GET("medico")
     Call<List<Medicos>> getMedicos();
 
+<<<<<<< HEAD
     //____ Pago ____
     @POST("pagar/")
     Call<Pago> Pago(@Body Pago pago);
+=======
+
+>>>>>>> c3398417d8b0f359e286befb314621ada38e5a26
 }
 

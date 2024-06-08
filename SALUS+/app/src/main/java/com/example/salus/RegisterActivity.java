@@ -3,6 +3,7 @@ package com.example.salus;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,11 +17,14 @@ import com.example.salus.entidad.PacienteResponse;
 import com.example.salus.entidad.RegisterRequest;
 import com.example.salus.entidad.RegisterResponse;
 
+import java.util.regex.Pattern;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
 public class RegisterActivity extends AppCompatActivity {
     private EditText etUsername, etEmail, etPassword, etDni, etNombre, etApellido, etClave, etTelefono;
     private Button btnRegister;
@@ -43,11 +47,67 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerUser();
-                Intent intent = new Intent(RegisterActivity.this, login.class);
-                startActivity(intent);
+                if (validateInputs()) {
+                    registerUser();
+                    Intent intent = new Intent(RegisterActivity.this, login.class);
+                    startActivity(intent);
+                }
             }
         });
+    }
+
+    private boolean validateInputs() {
+        String username = etUsername.getText().toString().trim();
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+        String dni = etDni.getText().toString().trim();
+        String nombre = etNombre.getText().toString().trim();
+        String apellido = etApellido.getText().toString().trim();
+        String telefono = etTelefono.getText().toString().trim();
+
+        if (username.isEmpty()) {
+            etUsername.setError("El nombre de usuario es obligatorio");
+            etUsername.requestFocus();
+            return false;
+        }
+
+        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            etEmail.setError("Introduce un email válido");
+            etEmail.requestFocus();
+            return false;
+        }
+
+        if (password.isEmpty() || password.length() < 6) {
+            etPassword.setError("La contraseña debe tener al menos 6 caracteres");
+            etPassword.requestFocus();
+            return false;
+        }
+
+        if (dni.isEmpty() || !Pattern.matches("\\d{8,}", dni)) {
+            etDni.setError("El DNI debe ser solo números y tener al menos 8 caracteres");
+            etDni.requestFocus();
+            return false;
+        }
+
+        if (nombre.isEmpty()) {
+            etNombre.setError("El nombre es obligatorio");
+            etNombre.requestFocus();
+            return false;
+        }
+
+        if (apellido.isEmpty()) {
+            etApellido.setError("El apellido es obligatorio");
+            etApellido.requestFocus();
+            return false;
+        }
+
+        if (telefono.isEmpty()) {
+            etTelefono.setError("El teléfono es obligatorio");
+            etTelefono.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 
     private void registerUser() {
@@ -119,3 +179,4 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 }
+

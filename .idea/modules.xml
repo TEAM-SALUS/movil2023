@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectModuleManager">
@@ -9,4 +10,13 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Salus+.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Salus+.app.unitTest.iml" />
     </modules>
   </component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/SALUS-mobile.iml" filepath="$PROJECT_DIR$/.idea/SALUS-mobile.iml" />
+    </modules>
+  </component>
+>>>>>>> c3398417d8b0f359e286befb314621ada38e5a26
 </project>

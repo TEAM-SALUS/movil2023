@@ -133,6 +133,7 @@ public class Turno {
     public void setId(Integer id) {
         this.id = id;
     }
+<<<<<<< HEAD
 
     public void Pagar(int monto, String fecha, String hora, String estado, int id_turno) {
         Pago pago = new Pago(monto, fecha, hora, estado, id_turno);
@@ -158,3 +159,6 @@ public class Turno {
             }
         });
     }
+=======
+}
+>>>>>>> c3398417d8b0f359e286befb314621ada38e5a26
