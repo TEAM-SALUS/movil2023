@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//import com.example.salus.entidad.Pago;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -65,9 +67,16 @@ public class Turnero_Medicos extends AppCompatActivity {
         Log.d("Medico ID:" , medicoId);
         Log.d("Especialidad ID:" , especialidadId);
 
+        /*
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intento = new Intent(Turnero_Medicos.this, Pago.class);
+                intento.putExtra("Medico",spinnerDoctor.getText());
+                intento.putExtra("MedicoID",medicoId);
+                intento.putExtra("EspecialidadID",especialidadId);
+
                 //String selectedDoctor = spinnerDoctor.getSelectedItem().toString();
                 String selectedDoctor = "asd";
                 int day = datePicker.getDayOfMonth();
@@ -75,13 +84,23 @@ public class Turnero_Medicos extends AppCompatActivity {
                 int year = datePicker.getYear();
                 int hour = timePicker.getHour();
                 int minute = timePicker.getMinute();
+                intento.putExtra("Fecha",year+"/"+month+"/"+day);
+                intento.putExtra("Hora",hour+":"+minute);
+
+
 
                 String appointmentDetails = "Doctor: " + selectedDoctor + "\n" +
                         "Date: " + day + "/" + (month + 1) + "/" + year + "\n" +
                         "Time: " + String.format("%02d:%02d", hour, minute);
 
                 Toast.makeText(Turnero_Medicos.this, appointmentDetails, Toast.LENGTH_LONG).show();
+
+                startActivity(Intent.createChooser(intento,"Compartir en").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+
             }
         });
+         */
     }
+
+
 }
