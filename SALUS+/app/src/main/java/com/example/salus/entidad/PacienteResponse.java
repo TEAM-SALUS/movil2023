@@ -1,34 +1,34 @@
 package com.example.salus.entidad;
 
 public class PacienteResponse {
-    private int id;
+    //private int id;
     private String dni_paciente;
     private String nombre;
     private String apellido;
     private String email;
     private String clave;
     private String telefono;
-    private int pacienteUser;
+    //private int pacienteUser;
 
-    public PacienteResponse(int id, String dni_paciente, String nombre, String apellido, String email, String clave, String telefono, int pacienteUser) {
-        this.id = id;
+    public PacienteResponse(String dni_paciente, String nombre, String apellido, String email, String clave, String telefono) {
+        //this.id = id;
         this.dni_paciente = dni_paciente;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.clave = clave;
         this.telefono = telefono;
-        this.pacienteUser = pacienteUser;
+        //this.pacienteUser = pacienteUser;
     }
 
     // Getters y Setters
-    public int getId() {
-        return id;
-    }
+   // public int getId() {
+   //     return id;
+   // }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+   // public void setId(int id) {
+    //    this.id = id;
+   // }
 
     public String getDni_paciente() {
         return dni_paciente;
@@ -78,11 +78,11 @@ public class PacienteResponse {
         this.telefono = telefono;
     }
 
-    public int getPacienteUser() {
-        return pacienteUser;
-    }
+   // public int getPacienteUser() {
+    //    return pacienteUser;
+   // }
 
-    public void setPacienteUser(int pacienteUser) {
-        this.pacienteUser = pacienteUser;
-    }
+    //public void setPacienteUser(int pacienteUser) {
+    //    this.pacienteUser = pacienteUser;
+    //}
 }

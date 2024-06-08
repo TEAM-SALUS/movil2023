@@ -50,7 +50,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".PerfilActivity"
+            android:name=".ProfileActivity"
             android:parentActivityName=".home"
             android:exported="false"
             android:label="Registro"/>

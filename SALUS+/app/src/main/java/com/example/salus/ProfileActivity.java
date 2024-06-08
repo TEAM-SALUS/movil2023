@@ -1,5 +1,182 @@
 package com.example.salus;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.salus.dao.URLConection;
+import com.example.salus.entidad.PacienteRequest;
+import com.example.salus.entidad.PacienteResponse;
+
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class ProfileActivity extends AppCompatActivity {
+    private EditText  etEmail, etDni, etNombre, etApellido, etTelefono, etClave;
+    private Button btnSave, btnDelete;
+    private String token;
+    private int userId;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_profile);
+
+        etEmail = findViewById(R.id.etEmail);
+        //etUsername= findViewById(R.id.etPacienteUser);
+        etClave = findViewById(R.id.etClave);
+        etDni = findViewById(R.id.etDniPaciente);
+        etNombre = findViewById(R.id.etNombre);
+        etApellido = findViewById(R.id.etApellido);
+        etTelefono = findViewById(R.id.etTelefono);
+        btnSave = findViewById(R.id.btnSave);
+        btnDelete = findViewById(R.id.btnDelete);
+
+        SharedPreferences sharedPreferences = getSharedPreferences(login.SHARED_PREFS, MODE_PRIVATE);
+        token = sharedPreferences.getString(login.TOKEN_KEY, null);
+        userId = sharedPreferences.getInt(login.USER_ID_KEY, 0);
+
+        if (userId == 0) {
+            Toast.makeText(this, "Error: ID del paciente no proporcionado", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
+
+        loadProfile();
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateProfile();
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteProfile();
+            }
+        });
+    }
+
+    private void loadProfile() {
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(httpLoggingInterceptor);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URLConection.URLPrivada)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(httpClient.build())
+                .build();
+
+        ApiDjango apiDjango = retrofit.create(ApiDjango.class);
+
+        Call<PacienteResponse> call = apiDjango.getPerfil("Token " + token, userId);
+        call.enqueue(new Callback<PacienteResponse>() {
+            @Override
+            public void onResponse(Call<PacienteResponse> call, Response<PacienteResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    PacienteResponse paciente = response.body();
+                    //etUsername.setText(paciente.getPacienteUser());
+                    etEmail.setText(paciente.getEmail());
+                    etDni.setText(paciente.getDni_paciente());
+                    etNombre.setText(paciente.getNombre());
+                    etApellido.setText(paciente.getApellido());
+                    etTelefono.setText(paciente.getTelefono());
+                    etClave.setText(paciente.getClave());
+                } else {
+                    Toast.makeText(ProfileActivity.this, "Error al cargar el perfil", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PacienteResponse> call, Throwable t) {
+                Toast.makeText(ProfileActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateProfile() {
+        String dni_paciente = etDni.getText().toString().trim();
+        String nombre = etNombre.getText().toString().trim();
+        String apellido = etApellido.getText().toString().trim();
+        String email = etEmail.getText().toString().trim();
+        String telefono = etTelefono.getText().toString().trim();
+        String clave = etClave.getText().toString().trim();
+
+        PacienteRequest pacienteRequest = new PacienteRequest(dni_paciente, nombre, apellido, email, telefono, clave);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URLConection.URLPrivada)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ApiDjango apiDjango = retrofit.create(ApiDjango.class);
+
+        Call<PacienteResponse> call = apiDjango.updatePaciente("Token " + token, userId, pacienteRequest);
+        call.enqueue(new Callback<PacienteResponse>() {
+            @Override
+            public void onResponse(Call<PacienteResponse> call, Response<PacienteResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    Toast.makeText(ProfileActivity.this, "Perfil actualizado", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ProfileActivity.this, "Error al actualizar el perfil", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PacienteResponse> call, Throwable t) {
+                Toast.makeText(ProfileActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void deleteProfile() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URLConection.URLPrivada)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ApiDjango apiDjango = retrofit.create(ApiDjango.class);
+
+        Call<Void> call = apiDjango.deletePaciente("Token " + token, userId);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(ProfileActivity.this, "Perfil eliminado", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(ProfileActivity.this, "Error al eliminar el perfil", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(ProfileActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+}
+
+
+
+
+/*package com.example.salus;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
@@ -218,4 +395,4 @@ public class PerfilActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(PerfilActivity.this, "Error al actualizar el perfil", Toast.LENGTH_SHORT).show();
             }
-        }}};
+        }}};*/
