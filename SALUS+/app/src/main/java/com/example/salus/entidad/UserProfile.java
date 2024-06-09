@@ -41,4 +41,13 @@ public class UserProfile {
     public void setEmail(String email) {
         this.email = email;
     }
+    // Método toString para representar la instancia como una cadena
+    @Override
+    public String toString() {
+        return "UserProfile{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
