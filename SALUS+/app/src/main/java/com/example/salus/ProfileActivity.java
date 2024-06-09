@@ -1,6 +1,5 @@
 package com.example.salus;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +14,9 @@ import com.example.salus.dao.URLConection;
 import com.example.salus.entidad.PacienteRequest;
 import com.example.salus.entidad.PacienteResponse;
 
+import java.io.IOException;
+import java.util.List;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -24,7 +26,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProfileActivity extends AppCompatActivity {
-    private EditText  etEmail, etDni, etNombre, etApellido, etTelefono, etClave;
+    private EditText etEmail, etClave, etDni, etNombre, etApellido, etTelefono;
     private Button btnSave, btnDelete;
     private String token;
     private int userId;
@@ -35,7 +37,6 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         etEmail = findViewById(R.id.etEmail);
-        //etUsername= findViewById(R.id.etPacienteUser);
         etClave = findViewById(R.id.etClave);
         etDni = findViewById(R.id.etDniPaciente);
         etNombre = findViewById(R.id.etNombre);
@@ -47,6 +48,8 @@ public class ProfileActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(login.SHARED_PREFS, MODE_PRIVATE);
         token = sharedPreferences.getString(login.TOKEN_KEY, null);
         userId = sharedPreferences.getInt(login.USER_ID_KEY, 0);
+
+        Log.d("ProfileActivity", "User ID loaded from SharedPreferences: " + userId);
 
         if (userId == 0) {
             Toast.makeText(this, "Error: ID del paciente no proporcionado", Toast.LENGTH_SHORT).show();
@@ -84,26 +87,35 @@ public class ProfileActivity extends AppCompatActivity {
 
         ApiDjango apiDjango = retrofit.create(ApiDjango.class);
 
-        Call<PacienteResponse> call = apiDjango.getPerfil("Token " + token, userId);
-        call.enqueue(new Callback<PacienteResponse>() {
+        Call<List<PacienteResponse>> call = apiDjango.getPerfil("Token " + token, userId);
+        call.enqueue(new Callback<List<PacienteResponse>>() {
             @Override
-            public void onResponse(Call<PacienteResponse> call, Response<PacienteResponse> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    PacienteResponse paciente = response.body();
-                    //etUsername.setText(paciente.getPacienteUser());
+            public void onResponse(Call<List<PacienteResponse>> call, Response<List<PacienteResponse>> response) {
+                if (response.isSuccessful() && response.body() != null && !response.body().isEmpty()) {
+                    PacienteResponse paciente = response.body().get(0);
+
+                    Log.d("ProfileActivity", "Paciente data: " + paciente.toString());
+
                     etEmail.setText(paciente.getEmail());
+                    etClave.setText(paciente.getClave());
                     etDni.setText(paciente.getDni_paciente());
                     etNombre.setText(paciente.getNombre());
                     etApellido.setText(paciente.getApellido());
                     etTelefono.setText(paciente.getTelefono());
-                    etClave.setText(paciente.getClave());
                 } else {
+                    Log.e("ProfileActivity", "Error response code: " + response.code());
+                    try {
+                        Log.e("ProfileActivity", "Error response body: " + response.errorBody().string());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     Toast.makeText(ProfileActivity.this, "Error al cargar el perfil", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<PacienteResponse> call, Throwable t) {
+            public void onFailure(Call<List<PacienteResponse>> call, Throwable t) {
+                Log.e("ProfileActivity", "Request failed: " + t.getMessage());
                 Toast.makeText(ProfileActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -117,7 +129,7 @@ public class ProfileActivity extends AppCompatActivity {
         String telefono = etTelefono.getText().toString().trim();
         String clave = etClave.getText().toString().trim();
 
-        PacienteRequest pacienteRequest = new PacienteRequest(dni_paciente, nombre, apellido, email, telefono, clave);
+        PacienteRequest pacienteRequest = new PacienteRequest(dni_paciente, nombre, apellido, email, telefono, clave,userId);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URLConection.URLPrivada)
@@ -171,6 +183,8 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 }
+
+
 
 
 

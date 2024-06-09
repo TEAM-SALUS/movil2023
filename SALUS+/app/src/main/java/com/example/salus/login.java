@@ -70,10 +70,10 @@ public class login extends AppCompatActivity {
                                 password.getText().clear();
                                 String token = response.body().getToken();
                                 //int ID = response.body().getid();
-                                /*Intent intent = new Intent(login.this, home.class);*/
-                                /*intent.putExtra("token", token);
+                                //Intent intent = new Intent(login.this, home.class);
+                                //intent.putExtra("token", token);
                                 //intent.putExtra("id", ID);
-                                startActivity(intent);*/
+                                //startActivity(intent);
                                 // Guardar el token en SharedPreferences
                                 SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -100,6 +100,7 @@ public class login extends AppCompatActivity {
         });
     }
     private void getUserProfile(String token) {
+        Log.d("getUserProfile", "Token de autorización: " + token);
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URLConection.URLPrivada)
@@ -108,11 +109,20 @@ public class login extends AppCompatActivity {
                 .build();
 
         ApiDjango apiDjango = retrofit.create(ApiDjango.class);
+        String requestUrl = URLConection.URLPrivada + "/api/v1/profile";
+        Log.d("getUserProfile", "URL de la solicitud: " + requestUrl);
         Call<UserProfile> call = apiDjango.getProfile("Token " + token);
+
         call.enqueue(new Callback<UserProfile>() {
             @Override
             public void onResponse(Call<UserProfile> call, Response<UserProfile> response) {
                 if (response.isSuccessful() && response.body() != null) {
+                    UserProfile userProfile = response.body();
+
+                    // Log completo de la respuesta
+
+                    Log.d("getUserProfile", "Response body: " + userProfile.toString());
+
                     int userId = response.body().getId();
 
                     // Guardar el ID del usuario en SharedPreferences
