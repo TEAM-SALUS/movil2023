@@ -1,5 +1,6 @@
 package com.example.salus;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -170,6 +171,8 @@ public class ProfileActivity extends AppCompatActivity {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(ProfileActivity.this, "Perfil eliminado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ProfileActivity.this, RegisterActivity.class);
+                    startActivity(intent);
                     finish();
                 } else {
                     Toast.makeText(ProfileActivity.this, "Error al eliminar el perfil", Toast.LENGTH_SHORT).show();
