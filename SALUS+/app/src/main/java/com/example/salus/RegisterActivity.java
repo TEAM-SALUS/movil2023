@@ -13,10 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.salus.dao.URLConection;
 import com.example.salus.entidad.PacienteRequest;
-import com.example.salus.entidad.PacienteResponse;
 import com.example.salus.entidad.RegisterRequest;
 import com.example.salus.entidad.RegisterResponse;
+import com.example.salus.entidad.UserProfileResponse;
+import com.example.salus.entidad.UsuarioResponse;
 
+
+import java.io.IOException;
 import java.util.regex.Pattern;
 
 import retrofit2.Call;
@@ -24,9 +27,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
+import com.google.gson.Gson;
 public class RegisterActivity extends AppCompatActivity {
-    private EditText etUsername, etEmail, etPassword, etDni, etNombre, etApellido, etClave, etTelefono;
+    private EditText etUsername, etEmail, etPassword, etDni, etNombre, etApellido, etTelefono;
     private Button btnRegister;
 
     @Override
@@ -40,7 +43,6 @@ public class RegisterActivity extends AppCompatActivity {
         etDni = findViewById(R.id.etDniPaciente);
         etNombre = findViewById(R.id.etNombre);
         etApellido = findViewById(R.id.etApellido);
-        etClave = findViewById(R.id.etClave);
         etTelefono = findViewById(R.id.etTelefono);
         btnRegister = findViewById(R.id.btnRegister);
 
@@ -49,8 +51,6 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (validateInputs()) {
                     registerUser();
-                    Intent intent = new Intent(RegisterActivity.this, login.class);
-                    startActivity(intent);
                 }
             }
         });
@@ -130,29 +130,29 @@ public class RegisterActivity extends AppCompatActivity {
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     String token = response.body().getToken();
-                    registerPaciente(token);
+                    getUserProfile(token);
                 } else {
+                    Log.e("RegisterActivity", "Error en la respuesta: " + response.message());
+                    if (response.errorBody() != null) {
+                        try {
+                            Log.e("RegisterActivity", "Error body: " + response.errorBody().string());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                     Toast.makeText(RegisterActivity.this, "Error en el registro de usuario", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                Log.e("RegisterActivity", "Fallo en la llamada: " + t.getMessage(), t);
                 Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void registerPaciente(String token) {
-        String dni = etDni.getText().toString().trim();
-        String nombre = etNombre.getText().toString().trim();
-        String apellido = etApellido.getText().toString().trim();
-        String email = etEmail.getText().toString().trim();
-        String clave = etClave.getText().toString().trim();
-        String telefono = etTelefono.getText().toString().trim();
-
-        PacienteRequest pacienteRequest = new PacienteRequest(dni, nombre, apellido, email, clave, telefono);
-
+    private void getUserProfile(String token) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URLConection.URLPrivada)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -160,23 +160,68 @@ public class RegisterActivity extends AppCompatActivity {
 
         ApiDjango apiDjango = retrofit.create(ApiDjango.class);
 
-        Call<PacienteResponse> call = apiDjango.registerPaciente("Token " + token, pacienteRequest);
-        call.enqueue(new Callback<PacienteResponse>() {
+        Call<UserProfileResponse> call = apiDjango.getUserProfile("Token " + token);
+        call.enqueue(new Callback<UserProfileResponse>() {
             @Override
-            public void onResponse(Call<PacienteResponse> call, Response<PacienteResponse> response) {
+            public void onResponse(Call<UserProfileResponse> call, Response<UserProfileResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    int pacienteUser = response.body().getId();
+                    Log.d("RegisterActivity", "User ID: " + pacienteUser);
+                    registerPaciente(token, pacienteUser);
+
+                } else {
+                    Log.e("RegisterActivity", "Error en la respuesta del perfil: " + response.message());
+                    Toast.makeText(RegisterActivity.this, "Error al obtener el perfil del usuario", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserProfileResponse> call, Throwable t) {
+                Log.e("RegisterActivity", "Fallo en la llamada del perfil: " + t.getMessage(), t);
+                Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    private void registerPaciente(String token, int pacienteUser) {
+        Log.d("RegisterActivity", "User ID: " + pacienteUser);
+        String dni = etDni.getText().toString().trim();
+        String nombre = etNombre.getText().toString().trim();
+        String apellido = etApellido.getText().toString().trim();
+        String email = etEmail.getText().toString().trim();
+        String clave = etPassword.getText().toString().trim(); // Usar etPassword como clave
+        String telefono = etTelefono.getText().toString().trim();
+
+        PacienteRequest pacienteRequest = new PacienteRequest(dni, nombre, apellido, email, clave, telefono, pacienteUser);
+        Log.d("RegisterActivity", "PacienteRequest: " + new Gson().toJson(pacienteRequest));
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(URLConection.URLPrivada)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ApiDjango apiDjango = retrofit.create(ApiDjango.class);
+
+        Call<UsuarioResponse> call = apiDjango.registerPaciente("Token " + token, pacienteRequest);
+        call.enqueue(new Callback<UsuarioResponse>() {
+            @Override
+            public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-                    // Redirigir a la pantalla de inicio de sesión o principal
+                    Intent intent = new Intent(RegisterActivity.this, login.class);
+                    startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(RegisterActivity.this, "Error en el registro del paciente", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<PacienteResponse> call, Throwable t) {
+            public void onFailure(Call<UsuarioResponse> call, Throwable t) {
                 Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
-}
+    }}
+
+
 

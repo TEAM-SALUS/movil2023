@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b47abf33-2456-467a-af7c-633d43769bdd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_06_2024_11_11_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_06_2024_11_11_p__m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/UserProfileResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/UsuarioResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SALUS+/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/Turno.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/Turno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/RegisterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/PacienteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/PacienteRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/PacienteResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/PacienteResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/RegisterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/RegisterResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
