@@ -26,8 +26,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Turnos extends AppCompatActivity {
     private RecyclerView recyclerTurno;
-    private TurnosAdaptador turnosAdaptador;
-    public EspecialidadesAdapter especialidadesAdapter;
+    //private TurnosAdaptador turnosAdaptador;
+    //public EspecialidadesAdapter especialidadesAdapter;
     private Context context;
     private ApiDjango api;
     ImageButton turno_wpp;
@@ -51,7 +51,7 @@ public class Turnos extends AppCompatActivity {
             }
         });
 
-        // Obtener la instancia de Retrofit usando ApiClient y la URL base
+        /* Obtener la instancia de Retrofit usando ApiClient y la URL base
         Retrofit retrofit = ApiClient.getClient(URLConection.URLPrivada);
         api = retrofit.create(ApiDjango.class);
 
@@ -78,7 +78,7 @@ public class Turnos extends AppCompatActivity {
                 Log.e("Turnos", "Error al realizar la llamada a la API.", t);
                 Toast.makeText(Turnos.this, "Error. Detalles: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 /*
         Button botonPagar = findViewById(R.id.botonPagar);
         botonPagar.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +116,7 @@ public class Turnos extends AppCompatActivity {
             }
         });*/
     }
-
+    /*
     public void eliminarTurno(int id, int position) {
         Call<Void> callEliminar = api.eliminarTurno(id);
         callEliminar.enqueue(new Callback<Void>() {
@@ -135,5 +135,5 @@ public class Turnos extends AppCompatActivity {
                 Toast.makeText(Turnos.this, "Error en la conexión", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 }

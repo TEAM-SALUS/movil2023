@@ -1,4 +1,4 @@
-package com.example.salus.adaptador;
+/*package com.example.salus.adaptador;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -58,3 +58,4 @@ public class PagoAdaptador extends RecyclerView.Adapter<PagoAdaptador.PagoViewHo
         }
     }
 }
+*/
