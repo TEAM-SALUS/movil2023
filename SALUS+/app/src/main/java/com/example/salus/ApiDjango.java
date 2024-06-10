@@ -66,6 +66,10 @@ public interface ApiDjango {
 
     @DELETE("/api/v1/paciente-user/{id}")
     Call<Void> deletePaciente(@Header("Authorization") String token, @Path("id") int id);
+
+    @DELETE("/api/v1/profile")
+    Call<Void> deleteUser(@Header("Authorization") String token);
+
     //____ ESPECIALIDAD ____
     @GET("especialidad")
     Call<List<Especialidad>> getEspecialidades();

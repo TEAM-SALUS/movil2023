@@ -164,7 +164,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         ApiDjango apiDjango = retrofit.create(ApiDjango.class);
 
-        Call<Void> call = apiDjango.deletePaciente("Token " + token, userId);
+        Call<Void> call = apiDjango.deleteUser("Token " + token);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
