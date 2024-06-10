@@ -5,27 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b47abf33-2456-467a-af7c-633d43769bdd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SALUS-mobile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SALUS-mobile.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_06_2024_11_11_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_06_2024_11_11_p__m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/PerfilActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/Autorizacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/Autorizacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/PacienteResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/PacienteResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/login.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_perfil.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/Turno.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/Turno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Alejandro\.android\avd\Pixel_4_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/SALUS+">
       <ProjectState />
@@ -81,6 +75,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2hZRGNfhNCMPndACRCNAy6w0nPJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -92,7 +89,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/StudioProjects/SALUS-mobile/SALUS+/settings.gradle.kts&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alejandro/Desktop/SALUS+/SALUS-mobile&quot;
   }
 }</component>
   <component name="RunManager" selected="Android App.Salus+.app">

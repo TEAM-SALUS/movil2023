@@ -79,7 +79,7 @@ public class Turnos extends AppCompatActivity {
                 Toast.makeText(Turnos.this, "Error. Detalles: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
+/*
         Button botonPagar = findViewById(R.id.botonPagar);
         botonPagar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,7 +114,7 @@ public class Turnos extends AppCompatActivity {
             public void onFailure(Call<Pago> call, Throwable t) {
                 Toast.makeText(Turnos.this, "Error en la conexión", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 
     public void eliminarTurno(int id, int position) {

@@ -68,12 +68,9 @@ public interface ApiDjango {
     @GET("medico")
     Call<List<Medicos>> getMedicos();
 
-<<<<<<< HEAD
+/*
     //____ Pago ____
-    @POST("pagar/")
-    Call<Pago> Pago(@Body Pago pago);
-=======
-
->>>>>>> c3398417d8b0f359e286befb314621ada38e5a26
+    //@POST("pagar/")
+    //Call<Pago> Pago(@Body Pago pago);
+*/
 }
-
