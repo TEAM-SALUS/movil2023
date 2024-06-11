@@ -44,6 +44,16 @@ public interface ApiDjango {
     Call<Void> eliminarTurno(@Path("id") int id);
     @PUT("turno/{id}")
     Call<Turno> actualizarTurno(@Path("id") @Body Turno turno);
+    @FormUrlEncoded
+    @POST("turno/")
+    Call<Turno> agregarTurno(
+            @Field("pagado") Boolean pagado,
+            @Field("estado") String estado,
+            @Field("turno_disponible") Integer turno_disponible,
+            @Field("id_paciente") Integer id_paciente,
+            @Field("id_medico") Integer id_medico,
+            @Field("obra_social") String obra_social
+    );
 
 
     //____ REGISTRO ____
