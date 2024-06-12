@@ -14,6 +14,7 @@ import com.example.salus.entidad.PacienteRequest;
 import com.example.salus.entidad.PacienteResponse;
 import com.example.salus.entidad.RegisterRequest;
 import com.example.salus.entidad.RegisterResponse;
+import com.example.salus.entidad.TurnoDisponible;
 import com.example.salus.entidad.UserProfile;
 import com.example.salus.entidad.UserProfileResponse;
 import com.example.salus.entidad.UsuarioResponse;
@@ -28,6 +29,7 @@ import retrofit2.http.POST;
 import retrofit2.http.GET;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 
 public interface ApiDjango {
@@ -97,6 +99,9 @@ public interface ApiDjango {
     //____ Profesional ____
     @GET("medico")
     Call<List<Medicos>> getMedicos();
+    // TURNOS DISPONIBLES
+    @GET("turnos-disponibles/")
+    Call<List<TurnoDisponible>> getTurnosDisponiblesPorMedico(@Query("medico") int medicoId);
 
 
 }

@@ -1,6 +1,7 @@
 package com.example.salus.adaptador;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.salus.R;
+import com.example.salus.TurnosDisponiblesActivity;
 import com.example.salus.entidad.HorarioDeAtencion;
 import com.example.salus.entidad.Medico;
 
@@ -65,10 +67,10 @@ public class MedicoAdapter extends RecyclerView.Adapter<MedicoAdapter.ViewHolder
         holder.btnTurnosDisponibles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Intent para ver turnos disponibles
-                // Intent intent = new Intent(context, TurnosDisponiblesActivity.class);
-                // intent.putExtra("medicoID", medico.getId());
-                // context.startActivity(intent);
+                 //Intent para ver turnos disponibles
+                 Intent intent = new Intent(context, TurnosDisponiblesActivity.class);
+                 intent.putExtra("medicoID", medico.getId());
+                 context.startActivity(intent);
             }
         });
     }
