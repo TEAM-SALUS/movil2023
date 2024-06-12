@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b47abf33-2456-467a-af7c-633d43769bdd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/dao/URLConection.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/dao/URLConection.java" afterDir="false" />
+=======
+>>>>>>> 8744c4de55b1431ba18f1d4f804b53aa40b2e5c0
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[4b4d02200701]" />
+=======
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+>>>>>>> 8744c4de55b1431ba18f1d4f804b53aa40b2e5c0
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/SALUS+">
       <ProjectState />
@@ -67,18 +70,14 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2hZRGNfhNCMPndACRCNAy6w0nPJ" />
   <component name="ProjectViewState">
@@ -90,9 +89,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.android.tools.idea.devicemanager.tab&quot;: &quot;Physical&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/StudioProjects/SALUS-mobile/SALUS+/settings.gradle.kts&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alejandro/Desktop/SALUS+/SALUS-mobile&quot;
   }
 }</component>
   <component name="RunManager" selected="Android App.Salus+.app">
