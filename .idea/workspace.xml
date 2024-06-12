@@ -11,13 +11,25 @@
   <component name="ChangeListManager">
     <list default="true" id="b47abf33-2456-467a-af7c-633d43769bdd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ProfesionalActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ProfesionalActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ProfesionalesActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/Turnero_Medicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/Turnero_Medicos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/EspecialidadesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/EspecialidadesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/MedicoAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/MedicoAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/ProfesionalesAdaptador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/Medico.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/Medico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_profesional.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_profesional.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/layout/activity_profesionales.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[ZT322C2ZX9]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/SALUS+">
       <ProjectState />
@@ -70,6 +82,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>

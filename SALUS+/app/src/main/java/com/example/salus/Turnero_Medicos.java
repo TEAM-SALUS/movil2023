@@ -44,6 +44,7 @@ public class Turnero_Medicos extends AppCompatActivity {
     private Button btnSubmit;
     private Spinner spinnerOS;
     private Spinner spinnerTD;
+    private int pacienteId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,15 @@ public class Turnero_Medicos extends AppCompatActivity {
         spinnerDoctor = findViewById(R.id.spinnerDoctor);
         tvSelectDoctor = findViewById(R.id.tvSelectDoctor);
         btnSubmit = findViewById(R.id.btnSubmit);
+
+        SharedPreferences sharedPreferences = getSharedPreferences(login.SHARED_PREFS, MODE_PRIVATE);
+        pacienteId = sharedPreferences.getInt(login.USER_ID_KEY, 0);
+
+        if (pacienteId == 0) {
+            Toast.makeText(this, "Error: ID del paciente no proporcionado", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
 
         // Configurar Spinner con una lista de doctores
         /*ArrayList<String> doctorList = new ArrayList<>();
@@ -114,7 +124,7 @@ public class Turnero_Medicos extends AppCompatActivity {
                 Boolean pagado = false;
                 String estado = "";
                 Integer turno_disponible = 1;
-                Integer id_paciente = 3;
+                //Integer id_paciente = 3;
                 Integer id_medico = 1;
                 String obra_social = "Particular";
                 loggin.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -126,7 +136,7 @@ public class Turnero_Medicos extends AppCompatActivity {
                         .client(httpClient.build())
                         .build();
                 ApiDjango turno = retrofit.create(ApiDjango.class);
-                Call<Turno> call = turno.agregarTurno(pagado, estado, turno_disponible, id_paciente, id_medico, obra_social);
+                Call<Turno> call = turno.agregarTurno(pagado, estado, turno_disponible, pacienteId, id_medico, obra_social);
 
                 call.enqueue(new Callback<Turno>() {
                     @Override

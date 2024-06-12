@@ -110,19 +110,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity
-            android:name=".ProfesionalesActivity"
-            android:parentActivityName=".home">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".home" />
-        </activity>
+
         <activity
             android:name=".ProfesionalActivity"
-            android:parentActivityName=".ProfesionalesActivity">
+            android:parentActivityName=".EspecialidadesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ProfesionalesActivity" />
+                android:value=".EspecialidadesActivity" />
         </activity>
         <activity
             android:name=".Turnos"

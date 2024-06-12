@@ -2,6 +2,8 @@ package com.example.salus;
 
 import com.example.salus.entidad.Autorizacion;
 
+import com.example.salus.entidad.HorarioDeAtencion;
+import com.example.salus.entidad.Medico;
 import com.example.salus.entidad.Medicos;
 import com.example.salus.entidad.Turno;
 
@@ -83,6 +85,13 @@ public interface ApiDjango {
     //____ ESPECIALIDAD ____
     @GET("especialidad")
     Call<List<Especialidad>> getEspecialidades();
+
+    @GET("medico/especialidad/{especialidadId}")
+    Call<List<Medico>> getMedicosPorEspecialidad(@Path("especialidadId") int especialidadId);
+
+    @GET("horariodeatencion-id/{medico_id}")
+    Call<List<HorarioDeAtencion>> getHorariosAtencionPorMedico(@Path("medico_id") int medicoId);
+
 
 
     //____ Profesional ____
