@@ -13,37 +13,43 @@
         android:layout_width="403dp"
         android:layout_height="168dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="560dp"
         android:foregroundGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.003"
         app:srcCompat="@drawable/images" />
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="557dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="174dp">
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="188dp"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email:"
+            android:text="@string/email"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese su email" />
+            android:hint="@string/ingrese_su_email"
+            android:minHeight="48dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clave:"
+            android:text="@string/clave"
             android:textSize="18sp" />
 
 
@@ -51,12 +57,13 @@
             android:id="@+id/etClave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese su clave" />
+            android:hint="@string/ingrese_su_clave"
+            android:minHeight="48dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dni:"
+            android:text="@string/dni"
             android:textSize="18sp" />
 
 
@@ -64,12 +71,13 @@
             android:id="@+id/etDniPaciente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese su dni" />
+            android:hint="@string/ingrese_su_dni"
+            android:minHeight="48dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre:"
+            android:text="@string/nombre"
             android:textSize="18sp" />
 
 
@@ -77,12 +85,13 @@
             android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese su nombre" />
+            android:hint="@string/ingrese_su_nombre"
+            android:minHeight="48dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apellido:"
+            android:text="@string/apellido"
             android:textSize="18sp" />
 
 
@@ -90,33 +99,36 @@
             android:id="@+id/etApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese su apellido" />
+            android:hint="@string/ingrese_su_apellido"
+            android:minHeight="48dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Teléfono:"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="HardcodedText" />
 
 
         <EditText
             android:id="@+id/etTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese su teléfono" />
+            android:hint="@string/ingrese_su_tel_fono"
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar" />
+            android:text="@string/guardar" />
 
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Eliminar" />
+            android:text="@string/eliminar" />
     </LinearLayout>
-</ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
