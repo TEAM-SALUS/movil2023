@@ -2,6 +2,7 @@ package com.example.salus.adaptador;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,10 +68,17 @@ public class MedicoAdapter extends RecyclerView.Adapter<MedicoAdapter.ViewHolder
         holder.btnTurnosDisponibles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 //Intent para ver turnos disponibles
-                 Intent intent = new Intent(context, TurnosDisponiblesActivity.class);
-                 intent.putExtra("medicoID", medico.getId());
-                 context.startActivity(intent);
+                SharedPreferences sharedPreferences = context.getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+
+                // Guardar el idMedico en SharedPreferences
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("idMedico", medico.getId());
+                editor.apply();
+
+                // Intent para ver turnos disponibles
+                Intent intent = new Intent(context, TurnosDisponiblesActivity.class);
+                intent.putExtra("medicoID", medico.getId());
+                context.startActivity(intent);
             }
         });
     }

@@ -2,6 +2,7 @@ package com.example.salus.adaptador;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.salus.ConfirmarTurnoActivity;
+import com.example.salus.ProfesionalActivity;
 import com.example.salus.R;
 import com.example.salus.entidad.TurnoDisponible;
 
@@ -50,7 +53,14 @@ public class TurnosDisponiblesAdapter extends RecyclerView.Adapter<TurnosDisponi
 
     private void reservarTurno(TurnoDisponible turno) {
         // Aquí puedes implementar la lógica para reservar el turno
-        Toast.makeText(context, "Turno reservado: " + turno.getDia() + " " + turno.getHora(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Reservando turno: " + turno.getDia() + " " + turno.getHora(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(context, ConfirmarTurnoActivity.class);
+        intent.putExtra("dia", turno.getDia());
+        intent.putExtra("hora", turno.getHora());
+        intent.putExtra("idTurnoDisponible", turno.getId());
+        Log.d("TurnoDisponible", turno.toString());
+
+        context.startActivity(intent);
     }
 
     @Override

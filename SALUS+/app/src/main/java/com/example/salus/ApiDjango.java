@@ -5,6 +5,7 @@ import com.example.salus.entidad.Autorizacion;
 import com.example.salus.entidad.HorarioDeAtencion;
 import com.example.salus.entidad.Medico;
 import com.example.salus.entidad.Medicos;
+import com.example.salus.entidad.NuevoTurno;
 import com.example.salus.entidad.Turno;
 
 import java.util.List;
@@ -102,6 +103,8 @@ public interface ApiDjango {
     // TURNOS DISPONIBLES
     @GET("turnos-disponibles/")
     Call<List<TurnoDisponible>> getTurnosDisponiblesPorMedico(@Query("medico") int medicoId);
+    @POST("crear-turno/")
+    Call<NuevoTurno> crearTurno(@Body NuevoTurno nuevoTurno);
 
 
 }

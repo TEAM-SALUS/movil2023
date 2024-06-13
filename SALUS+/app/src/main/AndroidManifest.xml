@@ -109,7 +109,14 @@
             android:parentActivityName=".ProfesionalActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".EspecialidadesActivity" />
+                android:value=".ProfesionalActivity" />
+        </activity>
+        <activity
+            android:name=".ConfirmarTurnoActivity"
+            android:parentActivityName=".TurnosDisponiblesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TurnosDisponiblesActivity" />
         </activity>
         <activity
             android:name=".Turnos"
