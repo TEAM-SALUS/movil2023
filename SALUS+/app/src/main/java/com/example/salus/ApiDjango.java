@@ -5,6 +5,7 @@ import com.example.salus.entidad.Autorizacion;
 import com.example.salus.entidad.HorarioDeAtencion;
 import com.example.salus.entidad.Medico;
 import com.example.salus.entidad.Medicos;
+import com.example.salus.entidad.MiTurno;
 import com.example.salus.entidad.NuevoTurno;
 import com.example.salus.entidad.Turno;
 
@@ -105,6 +106,21 @@ public interface ApiDjango {
     Call<List<TurnoDisponible>> getTurnosDisponiblesPorMedico(@Query("medico") int medicoId);
     @POST("crear-turno/")
     Call<NuevoTurno> crearTurno(@Body NuevoTurno nuevoTurno);
+    // Obtener todos los turnos de un paciente
+    @GET("turnos-por-paciente/")
+    Call<List<MiTurno>> getMiTurnosPorPaciente(@Header("Authorization") String token, @Query("id_paciente") int idPaciente);
+
+    // Obtener un turno específico por su ID
+    @GET("turno-reservado/{id}/")
+    Call<MiTurno> getMiTurnoReservado(@Header("Authorization") String token, @Path("id") int id);
+
+    // Actualizar un turno específico
+    @PUT("turno-reservado/{id}/")
+    Call<MiTurno> actualizarMiTurnoReservado(@Header("Authorization") String token, @Path("id") int id, @Body MiTurno miTurno);
+
+    // Eliminar un turno específico
+    @DELETE("turno-reservado/{id}/")
+    Call<Void> eliminarMiTurnoReservado(@Header("Authorization") String token, @Path("id") int id);
 
 
 }

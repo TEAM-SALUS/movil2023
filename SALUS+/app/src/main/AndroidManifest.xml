@@ -21,7 +21,6 @@
         android:theme="@style/Theme.Salus"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
         <!-- Actividades de la aplicación -->
         <activity
             android:name=".ConsultaActivity"
@@ -117,6 +116,21 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TurnosDisponiblesActivity" />
+        </activity>
+        <activity
+            android:name=".MisTurnos"
+            android:parentActivityName=".home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".home" />
+        </activity>
+
+        <activity
+            android:name=".EditarTurnoActivity"
+            android:parentActivityName=".MisTurnos">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MisTurnos" />
         </activity>
         <activity
             android:name=".Turnos"

@@ -1,5 +1,6 @@
 package com.example.salus;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -146,6 +147,8 @@ public class ConfirmarTurnoActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Log.d("ConfirmarTurnoActivity", "Turno reservado con éxito: " + response.body().toString());
                     Toast.makeText(ConfirmarTurnoActivity.this, "Turno reservado con éxito", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ConfirmarTurnoActivity.this, home.class); // Redirigir al Home
+                    startActivity(intent);
                     finish();
                 } else {
                     Log.e("ConfirmarTurnoActivity", "Error al reservar turno, código: " + response.code());

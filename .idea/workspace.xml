@@ -13,10 +13,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ApiDjango.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/MedicoAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/MedicoAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/TurnosDisponiblesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/adaptador/TurnosDisponiblesAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/dao/URLConection.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/dao/URLConection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/TurnoDisponible.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/entidad/TurnoDisponible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ConfirmarTurnoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/ConfirmarTurnoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" beforeDir="false" afterPath="$PROJECT_DIR$/SALUS+/app/src/main/java/com/example/salus/home.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +105,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="android.template.-1391664209">
+      <recent name="com.example.salus" />
+    </key>
+    <key name="android.template.744976614">
       <recent name="com.example.salus" />
     </key>
   </component>
