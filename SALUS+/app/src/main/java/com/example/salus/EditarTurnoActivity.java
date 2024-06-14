@@ -13,6 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.salus.dao.URLConection;
 import com.example.salus.entidad.MiTurno;
 
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -69,29 +73,39 @@ public class EditarTurnoActivity extends AppCompatActivity {
 
         ApiDjango apiDjango = retrofit.create(ApiDjango.class);
 
-        // Crear la llamada para actualizar el turno en el servidor
         Call<MiTurno> call = apiDjango.actualizarMiTurnoReservado("Token " + token, miTurno.getId(), miTurno);
+        Log.d("EditarTurnoActivity", "Calling URL: " + URLConection.URLPrivada + "turno-reservado/" + miTurno.getId() + "/");
+        Log.d("EditarTurnoActivity", "Request body: " + miTurno.toString());
+
         call.enqueue(new Callback<MiTurno>() {
             @Override
             public void onResponse(Call<MiTurno> call, Response<MiTurno> response) {
                 if (response.isSuccessful()) {
-                    // Si la actualización fue exitosa, mostrar mensaje y cerrar la actividad
                     Log.d("EditarTurnoActivity", "Turno actualizado con éxito: " + response.body().toString());
                     Toast.makeText(EditarTurnoActivity.this, "Turno actualizado con éxito", Toast.LENGTH_SHORT).show();
                     finish();
                 } else {
-                    // Si hubo un error en la actualización, mostrar mensaje de error
-                    Log.e("EditarTurnoActivity", "Error al actualizar turno, código: " + response.code());
-                    Toast.makeText(EditarTurnoActivity.this, "Error al actualizar turno", Toast.LENGTH_SHORT).show();
+                    handleErrorResponse(response);
                 }
             }
 
             @Override
             public void onFailure(Call<MiTurno> call, Throwable t) {
-                // Si hubo un fallo en la conexión, mostrar mensaje de error
                 Log.e("EditarTurnoActivity", "Error: " + t.getMessage());
                 Toast.makeText(EditarTurnoActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+    private void handleErrorResponse(Response<MiTurno> response) {
+        try {
+            Log.e("EditarTurnoActivity", "Error al actualizar turno, código: " + response.code());
+            Log.e("EditarTurnoActivity", "Error body: " + response.errorBody().string());
+            Toast.makeText(EditarTurnoActivity.this, "Error al actualizar turno: " + response.message(), Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            Log.e("EditarTurnoActivity", "Error al procesar error body: " + e.getMessage());
+            Toast.makeText(EditarTurnoActivity.this, "Error al actualizar turno", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }

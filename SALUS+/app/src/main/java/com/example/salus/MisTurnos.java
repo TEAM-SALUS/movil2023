@@ -92,6 +92,10 @@ public class MisTurnos extends AppCompatActivity {
     }
 
     private void obtenerMiTurnos() {
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(httpLoggingInterceptor);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URLConection.URLPrivada)
                 .addConverterFactory(GsonConverterFactory.create())
