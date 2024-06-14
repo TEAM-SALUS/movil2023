@@ -18,9 +18,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_salus"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_salus_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Salus"
@@ -50,7 +50,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".PerfilActivity"
+            android:name=".ProfileActivity"
             android:parentActivityName=".home"
             android:exported="false"
             android:label="Registro"/>
