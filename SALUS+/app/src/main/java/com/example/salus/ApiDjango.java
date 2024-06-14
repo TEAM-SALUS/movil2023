@@ -122,6 +122,9 @@ public interface ApiDjango {
     @DELETE("turno-reservado/{id}/")
     Call<Void> eliminarMiTurnoReservado(@Header("Authorization") String token, @Path("id") int id);
 
-
+/*
+    //____ Pago ____
+    //@POST("pagar/")
+    //Call<Pago> Pago(@Body Pago pago);
+*/
 }
-
