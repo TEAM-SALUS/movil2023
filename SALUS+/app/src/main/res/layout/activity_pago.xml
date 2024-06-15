@@ -75,10 +75,10 @@
         android:inputType="number" />
 
     <Button
-        android:id="@+id/btnSimularPago"
+        android:id="@+id/botonPagar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pagar"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:text="Pagar" />
 
 </LinearLayout>

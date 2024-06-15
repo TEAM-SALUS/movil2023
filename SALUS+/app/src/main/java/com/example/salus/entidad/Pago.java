@@ -1,9 +1,4 @@
 package com.example.salus.entidad;
-
-import java.util.Date;
-import java.text.SimpleDateFormat;
-import retrofit2.Call;
-
 public class Pago {
     private int id_pago;
     private int monto;
@@ -12,7 +7,13 @@ public class Pago {
     private String estado;
     private int id_turno;
 
-    public Pago(int monto, String fecha, String hora, String estado, int id_turno) {
+    // Constructor vacío
+    public Pago() {
+    }
+
+    // Constructor con parámetros
+    public Pago(int id_pago, int monto, String fecha, String hora, String estado, int id_turno) {
+        this.id_pago = id_pago;
         this.monto = monto;
         this.fecha = fecha;
         this.hora = hora;
@@ -20,6 +21,7 @@ public class Pago {
         this.id_turno = id_turno;
     }
 
+    // Getters y Setters
     public int getId_pago() {
         return id_pago;
     }
@@ -68,4 +70,3 @@ public class Pago {
         this.id_turno = id_turno;
     }
 }
-
